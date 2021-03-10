@@ -1,0 +1,32 @@
+package Alg;
+import java.util.*;
+public class TestEnvironment {
+	
+	static Scanner scan = new Scanner(System.in);
+	
+	public static void main(String[] args) {
+		
+		System.out.println("Enter string: ");
+		String str = scan.nextLine();
+		
+		String even = "";
+		String odd = "";
+		
+		char[] charArray = str.toCharArray();
+		
+		for (int i = 0; i < charArray.length ; i++) {
+	
+			if(i % 2 == 0) {
+				even += charArray[i];
+			}
+			
+			if(i % 2 != 0) {
+				odd += charArray[i];
+			}
+			
+		}
+		
+		System.out.println(even + " " + odd);
+	}
+
+}

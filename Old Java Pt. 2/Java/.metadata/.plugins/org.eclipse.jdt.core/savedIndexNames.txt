@@ -1,0 +1,18 @@
+INDEX VERSION 1.131+/Users/flexer/Desktop/Java/.metadata/.plugins/org.eclipse.jdt.core
+528619590.index
+3177648776.index
+395445914.index
+183490242.index
+1745918215.index
+3665656385.index
+2023613190.index
+1588084788.index
+1094065620.index
+4227110862.index
+395657849.index
+3706998471.index
+720021382.index
+1113086554.index
+4194125255.index
+3968822745.index
+1824385402.index

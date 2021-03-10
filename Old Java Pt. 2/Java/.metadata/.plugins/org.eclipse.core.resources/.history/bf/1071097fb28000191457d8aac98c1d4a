@@ -1,0 +1,41 @@
+package Alg;
+import java.util.*;
+public class TestEnvironment {
+	
+	static Scanner scan = new Scanner(System.in);
+	
+	public static void main(String[] args) {
+		
+		int testCase = scan.nextInt();
+		
+		for(int i = 0; i < testCase; i++) {
+			
+			String str = scan.next();
+			char[] charArray = str.toCharArray();
+			
+			StringBuilder even = new StringBuilder();
+			StringBuilder odd = new StringBuilder();
+			
+			
+			
+			for (int j = 0; j < charArray.length ; j++) {
+		
+				if(j % 2 == 0) {
+					even.append(charArray[j]);
+				}
+				
+				if(j % 2 != 0) {
+					odd.append(charArray[j]);
+				}
+			
+			}
+			
+			System.out.println(even + " " + odd);
+			
+		}
+		
+		scan.close();
+	
+	}
+
+}

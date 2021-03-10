@@ -1,0 +1,30 @@
+package Alg;
+import java.util.*;
+public class TestEnvironment {
+	
+	static String str = "Hacker"; 
+	static String str2 = "Rank";
+	
+	public static void main(String[] args) {
+		String even = "";
+		String odd = "";
+		
+		for (int i = 0; i < str.length() ; i++) {
+	
+			if(i % 2 == 0) {
+				even += str.charAt(i);
+			}
+			
+			if(i % 2 != 0) {
+				odd += str.charAt(i);
+			}
+			
+		}
+		
+		System.out.println(even + " " + odd);
+		
+		
+		
+	}
+
+}

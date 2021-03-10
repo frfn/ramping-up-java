@@ -1,0 +1,39 @@
+//printing out hours, minutes and seconds into seconds
+//use scanner to get each
+
+package catchUpStudy;
+import java.util.Scanner;
+public class January5 {
+	
+	//making them global variables
+	//purely from repetition, 3600 seconds = 1 hour
+	
+	private int hours = 3600;
+	
+	private int minutes = 60;
+	
+	private static int[] timeHolder = new int[2];
+	
+	private static Scanner object = new Scanner(System.in);
+	
+	public static void main(String[] args) {
+		
+		System.out.println("We are now converting hours, minutes, and seconds into seconds respectively, ");
+		System.out.println("Please enter hours, minutes, seconds respectively: ");
+		
+		for(int i = 0; i < timeHolder.length; i++) {
+		System.out.print("Enter time: ");
+		timeHolder[i] = object.nextInt();
+		}
+		
+		//enhancedForLoop to showcase what is inside array
+		for(int printValue : timeHolder) {
+			System.out.print(printValue + ", ");
+			
+		}
+		
+		System.out.println(timeHolder[1]);
+		
+	}
+
+}

@@ -1,0 +1,14 @@
+package Alg;
+import java.util.*;
+public class TestEnvironment {
+	
+	private static int x = 5;
+	public static void main(String[] args) {
+		
+		System.out.println(x++);
+		
+		System.out.println(++x);
+		
+	}
+
+}

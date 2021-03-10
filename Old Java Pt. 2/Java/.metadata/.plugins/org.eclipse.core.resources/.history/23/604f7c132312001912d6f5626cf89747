@@ -1,0 +1,34 @@
+package catchUpStudy;
+import java.util.Scanner;
+
+/**
+ * using for loops and while loops to 
+ * calculate the time
+ * from seconds to hh:mm:ss
+ */
+public class January6 {
+
+	static Scanner scan = new Scanner(System.in);
+	
+	private static int hour = 3600;
+	private static int minute = 60;
+	
+	private static int hrCtr;
+	private static int minCtr;
+	
+	public static void main(String[] args) {
+		
+		System.out.println("Input seconds: ");
+		int userInput = scan.nextInt();
+		
+		System.out.println("Calculating...");
+		
+		for(hrCtr = 0; userInput > (hrCtr*hour); hrCtr++) {
+			System.out.println(hrCtr);
+		}
+		System.out.println("---");
+		System.out.println(hrCtr);
+		
+	}
+	
+}

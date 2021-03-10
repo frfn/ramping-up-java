@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item key="isRegEx" value="false"/>
+		<item key="selection" value="dequeue"/>
+		<item key="casesensitive" value="true"/>
+		<item key="incremental" value="false"/>
+		<item key="wrap" value="false"/>
+		<item key="wholeword" value="false"/>
+		<list key="findhistory">
+			<item value="deQueue"/>
+			<item value="?"/>
+			<item value="Test"/>
+			<item value="test"/>
+			<item value="edit"/>
+			<item value="count"/>
+			<item value="update"/>
+			<item value="topping"/>
+			<item value="Array"/>
+			<item value="arraylist"/>
+			<item value="size"/>
+			<item value="cheat"/>
+			<item value="cheR"/>
+			<item value="Snell Roundhand"/>
+			<item value="new Color(111, 209, 255)"/>
+		</list>
+		<list key="replacehistory">
+			<item value="dequeue"/>
+			<item value="center"/>
+			<item value="Georgia"/>
+			<item value="new Color(255, 165, 117)"/>
+			<item value="userFreeList"/>
+			<item value="ERRORVALUE"/>
+			<item value="ERRORVALUE;"/>
+			<item value="new long[] {ERRORVALUE}"/>
+			<item value="return new long[] {ERRORVALUE}"/>
+			<item value="&lt;"/>
+			<item value="println"/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item key="DIALOG_WIDTH" value="290"/>
+		<item key="DIALOG_FONT_NAME" value="1|.AppleSystemUIFont|11.0|0|COCOA|1|.AppleSystemUIFont"/>
+		<item key="DIALOG_HEIGHT" value="409"/>
+		<item key="DIALOG_X_ORIGIN" value="42"/>
+		<item key="DIALOG_Y_ORIGIN" value="290"/>
+	</section>
+	<section name="org.eclipse.ui.texteditor.GotoLineAction$GotoLineDialog_dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="296"/>
+		<item key="DIALOG_Y_ORIGIN" value="403"/>
+	</section>
+</section>

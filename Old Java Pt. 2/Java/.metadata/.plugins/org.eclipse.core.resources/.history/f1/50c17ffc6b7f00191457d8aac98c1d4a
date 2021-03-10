@@ -1,0 +1,26 @@
+package Alg;
+import java.util.*;
+public class TestEnvironment {
+	
+	static Scanner scan = new Scanner(System.in);
+	
+	public static void main(String[] args) {
+		
+		double mealCost; int tip, tax;
+		
+		
+		System.out.println("Enter meal: "); mealCost = scan.nextDouble();
+		System.out.println("Enter tip: "); tip = scan.nextInt();
+		System.out.println("Enter tax: "); tax = scan.nextInt();
+		
+		double tipped = (mealCost * ((double)tip/100)); System.out.println(tipped);
+		double taxed = (mealCost * ((double)tax/100)); System.out.println(taxed);
+		double total = mealCost + tipped + taxed;
+		
+		
+		
+		System.out.println(total);
+		
+	}
+
+}

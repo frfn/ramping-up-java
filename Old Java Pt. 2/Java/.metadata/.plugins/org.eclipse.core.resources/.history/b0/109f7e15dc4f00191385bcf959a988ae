@@ -1,0 +1,22 @@
+package PP2_HospitalEmployee;
+
+public class Patient {
+	
+	protected String name;
+	
+	public Patient(String n) {
+		
+		name = n;
+		
+	}
+	
+	public void sayHiToPatient() {
+		System.out.println("Hi " + name + "!");
+	}
+	
+	public 
+	
+	public int favoriteNumber(int num) {
+		return num;
+	}
+}

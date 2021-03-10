@@ -1,0 +1,75 @@
+package PP2_HospitalEmployee;
+
+public class Main {
+	
+	public static void main(String[] args) {
+		
+		
+		/*
+		System.out.println("Possible Employee Hires");
+		System.out.println("------------------------");
+		
+		Employee emp = new Employee();
+		Employee emp2 = new Employee("Jonah Grauman", "White");
+		Employee emp3 = new Employee("Josh Lynch", "Black", "Doctor", 170000);
+		Employee emp4 = new Employee("Zion Chilagan", "Asian", "Administrator", 90000);
+		Employee emp5 = new Employee("Gabe Estrada", "Hispanic", "Nurse", 14, 8);
+		
+		emp.viewEmployeeHourlyInformation(); //will be a bunch of null values
+		emp2.viewNewEmployee();
+		emp3.viewEmployeeSalaryInformation();
+		emp4.viewEmployeeSalaryInformation();
+		emp5.viewEmployeeHourlyInformation();
+		*/
+		System.out.println("New Doctors"); 
+		System.out.println("------------");
+		//Doctors are salary paid -- use viewSalaryInformation
+		Patient pat = new Patient("Teacher");
+		Doctor doc = new Doctor(pat);
+		Doctor doc1 = new Doctor("Cam Tougas", "White");
+		Doctor doc2 = new Doctor("Maru Chan", "Mixed", 160000);
+		
+		doc.viewEmployeeSalaryInformation();
+		doc1.viewEmployeeSalaryInformation();
+		doc2.viewEmployeeSalaryInformation();
+		
+		System.out.println("");
+		
+		System.out.println("New Surgeons");
+		System.out.println("-------------");
+		
+		Surgeon sur = new Surgeon("Nicole Stanton", "White");
+		
+		sur.viewEmployeeSalaryInformation();
+		
+		/**
+		 * Polymorphism Test
+		 *  - Utilizing Employee
+		 */
+		
+		//These will print "Please make Employee..."
+		//It is normal for output!
+		Employee test = new Doctor();
+		Employee test2 = new Nurse();
+		Employee test3 = new Administrator();
+		Employee test4 = new Surgeon();
+		//Employee test5 = new Employee();
+		
+		System.out.println();
+		
+		Employee[] employeeGroup = new Employee[4];
+		employeeGroup[0] = test;
+		employeeGroup[1] = test2;
+		employeeGroup[2] = test3;
+		employeeGroup[3] = test4;
+		//employeeGroup[4] = test5;
+		
+		for(Employee viewMessage : employeeGroup) {
+			viewMessage.whoAmI();
+		}
+		
+		
+		
+	}
+
+}

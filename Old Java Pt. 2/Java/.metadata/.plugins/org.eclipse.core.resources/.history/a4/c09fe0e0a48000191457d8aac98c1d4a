@@ -1,0 +1,16 @@
+package Alg;
+import java.util.*;
+public class TestEnvironment {
+	
+	private static int x = 5;
+	private static int y = 5;
+	
+	public static void main(String[] args) {
+		
+		System.out.print(x++ + " --> ");  /* x = 6 */ System.out.println(x);
+		
+		System.out.println(++y);  // y = 6 right away
+		
+	}
+
+}

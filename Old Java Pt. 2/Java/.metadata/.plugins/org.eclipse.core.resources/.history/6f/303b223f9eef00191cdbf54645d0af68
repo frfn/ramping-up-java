@@ -1,0 +1,108 @@
+package Selection;
+import java.util.ArrayList;
+import java.util.HashMap;import java.util.Map;
+import java.util.Scanner;
+
+public class Main {
+	
+	public static class Person {
+		private String name;
+		private int age;
+		public Person(String name, int age) {
+			this.name = name;
+			this.age = age;
+		}
+		public String toString() {
+			String str = "";
+			str += "Name: " + this.name + "\nAge: " + this.age;
+			return str;
+		}
+		
+		public String getName() {
+			return name;
+		}
+		
+		public void setName(String name) {
+			this.name = name;
+		}
+	}
+	
+//	public static void main(String[] args) {
+//	
+//		HashMap<String, Person> map = new HashMap<String, Person>();
+//		Scanner scan = new Scanner(System.in);
+//		
+//		Person flex = new Person("Flexer", 23);		
+//		Person mark = new Person("Mark", 26);		
+//		Person melvin = new Person("Melvin", 25);		
+//		
+//		map.put("Flexer", flex);
+//		map.put("Mark", mark);
+//		map.put("Melvin", melvin);
+//		
+////		for(String key : map.keySet()) {
+////			System.out.println(key);
+////		}
+////		
+////		for(Person value : map.values()) {
+////			System.out.println(value);
+////		}
+//		
+//		for(Map.Entry<String, Person> entry : map.entrySet()) {
+//			String key = entry.getKey();
+//		    Person value = entry.getValue();
+//		    System.out.println(key + "\n" + value + "\n");
+//		   
+//		}
+//		
+//		System.out.println("Change name for: ");
+//		String change = scan.next();
+//		
+//		while(!change.equals("-1")) {
+//			if(map.containsKey(change)) {
+//				System.out.println("Change name to: ");
+//				String newChange = scan.next();
+//				
+//				Person person = map.get(change);
+//				person.setName(newChange);
+//				
+//			}
+//			else {
+//				System.out.println("Can't find key...");
+//			}
+//			
+//			System.out.println("Success");
+//			
+//			System.out.println("Change name for: ");
+//			change = scan.next();
+//			
+//		}
+//		
+//		for(Map.Entry<String, Person> entry : map.entrySet()) {
+//			String key = entry.getKey();
+//		    Person value = entry.getValue();
+//		    System.out.println(key + "\n" + value + "\n");
+//		   
+//		}
+//		
+//	}
+	
+	public static void main(String[] args) {
+		
+		Scanner scan = new Scanner(System.in);
+	
+		Person flex = new Person("Flexer", 23);		
+		Person mark = new Person("Mark", 26);		
+		Person melvin = new Person("Melvin", 25);		
+		
+		ArrayList<Person> list = new ArrayList<Person>();
+		
+		list.add(flex);
+		list.add(mark);
+		list.add(melvin);
+		
+		System.out.println(list);
+		
+	}
+	
+}

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workingSetManager>
+<workingSet editPageId="org.eclipse.jdt.internal.ui.DynamicSourcesWorkingSet" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1553869912510_6" label="Java Main Sources" name="Java Main Sources">
+<item elementID="=FlexersGrowth/ChapterTwo" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=FlexersGrowth/ChapterThree" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=FlexersGrowth/ChapterFour" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=FlexersGrowth/ChapterFive" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=FlexersGrowth/ChapterSix" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=FlexersGrowth/ChapterSeven" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=FlexersGrowth/Recap1–7" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=FlexersGrowth/ChapterEight" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=FlexersGrowth/ChapterNine" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=FlexersGrowth/ChapterTen" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=HomeworkForCSCI345/src" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=JavaWithMelvin/exercisesForMeToDo" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=JavaWithMelvin/testingsForMeToDo" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=JavaWithMelvin/recapExercises" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=JavaWithMelvin/revisitingChapters2&amp;3" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=JavaWithMelvin/revisitingChapters4" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=JavaWithMelvin/revisitingChapters5" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=JavaWithMelvin/randomJSLogic" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=OldTestsTakeALook/projectsForFun" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=OldTestsTakeALook/KEIL460" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=OldTestsTakeALook/KEIL347" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=OldTestsTakeALook/KRISHNAHYPOSIMULATOR" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=OracleTutorial/CodivaCode" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+</workingSet>
+<workingSet editPageId="org.eclipse.jdt.internal.ui.DynamicSourcesWorkingSet" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1553869912515_7" label="Java Test Sources" name="Java Test Sources"/>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1511460848293_0" label="Window Working Set" name="Aggregate for window 1511460848293"/>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1518410604151_1" label="Window Working Set" name="Aggregate for window 1518410604151"/>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1519856763412_2" label="Window Working Set" name="Aggregate for window 1519856763412"/>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1521491490927_3" label="Window Working Set" name="Aggregate for window 1521491490927"/>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1521491527273_4" label="Window Working Set" name="Aggregate for window 1521491527273"/>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1522416113244_5" label="Window Working Set" name="Aggregate for window 1522416113244"/>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1554126693952_8" label="Window Working Set" name="Aggregate for window 1554126693952"/>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1554169730225_9" label="Window Working Set" name="Aggregate for window 1554169730224"/>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1555428065961_10" label="Window Working Set" name="Aggregate for window 1555428065961"/>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1555518793058_11" label="Window Working Set" name="Aggregate for window 1555518793058"/>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1555606950605_12" label="Window Working Set" name="Aggregate for window 1555606950605"/>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1556596136648_13" label="Window Working Set" name="Aggregate for window 1556596136648"/>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1556720353917_14" label="Window Working Set" name="Aggregate for window 1556720353917"/>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1557354061060_15" label="Window Working Set" name="Aggregate for window 1557354061060"/>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1568071503121_16" label="Window Working Set" name="Aggregate for window 1568071503121"/>
+</workingSetManager>

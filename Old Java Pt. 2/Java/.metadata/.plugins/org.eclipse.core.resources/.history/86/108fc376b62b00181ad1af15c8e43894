@@ -1,0 +1,18 @@
+/* Program Developer: Flexer Fadrigalan
+ * CSCI 465 - Operating Systems Internal
+ * Homework 1 & 2
+ * 300923576
+ * 
+ * Product Description:
+ * An assignment that shows the building of an architecture which is to be called the HYPO Simulater –
+ * Also known as the hypothetical decimal machine. It is a machine that simulates by the use of functions
+ * or also known as methods to compute and to execute. In lieu to that, it is a program that essentially 
+ * simulates a computer. The machine demonstrates that all existing computing systems are binary. It has
+ * local variables that will represent the hardware and simulate the functions that the program will run.
+ */
+
+package simulator;
+
+public class HypoSimulator {
+
+}

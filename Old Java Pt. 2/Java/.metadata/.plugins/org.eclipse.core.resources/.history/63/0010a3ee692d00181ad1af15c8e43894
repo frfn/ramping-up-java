@@ -1,0 +1,54 @@
+/*********************************************
+ Program Developer: Flexer Fadrigalan
+ CSCI 465 - Operating Systems Internal
+ Homework 1 & 2
+ 300923576
+ 
+ Product Description:
+ An assignment that shows the building of an architecture which is to be called the HYPO Simulater –
+ Also known as the hypothetical decimal machine. It is a machine that simulates by the use of functions
+ or also known as methods to compute and to execute, it also a two address machine. In lieu to that, it is a program that essentially 
+ simulates a computer. The machine demonstrates that all existing computing systems are binary. It has
+ local variables that will represent the hardware and simulate the functions that the program will run.
+ *********************************************/
+
+package simulator;
+import java.io.*;
+
+public class HypoSimulator {
+	
+	/*****************************************************
+	 Declaring Hardware Components as Global Variables
+	 - Hypo Memory array of size 10,000 locations
+	 - Hypo memory registers: MAR and MBR
+	 - Clock
+	 - CPU registers: an array of 8 general purpose registers (gpr)
+	 - CPU registers (i) IR, (ii) psr, (iii) pc, (iv) sp
+	 *****************************************************/
+	
+	/*******************
+	 Global Variables as type "long"
+	 *******************/
+	
+	private static long[] Memory = new long[10000];	//array Memory with 10,000 locations
+	private static long MAR; //Memory Address Register
+	private static long MBR; //Memory Buffer Register
+	private static long clock; //clock
+	private static long[] GPR = new long[8]; //General Purpose Registers
+	private static long[] IR = new long[3]; //Instruction Register
+	private static long PSR; //Processor Status Register
+	private static long PC; //Program Counter
+	//private static long SP; //stack Pointer – will be used on HW2
+	
+	public static void InitializeSystem() {
+		
+		/**************************************
+		 Initializing all Hypo Machine hardware components to zero
+		 Memory, MAR, MBR, Clock, GPR, IR, PSR, PC
+		 Since some are arrays, initialize them!
+		 **************************************/
+		
+		
+	}
+
+}

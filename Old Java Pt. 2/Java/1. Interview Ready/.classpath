@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-9">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" path="Sorting Algorithms"/>
+	<classpathentry kind="src" path="Searching Algorithms"/>
+	<classpathentry kind="src" path="Class - Inheritance - Polymorphism"/>
+	<classpathentry kind="src" path="Workshop - Trying Different Concepts"/>
+	<classpathentry kind="src" path="Data Structure"/>
+	<classpathentry kind="src" path="Dynamic Programming"/>
+	<classpathentry kind="src" path="1. CtCI - Strings And Arrays"/>
+	<classpathentry kind="src" path="2. CtCI - Linked Lists"/>
+	<classpathentry kind="src" path="3. CtCI - Stacks and Queues"/>
+	<classpathentry kind="src" path="4. CtCI - Trees and Graphs"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

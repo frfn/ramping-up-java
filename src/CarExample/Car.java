@@ -5,7 +5,7 @@ interface ICarName {
     String owner = "Flexer";
     void showOwner();
 }
-public class Car implements ICarName, Compare{
+public class Car implements ICarName, Compare {
     // not final!
     private String color;
     private double speed, cost;

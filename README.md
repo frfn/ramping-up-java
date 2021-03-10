@@ -68,3 +68,37 @@ It is the process of restricting and only showing important information to the u
     - prevents variable modification
     - prevents inheritance
 
+# HashMap
+
+A hash map is a collection of items, mostly known for it's constant time, and key/pair value design!
+
+```
+HashMap<Integer, Car> = new HashMap<Integer, Car>();
+```
+- `.get()` to access an item
+- `.remove()` to remove an item
+- `.clear()` to remove all items
+
+To print out keys in the HashMap
+```
+// Print keys
+for (String i : capitalCities.keySet()) {
+  System.out.println(i);
+}
+```
+
+To print out values in the HashMap
+```
+// Print values
+for (String i : capitalCities.values()) {
+  System.out.println(i);
+}
+```
+
+To print out both
+```
+// Print keys and values
+for (String i : capitalCities.keySet()) {
+  System.out.println("key: " + i + " value: " + capitalCities.get(i));
+}
+```

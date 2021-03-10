@@ -1,7 +1,6 @@
 package CarExample;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 
 public class Honda extends Car {
@@ -25,6 +24,8 @@ public class Honda extends Car {
         * -----------------------------*
         *  THEY ALL DO THE SAME THING  *
         * -----------------------------*
+
+        They add all the items in the ArrayList
 
         1. for(String feature: features) {
              featureList.add(feature);

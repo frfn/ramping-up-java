@@ -2,9 +2,9 @@
 
 ### Access Modifiers
 
-- Private
-- Protected: can be used in classes that are 
-- Public: all classes can, this is default
+- `Private`
+- `Protected`: can be used in classes that are 
+- `Public`: all classes can, this is default
 
 ### `Inheritance` VS `Composition`
 
@@ -12,21 +12,21 @@
 
 > when the class either has an implements or extends, it most likely is an IS-A relationship
 
-- bus IS-A vehicle
-- car IS-A vehicle
-- potato IS-A vegetable
+- bus `IS-A` vehicle
+- car `IS-A` vehicle
+- potato `IS-A` vegetable
 
 `Has-A` relationship is `composition`
 
 > current class has a reference to an instance of another class, basically, the object will use another object ( same object or a different object )
 
-- car HAS-A engine
-- bike HAS-A engine
-- dog HAS-A tail
+- car `HAS-A` engine
+- bike `HAS-A` engine
+- dog `HAS-A` tail
 
 # Encapsulation
 
-- the idea of making things that sensitive hidden. An example is declaring variables private
+- the idea of making things that are sensitive hidden. An example is declaring variables private
 
 - `private String name;`
   - you can only access the `name` variable in the class it is in, you can create setters and getters to interact with it!

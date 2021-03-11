@@ -2,13 +2,15 @@
 
 ### Access Modifiers for variables
 
-- **`Private`**: can only be used in the class, and not outside the class
-- **`Protected`**: can be used in classes that are 
-- **`Public`**: all classes can, this is default
+- **`Private`**: can only be used in the current class, and not outside the class
+- **`Protected`**: can be used in the current class and subclasses of the class
+- **`Public`**: all classes can refer to this field, this is default
 
 ### `Inheritance` VS `Composition`
 
 `Is-A` relationship is **`inheritance`**
+
+Inheritance is important because it promotes code reuse, it also allows us to use another class as base which makes it easy to create other objects or apps!
 
 > when the class either has an implements or extends, it most likely is an IS-A relationship
 
@@ -20,7 +22,7 @@
 
 `Has-A` relationship is **`composition`** <br>
 
-**`Composition`** allows the reuse of the code, since Java doesn't support multiple inheritance, we can achieve it.
+**`Composition`** allows the reuse of the code, since Java doesn't support **multiple inheritance**, we can achieve it.
 
 > current class has a reference to an instance of another class, basically, the object will use another object ( same object or a different object )
 
@@ -41,11 +43,15 @@ It is the process of **restricting** and only showing important information to t
 
 ### `abstract` class and methods
 
+When we talk about abstract classes we are defining characteristics of an object type; specifying what an object is.
+
 - cannot be instantiated, must be inherited
 - methods that are abstract shall be filled by the subclass
 - variables may contain non-final variables
 
 ### `interface`
+
+When we talk about an interface and define capabilities that we promise to provide, we are talking about establishing a contract about what the object can do.
 
 - complete abstraction
 - it's a way to give behaviors to the class

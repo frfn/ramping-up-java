@@ -5,7 +5,7 @@
 - Interface
 - Access Modifiers
 - Creating Objects ( super, etc )
-- Data Structure ( ArrayList, HashMap )
+- Data Strucutre ( ArrayList, HashMap )
 
 # Compare
 

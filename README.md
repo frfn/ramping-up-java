@@ -1,14 +1,14 @@
 # Learning Classes
 
-### Access Modifiers
+### Access Modifiers for variables
 
-- `Private`
-- `Protected`: can be used in classes that are 
-- `Public`: all classes can, this is default
+- **`Private`**: can only be used in the class, and not outside the class
+- **`Protected`**: can be used in classes that are 
+- **`Public`**: all classes can, this is default
 
 ### `Inheritance` VS `Composition`
 
-`Is-A` relationship is `inheritance`
+`Is-A` relationship is **`inheritance`**
 
 > when the class either has an implements or extends, it most likely is an IS-A relationship
 
@@ -16,7 +16,11 @@
 - car `IS-A` vehicle
 - potato `IS-A` vegetable
 
-`Has-A` relationship is `composition`
+---
+
+`Has-A` relationship is **`composition`** <br>
+
+**`Composition`** allows the reuse of the code, since Java doesn't support multiple inheritance, we can achieve it.
 
 > current class has a reference to an instance of another class, basically, the object will use another object ( same object or a different object )
 
@@ -26,14 +30,14 @@
 
 # Encapsulation
 
-- the idea of making things that are sensitive hidden. An example is declaring variables private
+- the idea of making things that are sensitive **hidden**. An example is declaring variables **`private`**
 
 - `private String name;`
   - you can only access the `name` variable in the class it is in, you can create setters and getters to interact with it!
 
 # Data Abstraction
 
-It is the process of restricting and only showing important information to the user. Methods shall be filled in the subclasses that `extends` | `implements` the `abstract class` | `interface`
+It is the process of **restricting** and only showing important information to the user. Methods shall be filled in the subclasses that `extends` | `implements` the `abstract class` | `interface`
 
 ### `abstract` class and methods
 
@@ -50,7 +54,7 @@ It is the process of restricting and only showing important information to the u
 
 # Polymorphism
 
-- many forms, it happens when we objects are related with each through inheritance
+- many forms, it happens when objects are related with each other through inheritance
 
 ```
  Animal myAnimal = new Animal();  // Create a Animal object
@@ -62,7 +66,7 @@ It is the process of restricting and only showing important information to the u
 
 # Final 
 
-- `non-access modifier`, simplified means you can't change it, you can't access it and you can't override it
+- **`non-access modifier`**, simplified means you can't change it, you can't access it and you can't override it
   
     - prevents method overloading
     - prevents variable modification
@@ -70,7 +74,7 @@ It is the process of restricting and only showing important information to the u
 
 # HashMap
 
-A hash map is a collection of items, mostly known for it's constant time, and key/pair value design!
+A hash map is a **collection** of items, mostly known for its constant time, and key/pair value design!
 
 ```
 HashMap<Integer, Car> = new HashMap<Integer, Car>();
@@ -79,7 +83,9 @@ HashMap<Integer, Car> = new HashMap<Integer, Car>();
 - `.remove()` to remove an item
 - `.clear()` to remove all items
 
-To print out keys in the HashMap
+[All the functions of HashMap](https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html)
+
+To print out **`keys`** in the HashMap
 ```
 // Print keys
 for (String i : capitalCities.keySet()) {
@@ -87,7 +93,7 @@ for (String i : capitalCities.keySet()) {
 }
 ```
 
-To print out values in the HashMap
+To print out **`values`** in the HashMap
 ```
 // Print values
 for (String i : capitalCities.values()) {
@@ -102,3 +108,15 @@ for (String i : capitalCities.keySet()) {
   System.out.println("key: " + i + " value: " + capitalCities.get(i));
 }
 ```
+
+# StringBuilder
+
+Create a mutable string!
+```
+StringBuilder string = new StringBuilder();
+```
+- `.append(string)`
+- `.insert(index, string)`
+- `.reverse()`
+- `.charAt()`
+- `.substring(beginningIndex, endIndex)`

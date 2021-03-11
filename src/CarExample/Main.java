@@ -15,7 +15,7 @@ public class Main {
         /* Testing out the interface methods */
         /* --------------------------------- */
         // System.out.println(SI.isFaster(TypeR));
-        // System.out.println(TypeR.isMoreExpensive(SI));
+        // System.out.println(TypeR.isMoreExpensive(SI))
 
 
         /* ------------------------- */

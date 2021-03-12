@@ -60,6 +60,8 @@ When we talk about an interface and define capabilities that we promise to provi
 
 # Polymorphism
 
+Polymorphism is important because even though objects are implemented and created differently, you can interact with the objects as if it were just one object. Through inheritance, they will be related.
+
 - many forms, it happens when objects are related with each other through inheritance
 
 ```

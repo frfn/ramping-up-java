@@ -1,4 +1,4 @@
-package b_3_BinaryTree;
+package b_3_BinaryTreeX;
 
 public class BinaryTree {
 }

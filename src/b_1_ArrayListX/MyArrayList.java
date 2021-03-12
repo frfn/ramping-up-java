@@ -1,6 +1,5 @@
-package b_ArrayListX;
+package b_1_ArrayListX;
 
-import java.util.ArrayList; // to check implementation
 import java.util.Arrays;
 
 // a generic, you can fill it with a type you like

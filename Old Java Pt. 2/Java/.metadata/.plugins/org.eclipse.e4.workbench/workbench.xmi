@@ -2270,7 +2270,7 @@
   <commands xmi:id="_CwxIM--kEemFaqJajcG0wg" elementId="org.eclipse.ui.edit.text.shiftLeft" commandName="Shift Left" description="Shift a block of text to the left" category="_CwxLiO-kEemFaqJajcG0wg"/>
   <commands xmi:id="_CwxINO-kEemFaqJajcG0wg" elementId="org.eclipse.wst.sse.ui.structure.select.next" commandName="Select Next Element" description="Expand selection to include next sibling" category="_CwxLiO-kEemFaqJajcG0wg"/>
   <commands xmi:id="_CwxINe-kEemFaqJajcG0wg" elementId="org.eclipse.egit.ui.team.Push" commandName="Push..." category="_CwxLoO-kEemFaqJajcG0wg"/>
-  <commands xmi:id="_CwxINu-kEemFaqJajcG0wg" elementId="org.eclipse.jdt.debug.ui.commands.AddClassPrepareBreakpoint" commandName="Add CarExample Load Breakpoint" description="Add a class load breakpoint" category="_CwxLne-kEemFaqJajcG0wg"/>
+  <commands xmi:id="_CwxINu-kEemFaqJajcG0wg" elementId="org.eclipse.jdt.debug.ui.commands.AddClassPrepareBreakpoint" commandName="Add a_CarExample Load Breakpoint" description="Add a class load breakpoint" category="_CwxLne-kEemFaqJajcG0wg"/>
   <commands xmi:id="_CwxIN--kEemFaqJajcG0wg" elementId="org.eclipse.jdt.ui.edit.text.java.select.next" commandName="Select Next Element" description="Expand selection to include next sibling" category="_CwxLiO-kEemFaqJajcG0wg"/>
   <commands xmi:id="_CwxIOO-kEemFaqJajcG0wg" elementId="org.eclipse.mylyn.builds.ui.command.ShowBuildOutput" commandName="Show Build Output" category="_CwxLjO-kEemFaqJajcG0wg"/>
   <commands xmi:id="_CwxIOe-kEemFaqJajcG0wg" elementId="org.eclipse.egit.ui.RepositoriesViewNewRemote" commandName="Create Remote..." category="_CwxLoO-kEemFaqJajcG0wg"/>
@@ -2310,7 +2310,7 @@
   <commands xmi:id="_CwxIWe-kEemFaqJajcG0wg" elementId="org.eclipse.egit.ui.command.shareProject" commandName="Share with Git" description="Share the project using Git" category="_CwxLp--kEemFaqJajcG0wg">
     <parameters xmi:id="_CwxIWu-kEemFaqJajcG0wg" elementId="org.eclipse.egit.ui.command.projectNameParameter" name="Project" optional="false"/>
   </commands>
-  <commands xmi:id="_CwxIW--kEemFaqJajcG0wg" elementId="org.eclipse.jdt.ui.edit.text.java.convert.anonymous.to.nested" commandName="Convert Anonymous CarExample to Nested" description="Convert an anonymous class to a nested class" category="_CwxLme-kEemFaqJajcG0wg"/>
+  <commands xmi:id="_CwxIW--kEemFaqJajcG0wg" elementId="org.eclipse.jdt.ui.edit.text.java.convert.anonymous.to.nested" commandName="Convert Anonymous a_CarExample to Nested" description="Convert an anonymous class to a nested class" category="_CwxLme-kEemFaqJajcG0wg"/>
   <commands xmi:id="_CwxIXO-kEemFaqJajcG0wg" elementId="org.eclipse.jdt.ui.correction.changeToStatic" commandName="Quick Fix - Change to static access" description="Invokes quick assist and selects 'Change to static access'" category="_CwxLpO-kEemFaqJajcG0wg"/>
   <commands xmi:id="_CwxIXe-kEemFaqJajcG0wg" elementId="org.eclipse.ui.window.fullscreenmode" commandName="Toggle Full Screen" description="Toggles the window between full screen and normal" category="_CwxLmO-kEemFaqJajcG0wg"/>
   <commands xmi:id="_CwxIXu-kEemFaqJajcG0wg" elementId="org.eclipse.debug.ui.commands.newRendering" commandName="New Rendering" description="Add a new rendering." category="_CwxLne-kEemFaqJajcG0wg"/>
@@ -2855,7 +2855,7 @@
   <commands xmi:id="_CwxKXu-kEemFaqJajcG0wg" elementId="org.eclipse.jdt.debug.ui.commands.Execute" commandName="Execute" description="Evaluate selected text" category="_CwxLne-kEemFaqJajcG0wg"/>
   <commands xmi:id="_CwxKX--kEemFaqJajcG0wg" elementId="org.eclipse.jdt.ui.edit.text.java.add.block.comment" commandName="Add Block Comment" description="Enclose the selection with a block comment" category="_CwxLpO-kEemFaqJajcG0wg"/>
   <commands xmi:id="_CwxKYO-kEemFaqJajcG0wg" elementId="org.eclipse.ui.help.aboutAction" commandName="About" description="Open the about dialog" category="_CwxLmu-kEemFaqJajcG0wg"/>
-  <commands xmi:id="_CwxKYe-kEemFaqJajcG0wg" elementId="org.eclipse.jdt.ui.edit.text.java.annotate.classFile" commandName="Annotate CarExample File" description="Externally add Annotations to a CarExample File." category="_CwxLpO-kEemFaqJajcG0wg"/>
+  <commands xmi:id="_CwxKYe-kEemFaqJajcG0wg" elementId="org.eclipse.jdt.ui.edit.text.java.annotate.classFile" commandName="Annotate a_CarExample File" description="Externally add Annotations to a a_CarExample File." category="_CwxLpO-kEemFaqJajcG0wg"/>
   <commands xmi:id="_CwxKYu-kEemFaqJajcG0wg" elementId="org.eclipse.egit.ui.team.stash.create" commandName="Stash Changes..." category="_CwxLoO-kEemFaqJajcG0wg"/>
   <commands xmi:id="_CwxKY--kEemFaqJajcG0wg" elementId="org.eclipse.egit.ui.history.CheckoutCommand" commandName="Check Out" category="_CwxLp--kEemFaqJajcG0wg"/>
   <commands xmi:id="_CwxKZO-kEemFaqJajcG0wg" elementId="org.eclipse.jdt.ui.edit.text.java.search.read.access.in.project" commandName="Read Access in Project" description="Search for read references to the selected element in the enclosing project" category="_CwxLnO-kEemFaqJajcG0wg"/>
@@ -2918,7 +2918,7 @@
     <parameters xmi:id="_CwxKl--kEemFaqJajcG0wg" elementId="cancelReturns" name="Return Value on Cancel"/>
   </commands>
   <commands xmi:id="_CwxKmO-kEemFaqJajcG0wg" elementId="org.eclipse.egit.ui.RebaseCurrent" commandName="Rebase" category="_CwxLp--kEemFaqJajcG0wg"/>
-  <commands xmi:id="_CwxKme-kEemFaqJajcG0wg" elementId="org.eclipse.jdt.ui.edit.text.java.extract.class" commandName="Extract CarExample..." description="Extracts fields into a new class" category="_CwxLme-kEemFaqJajcG0wg"/>
+  <commands xmi:id="_CwxKme-kEemFaqJajcG0wg" elementId="org.eclipse.jdt.ui.edit.text.java.extract.class" commandName="Extract a_CarExample..." description="Extracts fields into a new class" category="_CwxLme-kEemFaqJajcG0wg"/>
   <commands xmi:id="_CwxKmu-kEemFaqJajcG0wg" elementId="org.eclipse.jdt.ui.correction.extractConstant.assist" commandName="Quick Assist - Extract constant" description="Invokes quick assist and selects 'Extract constant'" category="_CwxLpO-kEemFaqJajcG0wg"/>
   <commands xmi:id="_CwxKm--kEemFaqJajcG0wg" elementId="org.eclipse.recommenders.rcp.commands.extensionDiscovery" commandName="Discover New Extensions" category="_CwxLp--kEemFaqJajcG0wg">
     <parameters xmi:id="_CwxKnO-kEemFaqJajcG0wg" elementId="org.eclipse.recommenders.utils.rcp.linkContribution.href" name="URI" optional="false"/>
@@ -2962,7 +2962,7 @@
   <commands xmi:id="_CwxKwO-kEemFaqJajcG0wg" elementId="AUTOGEN:::org.eclipse.eclemma.ui.CoverageActionSet/org.eclipse.eclemma.ui.actions.CoverageDropDownAction" commandName="Coverage" category="_CwxLp--kEemFaqJajcG0wg"/>
   <commands xmi:id="_CwxKwe-kEemFaqJajcG0wg" elementId="AUTOGEN:::org.eclipse.eclemma.ui.CoverageActionSet/org.eclipse.eclemma.ui.actions.CoverageAsAction" commandName="Coverage As" category="_CwxLp--kEemFaqJajcG0wg"/>
   <commands xmi:id="_CwxKwu-kEemFaqJajcG0wg" elementId="AUTOGEN:::org.eclipse.eclemma.ui.CoverageActionSet/org.eclipse.eclemma.ui.actions.CoverageHistoryAction" commandName="Coverage History" category="_CwxLp--kEemFaqJajcG0wg"/>
-  <commands xmi:id="_CwxKw--kEemFaqJajcG0wg" elementId="AUTOGEN:::org.eclipse.jdt.ui.JavaElementCreationActionSet/org.eclipse.jdt.ui.actions.NewTypeDropDown" commandName="CarExample..." description="New Java CarExample" category="_CwxLp--kEemFaqJajcG0wg"/>
+  <commands xmi:id="_CwxKw--kEemFaqJajcG0wg" elementId="AUTOGEN:::org.eclipse.jdt.ui.JavaElementCreationActionSet/org.eclipse.jdt.ui.actions.NewTypeDropDown" commandName="a_CarExample..." description="New Java a_CarExample" category="_CwxLp--kEemFaqJajcG0wg"/>
   <commands xmi:id="_CwxKxO-kEemFaqJajcG0wg" elementId="AUTOGEN:::org.eclipse.jdt.ui.JavaElementCreationActionSet/org.eclipse.jdt.ui.actions.OpenPackageWizard" commandName="Package..." description="New Java Package" category="_CwxLp--kEemFaqJajcG0wg"/>
   <commands xmi:id="_CwxKxe-kEemFaqJajcG0wg" elementId="AUTOGEN:::org.eclipse.jdt.ui.JavaElementCreationActionSet/org.eclipse.jdt.ui.actions.OpenProjectWizard" commandName="Java Project..." description="New Java Project" category="_CwxLp--kEemFaqJajcG0wg"/>
   <commands xmi:id="_CwxKxu-kEemFaqJajcG0wg" elementId="AUTOGEN:::org.eclipse.jdt.ui.SearchActionSet/org.eclipse.jdt.ui.actions.OpenJavaSearchPage" commandName="Java..." category="_CwxLp--kEemFaqJajcG0wg"/>
@@ -3091,7 +3091,7 @@
   <commands xmi:id="_CwxLQO-kEemFaqJajcG0wg" elementId="org.python.pydev.editor.actions.addBlockComment" commandName="Add Comment Block" description="Creates a python comment block" category="_CwxLq--kEemFaqJajcG0wg"/>
   <commands xmi:id="_CwxLQe-kEemFaqJajcG0wg" elementId="org.python.pydev.editor.actions.navigation.pyCollapse" commandName="Python Collapse" description="Collapse block of code" category="_CwxLq--kEemFaqJajcG0wg"/>
   <commands xmi:id="_CwxLQu-kEemFaqJajcG0wg" elementId="org.python.pydev.debug.commands.ignoreCaughtException" commandName="&amp;Ignore caught exception" description="Ignore caught exception" category="_CwxLp--kEemFaqJajcG0wg"/>
-  <commands xmi:id="_CwxLQ--kEemFaqJajcG0wg" elementId="org.python.pydev.editor.actions.navigation.nextMethod" commandName="Next Method or CarExample" description="Navigates to the next method or class definition" category="_CwxLq--kEemFaqJajcG0wg"/>
+  <commands xmi:id="_CwxLQ--kEemFaqJajcG0wg" elementId="org.python.pydev.editor.actions.navigation.nextMethod" commandName="Next Method or a_CarExample" description="Navigates to the next method or class definition" category="_CwxLq--kEemFaqJajcG0wg"/>
   <commands xmi:id="_CwxLRO-kEemFaqJajcG0wg" elementId="org.python.pydev.editor.actions.comment" commandName="Python Comment" description="Comments a python line (Adds # to beggining of the line)" category="_CwxLq--kEemFaqJajcG0wg"/>
   <commands xmi:id="_CwxLRe-kEemFaqJajcG0wg" elementId="org.python.pydev.editor.actions.toggleforcetabs" commandName="Toggle Force tabs" description="Forces or not tabs in the current editor" category="_CwxLq--kEemFaqJajcG0wg"/>
   <commands xmi:id="_CwxLRu-kEemFaqJajcG0wg" elementId="org.python.pydev.editor.actions.pySelectInterpreter" commandName="PyDev: Select default interpreter" description="Select the default interpreter to be used." category="_CwxLq--kEemFaqJajcG0wg"/>
@@ -3099,7 +3099,7 @@
   <commands xmi:id="_CwxLSO-kEemFaqJajcG0wg" elementId="org.python.pydev.editor.actions.wrapparagraph" commandName="Wrap Paragraph (Ctrl+2,w)" description="Wraps the current paragraph" category="_CwxLq--kEemFaqJajcG0wg"/>
   <commands xmi:id="_CwxLSe-kEemFaqJajcG0wg" elementId="com.python.pydev.refactoring.actions.PyFindAllOccurrences" commandName="Find all references" description="Find all references" category="_CwxLq--kEemFaqJajcG0wg"/>
   <commands xmi:id="_CwxLSu-kEemFaqJajcG0wg" elementId="org.python.pydev.editor.actions.scriptEngine" commandName="Offline Action for scripting" description="Offline Action for scripting" category="_CwxLq--kEemFaqJajcG0wg"/>
-  <commands xmi:id="_CwxLS--kEemFaqJajcG0wg" elementId="com.python.pydev.actions.pyShowHierarchy" commandName="Show Python CarExample Hierarchy" description="Show the class hierarchy for a python class" category="_CwxLq--kEemFaqJajcG0wg"/>
+  <commands xmi:id="_CwxLS--kEemFaqJajcG0wg" elementId="com.python.pydev.actions.pyShowHierarchy" commandName="Show Python a_CarExample Hierarchy" description="Show the class hierarchy for a python class" category="_CwxLq--kEemFaqJajcG0wg"/>
   <commands xmi:id="_CwxLTO-kEemFaqJajcG0wg" elementId="org.python.pydev.editor.actions.togglecomment" commandName="Python Toggle Comment" description="Toggles comments of python line/s (Adds/Removes # at beggining of the line)" category="_CwxLq--kEemFaqJajcG0wg"/>
   <commands xmi:id="_CwxLTe-kEemFaqJajcG0wg" elementId="org.python.pydev.debug.ui.actions.runEditorBasedOnNatureTypeAction" commandName="Run editor with current interpreter" description="Run the editor based on the python nature" category="_CwxLqu-kEemFaqJajcG0wg"/>
   <commands xmi:id="_CwxLTu-kEemFaqJajcG0wg" elementId="org.python.pydev.editor.actions.convertSpaceToTab" commandName="Convert space-tabs to tabs" description="Converts tab-width space groups to tabs from selected region or whole document if nothing selected" category="_CwxLq--kEemFaqJajcG0wg"/>
@@ -3121,7 +3121,7 @@
   <commands xmi:id="_CwxLXu-kEemFaqJajcG0wg" elementId="org.python.pydev.debug.setnext" commandName="Set Next Statement" category="_CwxLqu-kEemFaqJajcG0wg"/>
   <commands xmi:id="_CwxLX--kEemFaqJajcG0wg" elementId="org.python.pydev.debug.ui.actions.debugEditorBasedOnNatureTypeAction" commandName="Debug editor with current interpreter" description="Debug the editor based on the python nature" category="_CwxLqu-kEemFaqJajcG0wg"/>
   <commands xmi:id="_CwxLYO-kEemFaqJajcG0wg" elementId="org.python.pydev.debug.ui.actions.runEditorAsCustomUnitTestAction" commandName="Run custom tests" description="Run custom tests from editor." category="_CwxLqu-kEemFaqJajcG0wg"/>
-  <commands xmi:id="_CwxLYe-kEemFaqJajcG0wg" elementId="org.python.pydev.editor.actions.navigation.previousMethod" commandName="Previous Method or CarExample" description="Navigates to the previous method or class definition" category="_CwxLq--kEemFaqJajcG0wg"/>
+  <commands xmi:id="_CwxLYe-kEemFaqJajcG0wg" elementId="org.python.pydev.editor.actions.navigation.previousMethod" commandName="Previous Method or a_CarExample" description="Navigates to the previous method or class definition" category="_CwxLq--kEemFaqJajcG0wg"/>
   <commands xmi:id="_CwxLYu-kEemFaqJajcG0wg" elementId="org.python.pydev.editor.actions.deselectEnclosingScope" commandName="Deselect Enclosing Scope" description="Deselect Enclosing Scope" category="_CwxLq--kEemFaqJajcG0wg"/>
   <commands xmi:id="_CwxLY--kEemFaqJajcG0wg" elementId="org.python.pydev.editor.actions.pyFormatStd" commandName="Python Format Code" description="Format Code" category="_CwxLq--kEemFaqJajcG0wg"/>
   <commands xmi:id="_CwxLZO-kEemFaqJajcG0wg" elementId="org.python.pydev.editor.actions.navigation.pyUnCollapseAll" commandName="Python Un Collapse All" description="Un Collapse all blocks of code" category="_CwxLq--kEemFaqJajcG0wg"/>

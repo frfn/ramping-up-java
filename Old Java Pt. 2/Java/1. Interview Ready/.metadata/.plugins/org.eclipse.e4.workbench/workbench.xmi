@@ -1561,7 +1561,7 @@
   <commands xmi:id="_VVPB7GcnEeuPLqBkk3154A" elementId="org.eclipse.ui.edit.text.shiftLeft" commandName="Shift Left" description="Shift a block of text to the left" category="_VVL-YmcnEeuPLqBkk3154A"/>
   <commands xmi:id="_VVPB7WcnEeuPLqBkk3154A" elementId="org.eclipse.wst.sse.ui.structure.select.next" commandName="Select Next Element" description="Expand selection to include next sibling" category="_VVL-YmcnEeuPLqBkk3154A"/>
   <commands xmi:id="_VVPB7mcnEeuPLqBkk3154A" elementId="org.eclipse.egit.ui.team.Push" commandName="Push..." category="_VVMlfGcnEeuPLqBkk3154A"/>
-  <commands xmi:id="_VVPB72cnEeuPLqBkk3154A" elementId="org.eclipse.jdt.debug.ui.commands.AddClassPrepareBreakpoint" commandName="Add CarExample Load Breakpoint" description="Add a class load breakpoint" category="_VVMleWcnEeuPLqBkk3154A"/>
+  <commands xmi:id="_VVPB72cnEeuPLqBkk3154A" elementId="org.eclipse.jdt.debug.ui.commands.AddClassPrepareBreakpoint" commandName="Add a_CarExample Load Breakpoint" description="Add a class load breakpoint" category="_VVMleWcnEeuPLqBkk3154A"/>
   <commands xmi:id="_VVPB8GcnEeuPLqBkk3154A" elementId="org.eclipse.jdt.ui.edit.text.java.select.next" commandName="Select Next Element" description="Expand selection to include next sibling" category="_VVL-YmcnEeuPLqBkk3154A"/>
   <commands xmi:id="_VVPB8WcnEeuPLqBkk3154A" elementId="org.eclipse.egit.ui.RepositoriesCreateGroup" commandName="Create a Repository Group" description="Create a repository group for structuring repositories in the Git Repositories view" category="_VVMlfGcnEeuPLqBkk3154A"/>
   <commands xmi:id="_VVPB8mcnEeuPLqBkk3154A" elementId="org.eclipse.egit.ui.RepositoriesViewCollapseWorkingTree" commandName="Collapse Working Tree" category="_VVMlfGcnEeuPLqBkk3154A"/>
@@ -1604,7 +1604,7 @@
   <commands xmi:id="_VVPo4WcnEeuPLqBkk3154A" elementId="org.eclipse.egit.ui.command.shareProject" commandName="Share with Git" description="Share the project using Git" category="_VVMlgmcnEeuPLqBkk3154A">
     <parameters xmi:id="_VVPo4mcnEeuPLqBkk3154A" elementId="org.eclipse.egit.ui.command.projectNameParameter" name="Project" optional="false"/>
   </commands>
-  <commands xmi:id="_VVPo42cnEeuPLqBkk3154A" elementId="org.eclipse.jdt.ui.edit.text.java.convert.anonymous.to.nested" commandName="Convert Anonymous CarExample to Nested" description="Convert an anonymous class to a nested class" category="_VVMldWcnEeuPLqBkk3154A"/>
+  <commands xmi:id="_VVPo42cnEeuPLqBkk3154A" elementId="org.eclipse.jdt.ui.edit.text.java.convert.anonymous.to.nested" commandName="Convert Anonymous a_CarExample to Nested" description="Convert an anonymous class to a nested class" category="_VVMldWcnEeuPLqBkk3154A"/>
   <commands xmi:id="_VVPo5GcnEeuPLqBkk3154A" elementId="org.eclipse.jdt.ui.correction.changeToStatic" commandName="Quick Fix - Change to static access" description="Invokes quick assist and selects 'Change to static access'" category="_VVMlgGcnEeuPLqBkk3154A"/>
   <commands xmi:id="_VVPo5WcnEeuPLqBkk3154A" elementId="org.eclipse.ui.window.fullscreenmode" commandName="Toggle Full Screen" description="Toggles the window between full screen and normal" category="_VVMldGcnEeuPLqBkk3154A"/>
   <commands xmi:id="_VVPo5mcnEeuPLqBkk3154A" elementId="org.eclipse.debug.ui.commands.newRendering" commandName="New Rendering" description="Add a new rendering." category="_VVMleWcnEeuPLqBkk3154A"/>
@@ -2097,7 +2097,7 @@
   <commands xmi:id="_VVTTUWcnEeuPLqBkk3154A" elementId="org.eclipse.jdt.debug.ui.commands.Execute" commandName="Execute" description="Evaluate selected text" category="_VVMleWcnEeuPLqBkk3154A"/>
   <commands xmi:id="_VVTTUmcnEeuPLqBkk3154A" elementId="org.eclipse.jdt.ui.edit.text.java.add.block.comment" commandName="Add Block Comment" description="Enclose the selection with a block comment" category="_VVMlgGcnEeuPLqBkk3154A"/>
   <commands xmi:id="_VVTTU2cnEeuPLqBkk3154A" elementId="org.eclipse.ui.help.aboutAction" commandName="About" description="Open the about dialog" category="_VVMldmcnEeuPLqBkk3154A"/>
-  <commands xmi:id="_VVTTVGcnEeuPLqBkk3154A" elementId="org.eclipse.jdt.ui.edit.text.java.annotate.classFile" commandName="Annotate CarExample File" description="Externally add Annotations to a CarExample File." category="_VVMlgGcnEeuPLqBkk3154A"/>
+  <commands xmi:id="_VVTTVGcnEeuPLqBkk3154A" elementId="org.eclipse.jdt.ui.edit.text.java.annotate.classFile" commandName="Annotate a_CarExample File" description="Externally add Annotations to a a_CarExample File." category="_VVMlgGcnEeuPLqBkk3154A"/>
   <commands xmi:id="_VVTTVWcnEeuPLqBkk3154A" elementId="org.eclipse.egit.ui.team.stash.create" commandName="Stash Changes..." category="_VVMlfGcnEeuPLqBkk3154A"/>
   <commands xmi:id="_VVTTVmcnEeuPLqBkk3154A" elementId="org.eclipse.jdt.ui.edit.text.java.search.read.access.in.project" commandName="Read Access in Project" description="Search for read references to the selected element in the enclosing project" category="_VVMleGcnEeuPLqBkk3154A"/>
   <commands xmi:id="_VVTTV2cnEeuPLqBkk3154A" elementId="org.eclipse.ui.file.closeAllSaved" commandName="Close All Saved" description="Close all saved editors" category="_VVMlcWcnEeuPLqBkk3154A"/>
@@ -2153,7 +2153,7 @@
     <parameters xmi:id="_VVT6OGcnEeuPLqBkk3154A" elementId="cancelReturns" name="Return Value on Cancel"/>
   </commands>
   <commands xmi:id="_VVT6OWcnEeuPLqBkk3154A" elementId="org.eclipse.egit.ui.RebaseCurrent" commandName="Rebase" category="_VVMlgmcnEeuPLqBkk3154A"/>
-  <commands xmi:id="_VVT6OmcnEeuPLqBkk3154A" elementId="org.eclipse.jdt.ui.edit.text.java.extract.class" commandName="Extract CarExample..." description="Extracts fields into a new class" category="_VVMldWcnEeuPLqBkk3154A"/>
+  <commands xmi:id="_VVT6OmcnEeuPLqBkk3154A" elementId="org.eclipse.jdt.ui.edit.text.java.extract.class" commandName="Extract a_CarExample..." description="Extracts fields into a new class" category="_VVMldWcnEeuPLqBkk3154A"/>
   <commands xmi:id="_VVT6O2cnEeuPLqBkk3154A" elementId="org.eclipse.jdt.ui.correction.extractConstant.assist" commandName="Quick Assist - Extract constant" description="Invokes quick assist and selects 'Extract constant'" category="_VVMlgGcnEeuPLqBkk3154A"/>
   <commands xmi:id="_VVT6PGcnEeuPLqBkk3154A" elementId="org.eclipse.compare.copyRightToLeft" commandName="Copy from Right to Left" description="Copy Current Change from Right to Left" category="_VVMlcmcnEeuPLqBkk3154A"/>
   <commands xmi:id="_VVT6PWcnEeuPLqBkk3154A" elementId="org.eclipse.debug.ui.commands.OpenProfileConfigurations" commandName="Profile..." description="Open profile launch configuration dialog" category="_VVMleWcnEeuPLqBkk3154A"/>
@@ -2191,7 +2191,7 @@
   <commands xmi:id="_VigBoWcnEeuPLqBkk3154A" elementId="AUTOGEN:::org.eclipse.eclemma.ui.CoverageActionSet/org.eclipse.eclemma.ui.actions.CoverageAsAction" commandName="Coverage As" category="_VVMlgmcnEeuPLqBkk3154A"/>
   <commands xmi:id="_VigBomcnEeuPLqBkk3154A" elementId="AUTOGEN:::org.eclipse.eclemma.ui.CoverageActionSet/org.eclipse.eclemma.ui.actions.CoverageHistoryAction" commandName="Coverage History" category="_VVMlgmcnEeuPLqBkk3154A"/>
   <commands xmi:id="_VigosGcnEeuPLqBkk3154A" elementId="AUTOGEN:::org.eclipse.egit.ui.SearchActionSet/org.eclipse.egit.ui.actions.OpenCommitSearchPage" commandName="Git..." category="_VVMlgmcnEeuPLqBkk3154A"/>
-  <commands xmi:id="_Vih20GcnEeuPLqBkk3154A" elementId="AUTOGEN:::org.eclipse.jdt.ui.JavaElementCreationActionSet/org.eclipse.jdt.ui.actions.NewTypeDropDown" commandName="CarExample..." description="New Java CarExample" category="_VVMlgmcnEeuPLqBkk3154A"/>
+  <commands xmi:id="_Vih20GcnEeuPLqBkk3154A" elementId="AUTOGEN:::org.eclipse.jdt.ui.JavaElementCreationActionSet/org.eclipse.jdt.ui.actions.NewTypeDropDown" commandName="a_CarExample..." description="New Java a_CarExample" category="_VVMlgmcnEeuPLqBkk3154A"/>
   <commands xmi:id="_Viid4GcnEeuPLqBkk3154A" elementId="AUTOGEN:::org.eclipse.jdt.ui.JavaElementCreationActionSet/org.eclipse.jdt.ui.actions.OpenPackageWizard" commandName="Package..." description="New Java Package" category="_VVMlgmcnEeuPLqBkk3154A"/>
   <commands xmi:id="_Viid4WcnEeuPLqBkk3154A" elementId="AUTOGEN:::org.eclipse.jdt.ui.JavaElementCreationActionSet/org.eclipse.jdt.ui.actions.OpenProjectWizard" commandName="Java Project..." description="New Java Project" category="_VVMlgmcnEeuPLqBkk3154A"/>
   <commands xmi:id="_VijE8GcnEeuPLqBkk3154A" elementId="AUTOGEN:::org.eclipse.jdt.ui.SearchActionSet/org.eclipse.jdt.ui.actions.OpenJavaSearchPage" commandName="Java..." category="_VVMlgmcnEeuPLqBkk3154A"/>

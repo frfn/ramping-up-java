@@ -1,4 +1,4 @@
-package PolymorphismExample;
+package a_PolymorphismExample;
 
 import java.util.ArrayList;
 

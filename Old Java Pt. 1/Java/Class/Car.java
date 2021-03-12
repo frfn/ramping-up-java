@@ -1,4 +1,4 @@
-package CarExample;
+package a_CarExample;
 
 
 // Note: abstract

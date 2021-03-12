@@ -1,4 +1,4 @@
-package CarExample;
+package a_CarExample;
 
 // simple interface
 interface ICarName {

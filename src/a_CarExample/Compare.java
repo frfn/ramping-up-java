@@ -1,4 +1,4 @@
-package CarExample;
+package a_CarExample;
 
 // interface giving behaviors, you can compare
 public interface Compare {

@@ -1,4 +1,4 @@
-package a_CarExample;
+package a_classTraits.carExample;
 
 import java.util.ArrayList;
 import java.util.Collections;

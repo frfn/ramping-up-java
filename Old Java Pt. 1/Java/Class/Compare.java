@@ -1,4 +1,4 @@
-package a_CarExample;
+package a_classTraits.carExample;
 
 // Note: interface VS. abstract classes
 // Interface: their like buttons that will be coded

@@ -1,4 +1,4 @@
-package b_1_ArrayListX;
+package b_dsalgo.list;
 
 import java.util.Arrays;
 

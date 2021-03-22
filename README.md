@@ -128,3 +128,19 @@ StringBuilder string = new StringBuilder();
 - `.reverse()`
 - `.charAt()`
 - `.substring(beginningIndex, endIndex)`
+
+# Call Stack 
+
+- If you were to recreate recursive functions to be iterative functions, you may need a `stack` data structure
+- Best explained with _recursion_!
+- The call stack increases whenever a function does a recursion function call
+  - the call does NOT terminate all the way through, it calls another function
+  - the function call that doees NOT finish, gets added to the call stack
+  
+# Recursion
+
+- Must have a base case, so the function can exit out
+- Seen in the binary trees, print function
+  - preorder
+  - inorder
+  - postorder

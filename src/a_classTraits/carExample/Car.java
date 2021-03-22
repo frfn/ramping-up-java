@@ -1,11 +1,11 @@
-package a_CarExample;
+package a_classTraits.carExample;
 
 // simple interface
-interface ICarName {
+interface ICarName extends Compare{
     String owner = "Flexer";
     void showOwner();
 }
-public class Car implements ICarName, Compare {
+public class Car implements ICarName {
     // not final!
     private String color;
     private double speed, cost;
@@ -64,8 +64,8 @@ public class Car implements ICarName, Compare {
     // Compare interface
     public boolean isFaster(Compare object){
         // created a car instant <-- type casted object as Car
-        Car carToBeCompared = (Car)object;
-        return this.getSpeed() > ((Car) object).getSpeed();
+        Car carToBeCompared = ((Car)object);
+        return this.getSpeed() > carToBeCompared.getSpeed();
 
         /*
         if(this.getSpeed() > ((Car) object).getSpeed()){
@@ -75,7 +75,7 @@ public class Car implements ICarName, Compare {
          */
     }
     public boolean isMoreExpensive(Compare object) {
-        Car carToBeCompared = (Car)object;
-        return this.getCost() > ((Car) object).getCost();
+        Car carToBeCompared = ((Car)object);
+        return this.getCost() > carToBeCompared.getCost();
     }
 }

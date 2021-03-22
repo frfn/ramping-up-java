@@ -1,4 +1,4 @@
-package a_CarExample;
+package a_classTraits.carExample;
 
 // Created for Composition example
 public class Engine {

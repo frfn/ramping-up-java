@@ -1,4 +1,4 @@
-package a_CarExample;
+package a_classTraits.carExample;
 
 // interface giving behaviors, you can compare
 public interface Compare {

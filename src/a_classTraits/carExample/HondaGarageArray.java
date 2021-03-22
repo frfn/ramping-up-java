@@ -1,4 +1,4 @@
-package a_CarExample;
+package a_classTraits.carExample;
 
 public class HondaGarageArray {
 

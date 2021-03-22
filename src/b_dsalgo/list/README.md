@@ -2,6 +2,14 @@
 
 [Generic Array](https://stackoverflow.com/questions/529085/how-to-create-a-generic-array-in-java): The proper way to create!
 
+# Overview
+
+- An array list
+- Manipulation of array index
+- Amortized time
+- Data Structure
+- Big O(n)
+
 Created my version of an array list
 
 - add 

@@ -1,4 +1,4 @@
-package a_CarExample;
+package a_classTraits.carExample;
 
 public class Main {
     public static void main(String[] args){
@@ -14,8 +14,8 @@ public class Main {
         /* --------------------------------- */
         /* Testing out the interface methods */
         /* --------------------------------- */
-        // System.out.println(SI.isFaster(TypeR));
-        // System.out.println(TypeR.isMoreExpensive(SI))
+         System.out.println(SI.isFaster(TypeR)); // argument must take of type Compare! The interface type!
+         System.out.println(TypeR.isMoreExpensive(SI));
 
 
         /* ------------------------- */

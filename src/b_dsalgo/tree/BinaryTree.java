@@ -2,6 +2,8 @@ package b_dsalgo.tree;
 
 // isBST function | heightOfTree function | print level order (Queue)
 
+import java.util.Stack;
+
 // Comparable contains a compareTo method that we have to fill in
 // were giving the X type more functions from Comparable, check the implementation
 public class BinaryTree<X extends Comparable<? super X>> { // Effective Java
@@ -240,6 +242,7 @@ public class BinaryTree<X extends Comparable<? super X>> { // Effective Java
     //-----------------------------//
     //   Print Items Recursively   //
     //-----------------------------//
+    // There is a call stack, that when the function does not fully finish, it will return to the line it left off on!
     // print items 'pre order' recursively!
     public void printPreOrderRecursive(Node<X> current) {
         if(itIsEmpty()){
@@ -264,10 +267,66 @@ public class BinaryTree<X extends Comparable<? super X>> { // Effective Java
         }
 
     }
+    // print items 'post order' recursively!
+    public void printPostOrderRecursive(Node<X> current) {
+        if(itIsEmpty()){
+            System.out.println("Nothing to print...");
+        }
+        if(current != null) {
+            printPostOrderRecursive(current.getLeft());
+            printPostOrderRecursive(current.getRight());
+            System.out.println(current.getItem());
+        }
+
+    }
 
     //-----------------------------//
     //   Print Items Iteratively   //
     //-----------------------------//
+    // Once done on white board, it becomes VERY easy to understand and see how the stack works!
+    // PreOrder
+    public void printPreOrderIterative() {
+        if(itIsEmpty()) {
+            System.out.println("Empty tree... Add data!");
+        }
+
+        Stack<Node<X>> stack = new Stack<>(); // this simulates the `call stack` the recursive methods uses, LIFO
+        stack.push(getRoot());
+
+        while(!stack.isEmpty()) {
+            Node<X> temp = stack.pop(); // even though pop(), we still have the reference to the popped value from stack!
+            System.out.println(temp.getItem());
+
+            // right first!
+            if(temp.getRight() != null) {
+                stack.push(temp.getRight());
+            }
+            if(temp.getLeft() != null) {
+                stack.push(temp.getLeft());
+            }
+        }
+    }
+    // InOrder
+    public void printInOrderIterative() {
+        if(itIsEmpty()) System.out.println("No data... Add data!");
+
+        Stack<Node<X>> stack = new Stack<>();
+        Node<X> temp = root; // start from root
+
+        // difference from PreOrder is only pushing left branch
+        while(!stack.isEmpty() || temp != null) {
+            if(temp != null) {
+                stack.push(temp);
+                temp = temp.getLeft(); // finish going all the way to the left
+            }
+            else {
+                temp = stack.pop();
+                System.out.println(temp.getItem() + " ");
+                temp = temp.getRight();
+            }
+        }
+
+    }
 
 }
 
@@ -310,7 +369,7 @@ class TestBinaryTree {
         tree.add(3);
         tree.add(14);
 
-        tree.printPreOrderRecursive(tree.getRoot());
+        tree.printPostOrderRecursive(tree.getRoot());
 
     }
 

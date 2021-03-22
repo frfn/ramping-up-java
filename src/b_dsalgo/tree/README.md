@@ -8,7 +8,7 @@ A `binary search tree` is a _structured_ binary tree, where the data is sorted, 
 
 - BinaryTree shows a `binary search tree`, _NOT_ a binary tree
 - To alter it, don't have logic to add the items
-- Recursive Fns 
+- Recursive Fns ( find min/max , print pre/in/post order ) -- good job!
 - Iterative Fns
 
 ## `Node<X>`

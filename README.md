@@ -144,3 +144,21 @@ StringBuilder string = new StringBuilder();
   - preorder
   - inorder
   - postorder
+  
+# Stack DS
+- Last in, First out (LIFO)
+- `.push()`
+- `.pop()`
+
+# Queue DS
+- First in, First out (FIFO)
+- `.enqueue()`
+- `.dequeue()`
+
+# Stack Memory
+- An area in the computer's memory which creates temporary variables created by a function
+- When computing is gone, everything that it had to do witht he function call will be erased
+
+# Heap Memory
+- A way to store global variables, by default they go to the heap memory space
+- if you want to create a large size array or big structure to keep that variable around a long time then you should allocate it on the heap.

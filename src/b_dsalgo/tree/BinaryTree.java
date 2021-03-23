@@ -1,16 +1,20 @@
 package b_dsalgo.tree;
 
-// isBST function | heightOfTree function | print level order (Queue)
-
+// isBST? function not implemented
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Stack;
 
 // Comparable contains a compareTo method that we have to fill in
-// were giving the X type more functions from Comparable, check the implementation
+// were giving the X type a function called compareTo() --> ? super X comes from Effective Java!
 public class BinaryTree<X extends Comparable<? super X>> { // Effective Java
     // here, X gets that extra Comparable fn
     private Node<X> root;
     private int size;
 
+    //-----------------//
+    //   Constructor   //
+    //-----------------//
     public BinaryTree() {
         root=null;
         size=0;
@@ -25,12 +29,13 @@ public class BinaryTree<X extends Comparable<? super X>> { // Effective Java
 
     // draw a diagram and go over, this logic is simple to follow
 
-    //--------------//
-    //   Add Node   //
-    //--------------//
+    //---------------------//
+    //   Add Node in BST   //
+    //---------------------//
     // helper fn for add() , recursively add
     private void insert(Node<X> current, Node<X> child) {
         /*
+        Comparable interface!
         less than = -1
         equal to  =  0
         more than =  1
@@ -68,9 +73,9 @@ public class BinaryTree<X extends Comparable<? super X>> { // Effective Java
         size++;
     }
 
-    //-----------------//
-    //   Delete Node   //
-    //-----------------//
+    //------------------------//
+    //   Delete Node in BST   //
+    //------------------------//
     // search fn for delete() -- traverse the tree till it finds the current item we're looking for
     public Node<X> contains(X item) {
         Node<X> current = root;
@@ -198,9 +203,9 @@ public class BinaryTree<X extends Comparable<? super X>> { // Effective Java
         return null;
     }
 
-    //----------------------------------//
-    //   Find Min and Max Recursively   //
-    //----------------------------------//
+    //-----------------------------------------//
+    //   Find Min and Max Recursively in BST   //
+    //-----------------------------------------//
     // Min
     public Node<X> getMinRecursive(Node<X> current) {
         if(itIsEmpty()) return null;
@@ -213,9 +218,9 @@ public class BinaryTree<X extends Comparable<? super X>> { // Effective Java
         return current.getRight() == null ? current : getMaxRecursive(current.getRight());
     }
 
-    //----------------------------------//
-    //   Find Min and Max Iteratively   //
-    //----------------------------------//
+    //-----------------------------------------//
+    //   Find Min and Max Iteratively in BST   //
+    //-----------------------------------------//
     // Min
     public Node<X> getMinIterative() {
         if (itIsEmpty()) {
@@ -239,9 +244,9 @@ public class BinaryTree<X extends Comparable<? super X>> { // Effective Java
         return current;
     }
 
-    //-----------------------------//
-    //   Print Items Recursively   //
-    //-----------------------------//
+    //------------------------------------//
+    //   Print Items Recursively in BST   //
+    //------------------------------------//
     // There is a call stack, that when the function does not fully finish, it will return to the line it left off on!
     // print items 'pre order' recursively!
     public void printPreOrderRecursive(Node<X> current) {
@@ -280,9 +285,9 @@ public class BinaryTree<X extends Comparable<? super X>> { // Effective Java
 
     }
 
-    //-----------------------------//
-    //   Print Items Iteratively   //
-    //-----------------------------//
+    //------------------------------------//
+    //   Print Items Iteratively in BST   //
+    //------------------------------------//
     // Once done on white board, it becomes VERY easy to understand and see how the stack works!
     // PreOrder
     public void printPreOrderIterative() {
@@ -327,7 +332,75 @@ public class BinaryTree<X extends Comparable<? super X>> { // Effective Java
         }
 
     }
+    // PostOrder | this is here ... but, you don't need to know how to implement this. Not significant. | Poll === Pop functionally
+    public void printPostOrderIterative() {
+        if(itIsEmpty()) System.out.println("Empty tree... Add data!");
 
+        Stack<Node<X>> stack = new Stack<>();
+        Node<X> current = root; // out pointer / reference
+
+        while(!stack.isEmpty() || current != null ) {
+            if(current != null) {
+                stack.push(current);
+                current = current.getLeft();
+            }
+            else {
+                Node<X> temp = stack.peek().getRight();
+                if(temp == null){
+                    temp = stack.pop();
+                    System.out.println(temp.getItem() + " ");
+                    while(!stack.isEmpty() && temp == stack.peek().getRight()) {
+                        temp = stack.pop();
+                        System.out.println(temp.getItem() + " ");
+                    }
+                }
+                else {
+                    current = temp;
+                }
+            }
+        }
+    }
+
+    //---------------------------------------//
+    //   Print Items Level by Level in BST   //
+    //---------------------------------------//
+    // implemented with Queue
+    public void printLevelOrder() {
+        if(itIsEmpty()) System.out.println("Empty tree... Add data!");
+        // Example of polymorphism through inheritance, Queue has all of LinkedList methods
+        // Implementation is different from linked list!
+        Queue<Node<X>> queue = new LinkedList<>();
+        queue.offer(root); // add === offer functionality
+        while(!queue.isEmpty()) {
+            Node<X> temp = queue.poll();
+            System.out.println(temp.getItem() + " ");
+            if(temp.getLeft() != null) {
+                queue.offer(temp.getLeft());
+            }
+            if(temp.getRight() != null) {
+                queue.offer(temp.getRight());
+            }
+        }
+
+    }
+
+    //-----------------//
+    //   Find Height   //
+    //-----------------//
+    // Depth VS Height
+    // You can do this iteratively by altering the printLevelOrder and having a counter and adding by one!
+    // No idea how this goes :)
+    public int findHeight(Node<X> current) {
+        if(current == null) {
+            return -1;
+        }
+
+        int leftHeight = findHeight(current.getLeft());
+        int rightHeight = findHeight(current.getRight());
+
+        return Math.max(leftHeight, rightHeight) + 1;
+
+    }
 }
 
 // this is a generic class, creates Node<X> object!
@@ -369,7 +442,7 @@ class TestBinaryTree {
         tree.add(3);
         tree.add(14);
 
-        tree.printPostOrderRecursive(tree.getRoot());
+        System.out.println(tree.findHeight(tree.getRoot()));
 
     }
 

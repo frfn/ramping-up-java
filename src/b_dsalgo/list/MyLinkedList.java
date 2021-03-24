@@ -1,6 +1,19 @@
 package b_dsalgo.list;
 
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class MyLinkedList {
+
+    List<Integer> list = new ArrayList<>();
+
+    {
+        list.add(10);
+
+        list.toArray();
+    }
+
 
 }
 

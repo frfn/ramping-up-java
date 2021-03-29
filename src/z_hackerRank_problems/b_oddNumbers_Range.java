@@ -3,7 +3,7 @@ package z_hackerRank_problems;
 import java.util.ArrayList;
 import java.util.List;
 
-public class oddNumbers_Range {
+public class b_oddNumbers_Range {
 
     public static void main(String[] args) {
         List<Integer> list = oddNumbers(2, 19);

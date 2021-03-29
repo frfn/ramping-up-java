@@ -395,11 +395,35 @@ public class BinaryTree<X extends Comparable<? super X>> { // Effective Java
             return -1;
         }
 
+        // Every time we complete a recursion call, increase the variable!
         int leftHeight = findHeight(current.getLeft());
         int rightHeight = findHeight(current.getRight());
 
+        // Compare the value, see which is greater, use that value to calculate the height!
+        // Confused? Debug again!
         return Math.max(leftHeight, rightHeight) + 1;
 
+    }
+
+    public int findMaxInABinaryTree(Node<Integer> current) {
+        if(itIsEmpty()) return 0;
+
+        if(current == null) {
+            return Integer.MIN_VALUE;
+        }
+
+        int maxNum = current.getItem();
+        int left = findMaxInABinaryTree(current.getLeft());
+        int right = findMaxInABinaryTree(current.getRight());
+
+        if(left > maxNum) {
+            maxNum = left;
+        }
+        if(right > maxNum) {
+            maxNum = right;
+        }
+
+        return maxNum;
     }
 }
 
@@ -437,12 +461,12 @@ class TestBinaryTree {
         tree.add(12);
         tree.add(4);
         tree.add(6);
+        tree.add(3);
         tree.add(9);
         tree.add(15);
-        tree.add(3);
         tree.add(14);
 
-        System.out.println(tree.findHeight(tree.getRoot()));
+        System.out.println(tree.findMaxInABinaryTree(tree.getRoot()));
 
     }
 

@@ -162,3 +162,10 @@ StringBuilder string = new StringBuilder();
 # Heap Memory
 - A way to store global variables, by default they go to the heap memory space
 - if you want to create a large size array or big structure to keep that variable around a long time then you should allocate it on the heap.
+
+# ORM
+- Object-relational mapping
+- a technique for storing, retrieving, updating, deleting from an object-oriented program in a Relational Database
+- `data layer` is to manage translation between the OO and relational worlds
+- `data layer` is typically is a lib usually written in the OO language like Java!
+- the db manager, functions here will be CRUD operations, while at the same time manipulating the data to be created, read, updated, or deleted!

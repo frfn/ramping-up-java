@@ -24,14 +24,10 @@ public class c_wordHistogram {
     }
 
     public static void printHistogram(String words) {
-
-        System.out.println(words);
-
-        String[] wordsSplit = words.replace("\n", " ").split(" ");
+        // String[] wordsSplit = words.replace("\n", " ").split(" ");
 
         HashMap<String, Integer> histogram = new HashMap<>();
-
-        for(String word: wordsSplit) {
+        for(String word: words.strip().split(" ")) {
             if(!histogram.containsKey(word)){
                 histogram.put(word, 1);
             }
@@ -41,7 +37,7 @@ public class c_wordHistogram {
         }
 
         for(String word: histogram.keySet()){
-            System.out.println(word + " : " + histogram.get(word).toString());
+            System.out.println(word + " : " + histogram.get(word));
         }
 
     }

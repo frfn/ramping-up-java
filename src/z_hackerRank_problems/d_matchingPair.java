@@ -1,16 +1,35 @@
 package z_hackerRank_problems;
 
 import java.util.HashMap;
+import java.util.HashSet;
 
 public class d_matchingPair {
 
     public static void main(String[] agrs) {
 
-        System.out.println(pairs(8, new int[] {1, 2, 1, 2, 1, 2, 1, 2}));
+        // System.out.println(hashMapPairs(8, new int[] {1, 2, 1, 2, 1, 2, 1, 2}));
+        System.out.println(hashSetPairs(new int[] {1,2,3,2,4,1}));
 
     }
 
-    public static int pairs(int numOfItems, int[] arrOfItems) {
+    public static int hashSetPairs(int[] nums) {
+        if(nums.length == 0 || nums.length == 1) return 0;
+        HashSet<Integer> set = new HashSet<>();
+        int counter = 0;
+        for(int num: nums) {
+            if(set.contains(num)) {
+                counter++;
+                set.remove(num);
+            }
+            else {
+                set.add(num);
+            }
+
+        }
+        return counter;
+    }
+
+    public static int hashMapPairs(int numOfItems, int[] arrOfItems) {
         HashMap<Integer, Integer> collection = new HashMap<>();
         int pairings = 0;
         for(int i = 0; i < numOfItems; i++) {

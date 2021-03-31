@@ -8,7 +8,7 @@ public class f_validParenthesis {
 
     public static void main(String[] args) {
         // System.out.println(validParenthesis("abcdef(gh)jk[lmno(p)]qrst{}vwxy[z]"));
-        System.out.println(validParenthesis("[()]"));
+        System.out.println(validParenthesis("([](){})"));
     }
 
     public static boolean validParenthesis(String str) {
@@ -25,13 +25,20 @@ public class f_validParenthesis {
 
         for(char c : str.toCharArray()) {
             // if any of these symbols come up, push on to stack.
-            if(c == '(' || c == '{' || c == '[') {
+
+            /*
+            First go around.
+             if(c == '(' || c == '{' || c == '[') {
+                stack.push(c);
+            }
+             */
+            if(map.containsKey(c)) {
                 stack.push(c);
             }
             else {
                 // if stack contains )]} in the beginning, it will be false!
                 // OR
-                // ] != } true -> return false, [{]}
+                // ] != ) true -> return false, [)])
                 // ] != ] false -> pop
                 if(stack.isEmpty() || map.get(stack.peek()) != c) {
                     return false;

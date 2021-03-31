@@ -3,6 +3,18 @@ import java.util.HashMap;
 
 public class d_romanToIntegers {
 
+    /*
+    (roman.get(s.charAt(i - 1)) < roman.get(s.charAt(i)))
+
+    this is the meat of logic.
+
+    If the value before the current value is LESS, then subtract.
+    - In our case subtract from RESULT the value from before current value
+    - Add back to result, current value MINUS before value!
+    Else
+    - just add the value!
+     */
+
     public static void main(String[] args) {
         System.out.println(romanToInt("MCMXCVI")); // 1996
     }

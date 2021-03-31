@@ -16,7 +16,7 @@ public class e_LongestCommonPrefix {
             char letter = words[0].charAt(i);
 
             for(int j = 1; j < words.length; j++) {
-                // remember that in an OR exression that if the first statement is true, the second statement will not be evaluated!
+                // remember that in an OR expression that if the first statement is true, the second statement will not be evaluated!
                 if(i == words[j].length() || words[j].charAt(i) != letter) {
                     return words[0].substring(0, i);
                 }

@@ -8,7 +8,7 @@ public class d_matchingPair {
     public static void main(String[] agrs) {
 
         // System.out.println(hashMapPairs(8, new int[] {1, 2, 1, 2, 1, 2, 1, 2}));
-        System.out.println(hashSetPairs(new int[] {1,2,3,2,4,1}));
+        System.out.println(hashSetPairs(new int[] {1, 2, 1, 2, 1, 2, 1, 2}));
 
     }
 
@@ -24,7 +24,6 @@ public class d_matchingPair {
             else {
                 set.add(num);
             }
-
         }
         return counter;
     }

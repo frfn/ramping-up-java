@@ -76,7 +76,7 @@ Post-order: : Used to delete a tree from leaf to root
 
 <br>
 
-**Find Height of BTt**
+**Find Height of BST**
 - Depth vs Height
   - depth: number of edges from root to that whatever node
   - height: number of edges from the node to the longest path leaf node 

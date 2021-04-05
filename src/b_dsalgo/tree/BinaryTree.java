@@ -1,6 +1,6 @@
 package b_dsalgo.tree;
 
-// isBST? function not implemented
+// isBST? function not implemented | sees if tree is a binary search tree ...
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Stack;
@@ -84,7 +84,7 @@ public class BinaryTree<X extends Comparable<? super X>> { // Effective Java
 
             if (compareEvaluation == 0) {
                 return current; // traversing!
-            } else if (compareEvaluation <= 0) {
+            } else if (compareEvaluation < 0) {
                 current = current.getLeft();
             } else {
                 current = current.getRight();
@@ -302,7 +302,7 @@ public class BinaryTree<X extends Comparable<? super X>> { // Effective Java
             Node<X> temp = stack.pop(); // even though pop(), we still have the reference to the popped value from stack!
             System.out.println(temp.getItem());
 
-            // right first!
+            // right first so that LEFT will be on top of stack | we're popping.
             if(temp.getRight() != null) {
                 stack.push(temp.getRight());
             }
@@ -372,7 +372,7 @@ public class BinaryTree<X extends Comparable<? super X>> { // Effective Java
         Queue<Node<X>> queue = new LinkedList<>();
         queue.offer(root); // add === offer functionality
         while(!queue.isEmpty()) {
-            Node<X> temp = queue.poll();
+            Node<X> temp = queue.poll(); // pop === poll functionality
             System.out.println(temp.getItem() + " ");
             if(temp.getLeft() != null) {
                 queue.offer(temp.getLeft());

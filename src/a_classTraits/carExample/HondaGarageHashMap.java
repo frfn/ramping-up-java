@@ -9,7 +9,7 @@ public class HondaGarageHashMap {
 
     public HondaGarageHashMap() {
         {
-            spotsAvailable = new HashMap<Integer, Car>();
+            spotsAvailable = new HashMap<>();
         }
     }
 

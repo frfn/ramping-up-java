@@ -21,6 +21,7 @@ public class i_removeDuplicatesFromSortedArray {
         return length;
     }
 
+    // my code is more understandable, less hand wave-y!
     public static int removeDupes(int[] nums) {
         if (nums.length == 0) return 0;
         int length = 0;

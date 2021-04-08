@@ -28,7 +28,7 @@ Car Class, implements Compare, and the in-house interface, ICarName
 - `private` variables are declared ( great for **encapsulation**! )
 - `constructor` initializes the declared varirables
 - `toString()` for printing the object
-- since a **subclass**, you must create the methods in the interface
+- since a **class that extends an interface**, you must create the methods in the interface
 
 # Honda 
 

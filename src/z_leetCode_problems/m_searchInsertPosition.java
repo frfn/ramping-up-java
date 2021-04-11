@@ -2,6 +2,8 @@ package z_leetCode_problems;
 
 public class m_searchInsertPosition {
 
+    // returns the index of where the target SHOULD be in, example below will be two
+
     public static void main(String[] args) {
         int[] arr = {1,3,5,7};
         System.out.println(searchInsert(arr, 4));
@@ -20,7 +22,7 @@ public class m_searchInsertPosition {
         return pointer;
     }
 
-    // maybe this? maybe not.. EDIT: not needed. Just because "search" is in the name. No need.
+    // binary search approach
     public static int binarySearchInsert(int[] nums, int target) {
         int left, right;
         left = 0; // start

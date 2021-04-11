@@ -1,18 +1,18 @@
 # Linked List
 
 ## utilities
-getSize() - returns the size of linked list
-toString() - prettifies the node to be printed
-getHead() - returns the first element of LL
-isEmpty() - returns true or false if empty
-toPrint() - prints the LL from beginning or specified node
+- `getSize()` - returns the size of linked list
+- `toString()` - prettifies the node to be printed
+- `getHead()` - returns the first element of LL
+- `isEmpty()` - returns true or false if empty
+- `toPrint()` - prints the LL from beginning or specified node
 
 ## isLoop
 - uses two pointers
-    - ptr1: ptr1 = ptr1.next;
-    - ptr2: ptr2 = ptr2.next.next;
+    - ptr1: `ptr1 = ptr1.next;`
+    - ptr2: `ptr2 = ptr2.next.next;`
     
-- see if ptr1 == ptr2. If they do, LL does loop!
+- see if `ptr1 == ptr2`. If they do, LL does loop!
 
 ## prepend, add
 

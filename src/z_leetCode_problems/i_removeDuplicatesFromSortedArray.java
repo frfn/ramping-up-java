@@ -21,7 +21,7 @@ public class i_removeDuplicatesFromSortedArray {
         return length;
     }
 
-    // my code is more understandable, less hand wave-y!
+    // further investigation, they both iterate as they go, practically the same code, this one starts at index 0 first
     public static int removeDupes(int[] nums) {
         if (nums.length == 0) return 0;
         int length = 0;
@@ -35,6 +35,11 @@ public class i_removeDuplicatesFromSortedArray {
 
                 // if [length++], it would be nums[length] = nums[i], then length = length + 1!
                 nums[++length] = nums[i];
+
+                // 3 3 4 5 6 6 7 7 7 8
+                // 3 4 5 6 7 8 7 7 7 8
+                // l = 0
+                // i = 1
             }
         }
         return length + 1;

@@ -28,7 +28,7 @@ public class mergesort {
     // merge( {3,1} , {3} , {1} ) == 1 3
     // finish a call in the call stack
     // arr = { 5, 1, 3 }
-    // merge( {5, 1, 3}, {5}, {1, 3} ) == 1 3 5
+    // merge( {5, 3, 1}, {5}, {1, 3} ) == 1 3 5
 
     // move on to right branch!!
 

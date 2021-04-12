@@ -1,4 +1,4 @@
-package z_traverseds;
+package z_2D;
 
 import java.util.Arrays;
 import java.util.Scanner;

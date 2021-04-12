@@ -61,3 +61,44 @@
 
 - merges from the end to the beginning
 - uses the merge sort algorithm but reversed!
+
+# Remove Element From Unsorted Array
+
+- iterate through the whole array
+- the algorithm is if the current value through the iteration is NOT the target value
+    - then `arr[pointer++] = arr[i]`
+    
+# strStr
+
+- needle in a haystack problem
+- iterate through the array
+- logic: if the `haystack.substring(i, i + needle.length()).equals(needle)`
+
+# Search Insert Position
+
+- iterate through the array
+- if the current number is greater than the target, return the counter
+
+# Length of Last Word
+
+- either use split() but this will cost you some time
+- logic for faster solution: 
+    - first strip() all the trailing white spaces
+    - iterate from the end of array
+    - if `current value == ' '`, return counter value
+    
+# Maximum Sub Array
+
+- O(n^2), use two for loops to iterate through the array and add, while collecting the largst sum
+- O(n), use Kadane's Algorithm - if current value is larger than the running sum, use the larger value
+    - now see if the largestSum is bigger than the current value
+    
+# Plus One
+
+- adding one to the array 
+    - {1, 2, 3} == {1, 2, 4}
+    - {9, 9}    == {1, 0, 0}
+    
+- logic: if the digit is LESS than 9, `digits[i]++; return digits;`
+    - if `digits[i] is 9` then at current value, `digits[i] =  0`;
+    - since we are looping through, it will iterate through the array and return when condition is met

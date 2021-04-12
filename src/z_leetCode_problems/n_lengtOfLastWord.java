@@ -17,7 +17,7 @@ public class n_lengtOfLastWord {
         int lettersCount = 0;
         for(int i = sFiltered.length()-1; i >= 0; i--, lettersCount++) {
             if(sFiltered.charAt(i) == ' ') {
-                break;
+                return lettersCount;
             }
         }
         return lettersCount;

@@ -15,11 +15,9 @@ public class l_strStr {
             return 0;
         }
         if(haystack.contains(needle)) {
-            int index;
             for(int i = 0; i < haystack.length(); i++ ) {
                 if(haystack.substring(i, i + needle.length()).equals(needle)) {
-                    index = i;
-                    return index;
+                    return i;
                 }
             }
         }

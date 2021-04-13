@@ -16,8 +16,8 @@ public class Selectionsort {
 		}
 	}
 	
-	
-	// 5, 3, 4, 2, 6
+	// i       j
+	// 5 6 7 3 1 2
 	public static void selectionsort(int[] array) {
 		for(int i=0; i<array.length; ++i) {
 			int min_index = i;

@@ -27,7 +27,7 @@ public class mergesort {
     // right[] = { 1 }
     // merge( {3,1} , {3} , {1} ) == 1 3
     // finish a call in the call stack
-    // arr = { 5, 1, 3 }
+    // arr = { 5, 3, 1 }
     // merge( {5, 3, 1}, {5}, {1, 3} ) == 1 3 5
 
     // move on to right branch!!
@@ -37,10 +37,12 @@ public class mergesort {
             return;
         }
 
+        // the splitting process
         int middle = arr.length / 2;
         int[] left = new int[middle];
         int[] right = new int[arr.length - middle];
 
+        // populating the left and right arrays
         {
             // for left
             for(int i = 0; i < left.length; i++) {
@@ -54,12 +56,16 @@ public class mergesort {
                 right[i] = arr[i + middle];
             }
         }
+
+        // the most important is to recursively call
         mergeSort(left);
         mergeSort(right);
         merge(arr, left, right);
     }
 
     public static void merge(int[] MERGED, int[] L, int[] R) {
+        // when it FIRST gets here, it just compares TWO values
+        // as it forms, the list will be sorted and this will sort TWO sorted lists into one
         int i,j,k;
         i=j=k=0;
         while(i < L.length && j < R.length) {

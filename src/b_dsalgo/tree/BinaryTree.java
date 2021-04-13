@@ -210,7 +210,6 @@ public class BinaryTree<X extends Comparable<? super X>> { // Effective Java
     public Node<X> getMinRecursive(Node<X> current) {
         if(itIsEmpty()) return null;
         return current.getLeft() == null ? current : getMinRecursive(current.getLeft());
-
     }
     // Max
     public Node<X> getMaxRecursive(Node<X> current) {
@@ -466,7 +465,7 @@ class TestBinaryTree {
         tree.add(15);
         tree.add(14);
 
-        System.out.println(tree.findMaxInABinaryTree(tree.getRoot()));
+        System.out.println(tree.getMinRecursive(tree.getRoot()).getItem());
 
     }
 

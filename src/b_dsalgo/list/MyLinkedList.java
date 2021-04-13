@@ -315,7 +315,7 @@ public class MyLinkedList<X extends Comparable<? super X>> {
     public boolean isPalindrome(Node<X> node) {
         if(getSize() == 1) return true;
 
-        Node<X> middleNode = getMiddleNode(node);
+        Node<X> middleNode = getMiddleNode(node); // there's more elements in this list, bc of the algorithm for getMiddleNode
         Node<X> reversed = reverseInPlace(middleNode.getNext());
         middleNode.setNext(null);
 

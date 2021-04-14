@@ -11,6 +11,8 @@ public class Quicksort {
 			System.out.print(list[i] + ", ");
 		}
 	}
+
+
 	public static int partition(int[] Array, int start, int end) {
 		int pivot = Array[end];
 		int partitionIndex = start;

@@ -1,6 +1,7 @@
 package b_dsalgo.list;
 
 import java.util.HashSet;
+import java.util.Set;
 
 public class MyLinkedList<X extends Comparable<? super X>> {
 
@@ -351,6 +352,35 @@ public class MyLinkedList<X extends Comparable<? super X>> {
         }
     }
 
+    // ---------------- // 2 4 6 8 \
+    // Find Merge Point //          9 10 null
+    // ---------------- // 5 6 7 8 /
+    public X findMergeNode(Node<X> list, Node<X> otherList) {
+        Node<X> currentList = list;
+        Node<X> currentOtherList = otherList;
+        Set<Node<X>> set = new HashSet<>();
+
+        while(currentList != null) {
+            set.add(currentList);
+            currentList = currentList.getNext();
+        }
+
+        for(Node<X> node: set) {
+            System.out.println(node.getItem());
+        }
+
+        while(currentOtherList != null){
+            if(set.contains(currentOtherList)){
+                break;
+            }
+            currentOtherList = currentOtherList.getNext();
+        }
+
+        return currentOtherList != null ? currentOtherList.getItem() : null;
+
+    }
+
+
 }
 
 class Node<X> {
@@ -384,9 +414,20 @@ class Node<X> {
 class MyLinkedListMain {
     public static void main(String[] args){
         MyLinkedList<Integer> list = new MyLinkedList<>();
-        list.add(1); list.add(1); list.add(1); list.add(2); list.add(2); list.add(3); list.add(3);
-        list.removeDuplicates();
-        list.toPrint();
+        MyLinkedList<Integer> list2 = new MyLinkedList<>();
+
+        list.add(1); list.add(2); list.add(3); list.add(4); list.add(5); list.add(6);
+
+        list2.add(3);
+
+
+        // the driver
+        Node<Integer> current = list2.getHead();
+        while(current.getNext() != null) {
+            current = current.getNext();
+        }
+        current.setNext(list.getHead().getNext().getNext().getNext().getNext().getNext());
+        System.out.println(list.findMergeNode(list.getHead(), list2.getHead()));
 
     }
 }

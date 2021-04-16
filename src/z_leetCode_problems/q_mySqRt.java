@@ -28,7 +28,7 @@ public class q_mySqRt {
                 return middle;
             }
         }
-        return right;
+        return right; // at this point, right has been altered
     }
 
     public static int mySqRt(int x) {

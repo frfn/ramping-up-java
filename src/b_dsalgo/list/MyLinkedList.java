@@ -352,6 +352,41 @@ public class MyLinkedList<X extends Comparable<? super X>> {
         }
     }
 
+    public Node<X> removeDupesInSortedList(Node<X> head) {
+        Node<X> current = head;
+
+        while(current != null && current.getNext() != null) { // the current.getNext() is the off by one cause ( -1 )
+            if(current.getItem() == current.getNext().getItem()) {
+                current.setNext(current.getNext().getNext());
+            }
+            else {
+                current = current.getNext();
+            }
+
+        }
+        return head;
+    }
+
+    public Node<X> removeDuplicatesFromASortedList(Node<X> node) {
+        HashSet<X> set = new HashSet<>();
+
+        Node<X> removedDupes = new Node<>(null); // this has next
+        Node<X> notDupe = removedDupes; // temp variable
+        Node<X> current = node;
+
+        while(current != null) {
+            if(set.contains(current.getItem())) {
+                notDupe.setNext(current.getNext());
+            } else {
+                set.add(current.getItem());
+                notDupe.setNext(current);
+                notDupe = notDupe.getNext(); // only move when there is a new value
+            }
+            current = current.getNext();
+        }
+        return removedDupes.getNext();
+    }
+
     // ---------------- // 2 4 6 8 \
     // Find Merge Point //          9 10 null
     // ---------------- // 5 6 7 8 /
@@ -414,13 +449,13 @@ class Node<X> {
 class MyLinkedListMain {
     public static void main(String[] args){
         MyLinkedList<Integer> list = new MyLinkedList<>();
-        MyLinkedList<Integer> list2 = new MyLinkedList<>();
 
-        list.add(1); list.add(2); list.add(3); list.add(4); list.add(5); list.add(6);
+        list.add(1); list.add(1); list.add(2);
 
-        list2.add(3);
+        list.toPrint(list.removeDupesInSortedList(list.getHead()));
 
 
+        /*
         // the driver
         Node<Integer> current = list2.getHead();
         while(current.getNext() != null) {
@@ -428,6 +463,6 @@ class MyLinkedListMain {
         }
         current.setNext(list.getHead().getNext().getNext().getNext().getNext().getNext());
         System.out.println(list.findMergeNode(list.getHead(), list2.getHead()));
-
+        */
     }
 }

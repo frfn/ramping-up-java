@@ -424,6 +424,78 @@ public class BinaryTree<X extends Comparable<? super X>> { // Effective Java
 
         return maxNum;
     }
+
+    public boolean symmetricTree(Node<X> root) {
+        return symmetricTreeHelper(root, root);
+    }
+
+    public boolean symmetricTreeHelper(Node<X> p, Node<X> q) {
+        if(p == null && q == null) return true;
+        if(p == null || q == null) return false;
+
+        if(p.getItem().compareTo(q.getItem()) == 0) {
+            return symmetricTreeHelper(p.getLeft(), q.getRight()) && symmetricTreeHelper(p.getRight(), q.getLeft());
+        }
+
+        return false;
+
+        /*
+        Queue<TreeNode> q = new LinkedList<>();
+        q.add(root);
+        q.add(root);
+        while (!q.isEmpty()) {
+            TreeNode t1 = q.poll();
+            TreeNode t2 = q.poll();
+            if (t1 == null && t2 == null) continue;
+            if (t1 == null || t2 == null) return false;
+            if (t1.val != t2.val) return false;
+            q.add(t1.left);
+            q.add(t2.right);
+            q.add(t1.right);
+            q.add(t2.left);
+        }
+        return true;
+         */
+    }
+
+    public boolean sameTree(Node<X> p, Node<X> q) {
+        // Equal nullity denotes that this branch is the same (local equality)
+        // This is a base case, but also handles being given two empty trees
+        if (p == null && q == null) return true;
+
+            // Unequal nullity denotes that the trees aren't the same
+            // Note that we've already ruled out equal nullity above
+        else if (p == null || q == null) return false;
+
+        // Both nodes have values; descend iff those values are equal
+        // "&&" here allows for any difference to overrule a local equality
+        if (p.getItem() == q.getItem()) {
+            return sameTree(p.getLeft(), q.getLeft()) && sameTree(p.getRight(), q.getRight());
+        }
+
+        // If we're here, both nodes have values, and they're unequal, so the trees aren't the same
+        return false;
+
+        /*
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(p);
+        queue.add(q);
+        while(!queue.isEmpty()){
+            TreeNode f = queue.poll();
+            TreeNode s = queue.poll();
+            if(f == null && s == null){
+                continue;
+            }else if(f == null || s == null || f.val != s.val){
+                return false;
+            }
+            queue.add(f.left);
+            queue.add(s.left);
+            queue.add(f.right);
+            queue.add(s.right);
+        }
+        return true;
+         */
+    }
 }
 
 // this is a generic class, creates Node<X> object!
@@ -465,7 +537,9 @@ class TestBinaryTree {
         tree.add(15);
         tree.add(14);
 
-        System.out.println(tree.getMinRecursive(tree.getRoot()).getItem());
+
+
+        System.out.println(tree);
 
     }
 

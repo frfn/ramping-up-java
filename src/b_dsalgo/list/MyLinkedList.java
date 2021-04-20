@@ -152,13 +152,43 @@ public class MyLinkedList<X extends Comparable<? super X>> {
             current = current.getNext();
         }
         current = head; // resets currents position
-        Node<X> iterator = rotated.getNext();
+        Node<X> iterator = rotated.getNext(); // from the dummy node, you move up one
         // .getNext because I want to land on a Node, not on null!
         while(iterator.getNext() != null) {
             iterator = iterator.getNext();
         }
         iterator.setNext(current);
         return rotated.getNext();
+    }
+
+    //       0            1            2            3            4             5   | index
+    //       1            2            3            4            5             6   | length
+    // 10 % 6 = 4    ...    6 - 4 = 2    ...   rotate at NODE 5
+    // k = k % length ... -> i < length - k
+
+    public Node<X> rotateFromEnd(Node<X> head, int k) {
+        if(k == 0) return head;
+        if(head == null) return null;
+
+        Node<X> current = head;
+
+        int length = 1;
+        while(current.getNext() != null) {
+            current = current.getNext(); length++;
+        }
+
+        current.setNext(head);
+
+        k = k % length; // important logic
+
+        for(int i = 0; i < length - k; i++) {
+            current = current.getNext();
+        }
+
+        head = current.getNext();
+        current.setNext(null);
+        return head;
+
     }
 
     // ----------------------- //
@@ -186,9 +216,9 @@ public class MyLinkedList<X extends Comparable<? super X>> {
     // ----------- //
     public Node<X> getMiddleNode(Node<X> node) {
         Node<X> slowPtr = node, fastPtr = node.getNext(); // without getNext, it will fail for even numbers
-        // s s s s -> return 4? WRONG, if fastPtr is node instead of getNext() it fails for even numbers
-        // 1 2 3 4 5 6 null
-        //   f   f   f
+        // s s
+        // 1 2 3 4 null
+        //   f   f
 
         // s s s s -> return 4
         // 1 2 3 4 5 6 7 null
@@ -449,14 +479,17 @@ class Node<X> {
 class MyLinkedListMain {
     public static void main(String[] args){
         MyLinkedList<Integer> list = new MyLinkedList<>();
+        list.add(1); list.add(2); list.add(3); list.add(4); list.add(5);
 
-        list.add(1); list.add(1); list.add(2);
+        list.toPrint(list.getHead());
 
-        list.toPrint(list.removeDupesInSortedList(list.getHead()));
+        System.out.println();
+
+        list.toPrint(list.rotateFromEnd(list.getHead(), 9));
 
 
         /*
-        // the driver
+        // the driver for finding merged point
         Node<Integer> current = list2.getHead();
         while(current.getNext() != null) {
             current = current.getNext();
@@ -466,3 +499,46 @@ class MyLinkedListMain {
         */
     }
 }
+/*
+First Iteration.
+public Node<X> rotateRight(Node<X> head, int k) {
+        if(head == null) return null;
+        if(k == 0) return head;
+
+        int length = 1;
+        Node<X> current = head;
+        while(current.getNext() != null) {
+            current = current.next;
+            length++;
+        }
+
+        System.out.println("length: "+length);
+
+
+        int rotateAt = length - k; // 5 - 1 = 4
+
+        System.out.println("rotate at: "+rotateAt);
+
+        current = head;
+        Node<X> dummy = new Node<>(null);
+        int index = 0;
+
+        while(current.next != null) {
+            if(index+1 == rotateAt) {
+                System.out.println("index: "+index);
+                dummy.next = current.next;
+                current.next = null;
+
+                Node<X> iterator = dummy.getNext();
+                while(iterator.next != null) {
+                    iterator = iterator.next;
+                }
+                iterator.next = head;
+                break;
+            }
+            index++;
+            current = current.next;
+        }
+        return dummy.next;
+    }
+ */

@@ -1,6 +1,6 @@
 package z_leetCode_problems;
 
-public class h_palindrome {
+public class h_palindrome_strictPalindrome {
 
     public static void main(String[] args) {
         System.out.println(strictPalindrome("A man, a plan, a canal: Panama"));

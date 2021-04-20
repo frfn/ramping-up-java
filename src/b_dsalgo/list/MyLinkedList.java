@@ -445,6 +445,23 @@ public class MyLinkedList<X extends Comparable<? super X>> {
 
     }
 
+    // https://leetcode.com/problems/intersection-of-two-linked-lists/discuss/49785/Java-solution-without-knowing-the-difference-in-len!
+    public Node<X> getIntersectionNode(Node<X> headA, Node<X> headB) {
+        //boundary check
+        if(headA == null || headB == null) return null;
+
+        Node<X> a = headA;
+        Node<X> b = headB;
+
+        //if a & b have different len, then we will stop the loop after second iteration
+        while( a != b){
+            //for the end of first iteration, we just reset the pointer to the head of another linkedlist
+            a = a == null ? headB : a.getNext();
+            b = b == null ? headA : b.getNext();
+        }
+
+        return a;
+    }
 
 }
 

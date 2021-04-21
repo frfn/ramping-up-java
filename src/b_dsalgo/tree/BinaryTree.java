@@ -496,6 +496,20 @@ public class BinaryTree<X extends Comparable<? super X>> { // Effective Java
         return true;
          */
     }
+
+    public Node<X> lowestCommonAncestor(Node<X> head, int a, int b) {
+        while(head != null) {
+            if((Integer)head.getItem() > a && (Integer)head.getItem() > b) {
+                head = head.getLeft();
+            }
+            else if((Integer)head.getItem() < a && (Integer)head.getItem() < b) {
+                head = head.getRight();
+            }
+            else break;
+        }
+        return head;
+    }
+
 }
 
 // this is a generic class, creates Node<X> object!
@@ -527,7 +541,7 @@ class TestBinaryTree {
 
         BinaryTree<Integer> tree = new BinaryTree<>();
 
-        tree.add(10);
+        /*tree.add(10);
         tree.add(5);
         tree.add(12);
         tree.add(4);
@@ -535,9 +549,9 @@ class TestBinaryTree {
         tree.add(3);
         tree.add(9);
         tree.add(15);
-        tree.add(14);
+        tree.add(14);*/
 
-
+        tree.add(2); tree.add(1); tree.add(3); tree.add(4);
 
         System.out.println(tree);
 

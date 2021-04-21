@@ -502,7 +502,7 @@ class MyLinkedListMain {
 
         System.out.println();
 
-        list.toPrint(list.rotateFromEnd(list.getHead(), 9));
+        list.toPrint(list.rotateFromEnd(list.getHead(), 1));
 
 
         /*

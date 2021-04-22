@@ -2,6 +2,7 @@ package a_classTraits.personExample;
 
 import org.w3c.dom.ls.LSOutput;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -31,6 +32,7 @@ public class Main {
                 case "1":
                     System.out.println("Changing name UI... who would you like to change?");
                     String person = scan.next();
+                    Scanner name = new Scanner(System.in);
 
                     Person temp;
 
@@ -42,8 +44,8 @@ public class Main {
                             temp = people;
                             System.out.println("The person you are changing is: " + temp.getName());
                             System.out.print("Changing name to: ");
-                            String name = scan.next();
-                            changeName(house, temp, name);
+                            String newName = name.nextLine();
+                            changeName(house, temp, newName);
                             System.out.println("All set!");
                             break;
                         }

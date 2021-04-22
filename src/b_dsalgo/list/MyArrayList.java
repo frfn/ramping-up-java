@@ -5,27 +5,23 @@ import java.util.Arrays;
 // a generic, you can fill it with a type you like
 public class MyArrayList<X> {
 
-    private X list[];
+    private X[] list;
     private int size;
 
     // for the sake of learning, this is unchecked casting! See the book mark on this on Google Chrome
     public MyArrayList() {
         list = (X[]) new Object[10];
-
         // init block
         {
             Arrays.fill(list, null);
-
             /*
             Same as:
             1. for(int i = 0; i < list.length; i++){
                    list[i] = null;
                }
             */
-
-        }
-
         size = 0;
+        }
     }
 
     public boolean isEmpty() {

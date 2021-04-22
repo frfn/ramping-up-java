@@ -151,13 +151,15 @@ public class MyLinkedList<X extends Comparable<? super X>> {
             }
             current = current.getNext();
         }
-        current = head; // resets currents position
+
+        /* System.out.println("Head value: "); toPrint(head); */
+
         Node<X> iterator = rotated.getNext(); // from the dummy node, you move up one
         // .getNext because I want to land on a Node, not on null!
         while(iterator.getNext() != null) {
             iterator = iterator.getNext();
         }
-        iterator.setNext(current);
+        iterator.setNext(head);
         return rotated.getNext();
     }
 
@@ -194,6 +196,7 @@ public class MyLinkedList<X extends Comparable<? super X>> {
     // ----------------------- //
     // Get N-Th node from last //
     // ----------------------- //
+    // with size given
     public Node<X> getNthNodeFromEndOfList(int position) {
         if(position >= size || size < 0) throw new NullPointerException("Null exception!");
 
@@ -209,6 +212,28 @@ public class MyLinkedList<X extends Comparable<? super X>> {
             referencePtr = referencePtr.getNext();
         }
         return current;
+    }
+
+    // no size is given
+    public Node<X> getNthNodeFromEOL(int position) {
+        if(position == 0) return null;
+
+        Node<X> current = head;
+        int length = 1;
+        while(current.next != null) {
+            current = current.next;
+            length++;
+        }
+
+        position %= length;
+        current = head;
+
+        for(int i = 0; i < length - position; i++) {
+            current = current.next;
+        }
+
+        return current;
+
     }
 
     // ----------- //
@@ -436,12 +461,12 @@ public class MyLinkedList<X extends Comparable<? super X>> {
 
         while(currentOtherList != null){
             if(set.contains(currentOtherList)){
-                break;
+                return currentOtherList.getItem();
             }
             currentOtherList = currentOtherList.getNext();
         }
 
-        return currentOtherList != null ? currentOtherList.getItem() : null;
+        return null;
 
     }
 
@@ -496,14 +521,11 @@ class Node<X> {
 class MyLinkedListMain {
     public static void main(String[] args){
         MyLinkedList<Integer> list = new MyLinkedList<>();
-        list.add(1); list.add(2); list.add(3); list.add(4); list.add(5);
+        list.add(1); list.add(2); list.add(3); list.add(4);
 
         list.toPrint(list.getHead());
 
         System.out.println();
-
-        list.toPrint(list.rotateFromEnd(list.getHead(), 1));
-
 
         /*
         // the driver for finding merged point

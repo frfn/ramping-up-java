@@ -60,10 +60,10 @@ class Jet extends FlyingMachines {
         super("Jet");
     }
 
-    // Example of overriding
-//    public void fly() {
-//        System.out.println("Jet flies!");
-//    }
+    // Example of Overriding!
+    public void fly() {
+        System.out.println("The Fast Jet flies!");
+    }
 }
 
 // helicopter class
@@ -73,7 +73,7 @@ class Helicopter extends FlyingMachines {
     }
 
     // Example of overriding
-//    public void fly() {
-//        System.out.println("Helicopter flies!");
-//    }
+    // public void fly() {
+    //     System.out.println("Helicopter flies!");
+    // }
 }

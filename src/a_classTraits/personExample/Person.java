@@ -22,14 +22,10 @@ public class Person implements Interaction {
     public String getName() { return name; }
 
     @Override
-    public void sayHello() {
-        System.out.println("Hello!");
-    }
+    public void sayHello() { System.out.println("Hello!"); }
 
     @Override
-    public boolean isTallerShorter(Interaction otherPerson) {
-        return height > ((Person) otherPerson).getHeight();
-    }
+    public boolean isTallerShorter(Interaction otherPerson) { return height > ((Person) otherPerson).getHeight(); }
 
     @Override
     public boolean isHeavierLighter(Interaction otherPerson) {

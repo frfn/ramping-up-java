@@ -7,7 +7,6 @@ public class Honda extends Car {
 
     ArrayList<String> featureList = new ArrayList<String>(); // if static, every time a new instantiation is created, it will affect every object
 
-    private final String brand = "Honda";
     private final String model;
 
     public Honda(String model, String colorOfCar, double speedOfCar, double costOfCar, double liter, double horsepower) {
@@ -43,6 +42,7 @@ public class Honda extends Car {
     }
 
     public String toString() {
+        String brand = "Honda";
         return brand + " " + model + " | " + super.toString() + " " + featureList.toString();
     }
 

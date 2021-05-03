@@ -29,6 +29,20 @@ public class IntLinkedList {
     // -------- //
     // add node //
     // -------- //
+    public void add(ListNode newNode) {
+        if(head == null) {
+            head = newNode; size++; return;
+        }
+
+        ListNode current = head;
+        while(current.next != null) {
+            current = current.next;
+        }
+        current.next = newNode;
+
+        size++;
+    }
+
     public void addNode(ListNode node, int data) {
         ListNode newNode = new ListNode(data);
         if(node == null) {
@@ -312,17 +326,21 @@ public class IntLinkedList {
             fastPtr = fastPtr.next.next;
 
             if(slowPtr == fastPtr) {
-                // FILL HERE
+               return getStartOfLoop(slowPtr);
             }
         }
         return null;
     }
+    private ListNode getStartOfLoop(ListNode slowPtr) {
+        ListNode temp = head;
 
-    private ListNode getStartOfLoop(ListNode node, ListNode head) {
-        // FILL HERE
-        return new ListNode(-1);
+        while(temp != slowPtr) { // this will land on the starting node
+            temp = temp.next;
+            slowPtr = slowPtr.next;
+        }
+
+        return temp; // this will be the starting node of the loop | this is the Floyd's Detection Algorithm!
     }
-
 
     // -------------- //
     // take loop away //
@@ -334,13 +352,19 @@ public class IntLinkedList {
             fastPtr = fastPtr.next.next;
 
             if(slowPtr == fastPtr) {
-                // FILL HERE
+               cut(slowPtr);
+               return; // this breaks the while loop!
             }
         }
     }
+    private void cut(ListNode slowPtr) {
+        ListNode temp  = head;
 
-    private void cut(ListNode node, ListNode head) {
-        // FILL HERE
+        while(temp.next != slowPtr.next) { // we want to go to a node before the starting node
+            temp = temp.next;
+            slowPtr = slowPtr.next;
+        }
+        slowPtr.next = null; // this will be the node right before the starting node!
     }
 
     // --------------- //
@@ -502,14 +526,23 @@ class TestIntLinkedList {
 
     public static void main(String[] args) {
         IntLinkedList list = new IntLinkedList();
-        list.addNode(list.getHead(), 3);
-        list.addNode(list.getHead(), 1);
-        list.addNode(list.getHead(), 1);
-        list.addNode(list.getHead(), 1);
-        list.addNode(list.getHead(), 3);
+        ListNode one = new ListNode(1);
+        ListNode two = new ListNode(2);
+        ListNode three = new ListNode(3);
+        ListNode four = new ListNode(4);
+        ListNode five = new ListNode(5);
 
+        one.next = two;
+        two.next = three;
+        three.next = four;
+        four.next = five;
+        five.next = two;
 
-        System.out.println(list.isPalindrome(list.getHead()));
+        list.add(one);
 
+        System.out.println(list.isLoop(one));               // is loop?
+        System.out.println(list.beginningOfLoop(one).val);  // start of loop?
+        list.cutLoop(list.getHead());                       // cut loop!
+        list.print(list.getHead());                         // the algorithm works.
     }
 }

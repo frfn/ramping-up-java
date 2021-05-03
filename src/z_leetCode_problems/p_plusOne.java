@@ -13,10 +13,16 @@ public class p_plusOne {
     public static int[] plusOne(int[] digits) {
         if(digits.length == 0) throw new IllegalArgumentException();
 
+        /*
+
+        99 -> 00, -> you create the 100
+
+         */
+
         for(int i = digits.length-1; i >= 0; i--) {
             if(digits[i] < 9) {
                 digits[i]++;
-                // to terminate and return the array
+                // to terminate and return the array, this is the important part, must return else, all digits are 9's
                 return digits;
             }
             digits[i] = 0;

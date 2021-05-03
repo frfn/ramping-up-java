@@ -32,6 +32,10 @@ Contains
 <br>
 
 **Add Node**
+>Recursion!
+
+- A better approach, uses recursion to travel the tree till null!
+
 >2 total functions
 
 - `insert`, recursive logic to add the new node 
@@ -42,6 +46,10 @@ Contains
 <br>
 
 **Delete Node**
+>Recursion
+ 
+- A better approach, uses recursion till it finds the node, it handles all four cases!
+
 >3 total functions
 
 - `contains`, to traverse through the tree to see if item exists

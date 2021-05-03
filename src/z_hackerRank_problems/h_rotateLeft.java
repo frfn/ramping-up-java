@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class h_rotateLeft {
 
     public static void main(String[] args) {
-        System.out.println(Arrays.toString(rotLeftAnotherWay(new int[]{1, 2, 3, 4, 5}, 2)));
+        System.out.println(Arrays.toString(rotated(new int[]{1, 2, 3, 4, 5}, 3)));
     }
 
     // This works, copies the array and puts it back
@@ -48,6 +48,23 @@ public class h_rotateLeft {
             rotatedArray[globalCounter] = a[i];
         }
         return rotatedArray;
+    }
+
+    public static int[] rotated(int[] array, int index) {
+        int[] rotate = new int[array.length];
+        int globalIndex = 0;
+
+        //  0,1,2,3,4
+        // [1,2,3,4,5]
+        // []
+
+        for(int i = index; i < array.length; i++) {
+            rotate[globalIndex++] = array[i];
+        }
+        for(int i = 0; i < index; i++) {
+            rotate[globalIndex++] = array[i];
+        }
+        return rotate;
     }
 
 }

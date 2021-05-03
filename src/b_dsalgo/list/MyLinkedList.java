@@ -407,6 +407,7 @@ public class MyLinkedList<X extends Comparable<? super X>> {
         }
     }
 
+    // BETTER here! One pass, Space efficient!
     public Node<X> removeDupesInSortedList(Node<X> head) {
         Node<X> current = head;
 
@@ -422,6 +423,7 @@ public class MyLinkedList<X extends Comparable<? super X>> {
         return head;
     }
 
+    // less efficient ... though it works!
     public Node<X> removeDuplicatesFromASortedList(Node<X> node) {
         HashSet<X> set = new HashSet<>();
 
@@ -538,46 +540,3 @@ class MyLinkedListMain {
         */
     }
 }
-/*
-First Iteration.
-public Node<X> rotateRight(Node<X> head, int k) {
-        if(head == null) return null;
-        if(k == 0) return head;
-
-        int length = 1;
-        Node<X> current = head;
-        while(current.getNext() != null) {
-            current = current.next;
-            length++;
-        }
-
-        System.out.println("length: "+length);
-
-
-        int rotateAt = length - k; // 5 - 1 = 4
-
-        System.out.println("rotate at: "+rotateAt);
-
-        current = head;
-        Node<X> dummy = new Node<>(null);
-        int index = 0;
-
-        while(current.next != null) {
-            if(index+1 == rotateAt) {
-                System.out.println("index: "+index);
-                dummy.next = current.next;
-                current.next = null;
-
-                Node<X> iterator = dummy.getNext();
-                while(iterator.next != null) {
-                    iterator = iterator.next;
-                }
-                iterator.next = head;
-                break;
-            }
-            index++;
-            current = current.next;
-        }
-        return dummy.next;
-    }
- */

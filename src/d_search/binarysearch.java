@@ -3,11 +3,9 @@ package d_search;
 // only works on sorted lists
 
 public class binarysearch {
-
     public static void main(String[] args) {
-        System.out.println(bs(new int[] {1,3,5,6,7,8,9,9}, 4));
+        System.out.println(bs(new int[] {1,3,5,6,7,8,9,9}, 9));
     }
-
     public static boolean bs(int[] arr, int target) {
         int left = 0;
         int right = arr.length-1;

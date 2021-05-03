@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class k_flexAndToys {
 
-    // the idea here is that sometimes greedy algorithms do not work, you must sort it
+    // the idea here is that sometimes greedy algorithms do not wor IF NOT sorted
     public static void main(String[] args) {
         System.out.println(howManyToys(new int[] {3, 100, 3, 5, 1, 4, 40}, 60));
     }

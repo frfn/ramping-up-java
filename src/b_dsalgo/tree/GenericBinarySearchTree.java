@@ -7,7 +7,7 @@ import java.util.Stack;
 
 // Comparable contains a compareTo method that we have to fill in
 // were giving the X type a function called compareTo() --> ? super X comes from Effective Java!
-public class BinaryTree<X extends Comparable<? super X>> { // Effective Java
+public class GenericBinarySearchTree<X extends Comparable<? super X>> { // Effective Java
     // here, X gets that extra Comparable fn
     private Node<X> root;
     private int size;
@@ -15,7 +15,7 @@ public class BinaryTree<X extends Comparable<? super X>> { // Effective Java
     //-----------------//
     //   Constructor   //
     //-----------------//
-    public BinaryTree() {
+    public GenericBinarySearchTree() {
         root=null;
         size=0;
     }
@@ -23,6 +23,38 @@ public class BinaryTree<X extends Comparable<? super X>> { // Effective Java
     //-----------------//
     //   Utility Fns   //
     //-----------------//
+    public Node<X> contains(X item) {
+        Node<X> current = root;
+        while(current != null) {
+            int compareEvaluation = item.compareTo(current.getItem()); // will be: -1 , 0 , 1
+
+            if (compareEvaluation == 0) {
+                return current; // traversing!
+            } else if (compareEvaluation < 0) {
+                current = current.getLeft();
+            } else {
+                current = current.getRight();
+            }
+        }
+        return null;
+    } // search fn for delete() -- traverse the tree till it finds the current item we're looking for
+    private void redirectNode(Node<X> current, Node<X> toNextNode) {
+        // deleting root?
+        if(current == root) {
+            // the next node will be root
+            toNextNode.setLeft(current.getLeft());
+            toNextNode.setRight(current.getLeft());
+            root = toNextNode;
+        }
+        // reassign right node
+        else if (current.getParent().getRight() == current) {
+            current.getParent().setRight(toNextNode);
+        }
+        // reassign left node
+        else {
+            current.getParent().setLeft(toNextNode);
+        }
+    } // redirect pointer to left or right nodes to link the nodes , and 'delete' the removed node , through GC.
     public boolean itIsEmpty() { return root == null; }
     public Node<X> getRoot() { return root != null ? root :  null; }
     public int getSize() { return size; }
@@ -32,7 +64,67 @@ public class BinaryTree<X extends Comparable<? super X>> { // Effective Java
     //---------------------//
     //   Add Node in BST   //
     //---------------------//
-    // helper fn for add() , recursively add
+
+    // This is what
+    public Node<X> addRecursion(Node<X> current, X item) {
+        // if the tree is EMPTY
+        if(itIsEmpty()) {
+            root = new Node<>(item);
+            size++;
+            return root;
+        }
+
+        // the base case, we reassign current, which is null, as the new node
+        if(current == null) {
+           current = new Node<>(item); size++;
+           return current;
+        }
+
+        // we traverse the tree, and once the base case returns a node, that node either becomes current.left = node | current.right = node
+        if(item.compareTo(current.getItem()) <= 0) {
+            current.left = addRecursion(current.left, item);
+        } else if(item.compareTo(current.getItem()) > 0) {
+            current.right = addRecursion(current.right, item);
+        }
+
+        return current;
+
+    } // add node | more efficient recursive
+    // you need to learn!
+
+    public void addIterative(X item) {
+        Node<X> current = root;
+        Node<X> newNode = new Node<>(item);
+
+        if(current == null) {
+            root = newNode;
+            size++;
+            return;
+        }
+
+        while(current != null) {
+
+            if(newNode.getItem().compareTo(current.getItem()) <= 0) {
+                if(current.getLeft() == null) {
+                    current.setLeft(newNode);
+                    newNode.setParent(current);
+                    size++;
+                    break;
+                }
+                current = current.getLeft();
+            }
+
+            if(newNode.getItem().compareTo(current.getItem()) > 0) {
+                if(current.getRight() == null) {
+                    current.setRight(newNode);
+                    newNode.setParent(current);
+                    size++;
+                    break;
+                }
+                current = current.getRight();
+            }
+        }
+    } // iterative adding in a BST
     private void insert(Node<X> current, Node<X> child) {
         /*
         Comparable interface!
@@ -60,8 +152,7 @@ public class BinaryTree<X extends Comparable<? super X>> { // Effective Java
                 insert(current.getRight(), child);
             }
         }
-    }
-    // to add
+    } // helper fn for add() , recursively add
     public void add(X item){
         Node<X> node = new Node<>(item); // Node has no connections, just item
         if(itIsEmpty()){
@@ -71,137 +162,56 @@ public class BinaryTree<X extends Comparable<? super X>> { // Effective Java
             insert(root, node);
         }
         size++;
-    }
+    } // to add
 
     //------------------------//
     //   Delete Node in BST   //
     //------------------------//
-    // search fn for delete() -- traverse the tree till it finds the current item we're looking for
-    public Node<X> contains(X item) {
-        Node<X> current = root;
-        while(current != null) {
-            int compareEvaluation = item.compareTo(current.getItem()); // will be: -1 , 0 , 1
 
-            if (compareEvaluation == 0) {
-                return current; // traversing!
-            } else if (compareEvaluation < 0) {
-                current = current.getLeft();
+    // This is what
+    public Node<X> delete(Node<X> current, X item) {
+        if(current == null) return null;
+
+        if(item.compareTo(current.getItem()) < 0) {
+            current.left = delete(current.left, item);
+
+        } else if (item.compareTo(current.getItem()) > 0) {
+            current.right = delete(current.right, item);
+
+        } else {
+            if(current.left == null || current.right == null) {
+                 return current.left == null ? current.right : current.left; // this is correct, current.right even if null is a thing
+//                Node<X> temp = current.left == null ? current.right : current.left;
+//                return temp;
+//                if(temp == null) {
+//                    return null;
+//                } else {
+//                    return temp;
+//                }
             } else {
-                current = current.getRight();
+                /*
+                Two ways:
+                - right subtree : find the min
+                - left subtree  : find the max
+
+                in this case, find min.
+                 */
+                Node<X> successor = current.right;
+                while(successor.left != null) {
+                    successor = successor.left;
+                }
+
+                // now replace the data!
+                current.setItem(successor.getItem()); // current.item = successor.item;
+
+                // delete the successor since it's not needed anymore!
+                current.right = delete(current.right, successor.getItem());
             }
+
         }
-        return null;
+        return current;
     }
-    // redirect pointer to left or right nodes to link the nodes , and 'delete' the removed node , through GC.
-    private void redirectNode(Node<X> current, Node<X> toNextNode) {
-        // deleting root?
-        if(current == root) {
-            // the next node will be root
-            toNextNode.setLeft(current.getLeft());
-            toNextNode.setRight(current.getLeft());
-            root = toNextNode;
-        }
-        // reassign right node
-        else if (current.getParent().getRight() == current) {
-            current.getParent().setRight(toNextNode);
-        }
-        // reassign left node
-        else {
-            current.getParent().setLeft(toNextNode);
-        }
-    }
-    // delete node
-    public Node<X> delete(X item) throws Exception {
-        if (itIsEmpty()) {
-            throw new Exception("Tree has no items! Add item first!");
-        }
-
-        // See if item exists
-        Node<X> toBeDeletedNode = contains(item);
-
-        // Delete Root: special case! redirectNode is not used here
-        if (toBeDeletedNode == root) {
-
-            // root has no children
-            if (toBeDeletedNode.getLeft() == null && toBeDeletedNode.getRight() == null) {
-                root = null;
-                size = 0;
-            }
-
-            // if root has no left child,
-            if (toBeDeletedNode.getLeft() == null) {
-                Node<X> child = toBeDeletedNode.getRight();
-                while (child.getLeft() != null || child.getRight() != null) {
-                    child = child.getLeft(); // push child to the left to grab the next potential root!
-                }
-                if (child != toBeDeletedNode.getRight()) {
-                    child.getParent().setLeft(null);
-                    child.setRight(toBeDeletedNode.getRight());
-                }
-                child.setLeft(toBeDeletedNode.getLeft()); // it will still have all the right branch items if it has a left branch, if none, null will be assigned
-                root = child;
-                size--;
-                return toBeDeletedNode;
-            }
-
-
-            // if root has left child
-            if (toBeDeletedNode.getLeft() != null) {
-                Node<X> child = toBeDeletedNode.getLeft();
-                while (child.getLeft() != null || child.getRight() != null) {
-                    child = child.getRight(); // push child to the right to grab the next potential root!
-                }
-                if (child != toBeDeletedNode.getLeft()) { // after the traversal, if child item is not the left of root
-                    child.getParent().setRight(null);
-                    child.setLeft(toBeDeletedNode.getLeft());
-                }
-                child.setRight(toBeDeletedNode.getRight()); // it will still have all the left branch items if it has a left branch
-                root = child;
-                size--;
-                return toBeDeletedNode;
-            }
-        }
-        // for the other cases if toBeDeletedNode is not root
-        else {
-            if (toBeDeletedNode != null) {
-                // if toBeDeletedNode has BOTH children
-                if (toBeDeletedNode.getLeft() != null && toBeDeletedNode.getRight() != null) {
-                    Node<X> child = toBeDeletedNode.getLeft();
-                    while (child.getLeft() != null || child.getRight() != null) {
-                        child = child.getRight();
-                    }
-                    // if child is not adjacent to the toBeDeletedNode
-                    if (child != toBeDeletedNode.getLeft()) {
-                        child.getParent().setRight(null);
-                        child.setLeft(toBeDeletedNode.getLeft());
-                    }
-                    child.setRight(toBeDeletedNode.getRight());
-                    redirectNode(toBeDeletedNode, child);
-                    size--;
-                    return toBeDeletedNode;
-                }
-
-                // if the toBeDeletedNode has left branch
-                else if (toBeDeletedNode.getLeft() != null && toBeDeletedNode.getRight() == null) {
-                    redirectNode(toBeDeletedNode, toBeDeletedNode.getLeft());
-                    return toBeDeletedNode;
-                }
-
-                // if the toBeDeletedNode has right branch
-                else if (toBeDeletedNode.getLeft() == null && toBeDeletedNode.getRight() != null) {
-                    redirectNode(toBeDeletedNode, toBeDeletedNode.getRight());
-                    return toBeDeletedNode;
-                }
-
-                // if the toBeDeletedNode has NO children
-                else if (toBeDeletedNode.getLeft() == null && toBeDeletedNode.getRight() == null) {
-                    redirectNode(toBeDeletedNode, null);
-                    return toBeDeletedNode;
-                }
-            }
-        }
-        return null;
-    }
+    // you need to learn!
 
     //-----------------------------------------//
     //   Find Min and Max Recursively in BST   //
@@ -242,6 +252,8 @@ public class BinaryTree<X extends Comparable<? super X>> { // Effective Java
         }
         return current;
     }
+
+    // Great to understand!
 
     //------------------------------------//
     //   Print Items Recursively in BST   //
@@ -404,6 +416,8 @@ public class BinaryTree<X extends Comparable<? super X>> { // Effective Java
 
     }
 
+
+    // Methods that needs to be commented below
     public int findMaxInABinaryTree(Node<Integer> current) {
         if(itIsEmpty()) return 0;
 
@@ -509,14 +523,13 @@ public class BinaryTree<X extends Comparable<? super X>> { // Effective Java
         }
         return head;
     }
-
 }
 
 // this is a generic class, creates Node<X> object!
 class Node<X> {
 
     private X item;
-    private Node<X> parent, left, right; // you can refer other objects here | this is 'linking' the objects!
+    Node<X> parent, left, right; // you can refer other objects here | this is 'linking' the objects!
 
     // this is how you _make_ the object
     public Node(X item){
@@ -524,6 +537,7 @@ class Node<X> {
         parent=left=right=null;
     }
 
+    // pretty much, you don't need the things at the bottom, don't make the stuff private
     public X getItem() { return item; }
     public Node<X> getParent() { return parent; }
     public Node<X> getLeft() { return left; }
@@ -537,23 +551,23 @@ class Node<X> {
 
 class TestBinaryTree {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
 
-        BinaryTree<Integer> tree = new BinaryTree<>();
+        GenericBinarySearchTree<Integer> tree = new GenericBinarySearchTree<>();
 
-        /*tree.add(10);
-        tree.add(5);
-        tree.add(12);
-        tree.add(4);
-        tree.add(6);
-        tree.add(3);
-        tree.add(9);
-        tree.add(15);
-        tree.add(14);*/
+        tree.addRecursion(tree.getRoot(), 10);
+        tree.addRecursion(tree.getRoot(), 5);
+        tree.addRecursion(tree.getRoot(), 15);
+        tree.addRecursion(tree.getRoot(), 3);
+        tree.addRecursion(tree.getRoot(), 8);
+        tree.addRecursion(tree.getRoot(), 9);
+        tree.addRecursion(tree.getRoot(), 11);
+        tree.addRecursion(tree.getRoot(), 18);
+        tree.addRecursion(tree.getRoot(),7);
 
-        tree.add(2); tree.add(1); tree.add(3); tree.add(4);
+        tree.delete(tree.getRoot(), 10);
 
-        System.out.println(tree);
+        tree.printPreOrderIterative();
 
     }
 

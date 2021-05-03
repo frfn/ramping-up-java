@@ -2,6 +2,7 @@ package z_hackerRank_problems;
 
 import java.io.*;
 import java.util.HashMap;
+import java.util.Map;
 
 public class c_wordHistogram {
 
@@ -19,7 +20,12 @@ public class c_wordHistogram {
         } catch (IOException ioException) {
             ioException.printStackTrace();
         }
-        printHistogram(strBuilder.toString());
+
+        HashMap<String, Integer> words = histo(strBuilder.toString());
+
+        for(Map.Entry<String, Integer> entry: words.entrySet()) {
+            System.out.println(entry.getKey() + " : " + entry.getValue());
+        }
 
     }
 
@@ -40,6 +46,18 @@ public class c_wordHistogram {
             System.out.println(word + " : " + histogram.get(word));
         }
 
+    }
+
+    public static HashMap<String, Integer> histo(String exp) {
+        if(exp.length() == 0) return null;
+
+        HashMap<String, Integer> map = new HashMap<>();
+        for(String word: exp.split(" ")) {
+            int count = map.getOrDefault(word, 0);
+            map.put(word, count + 1);
+        }
+
+        return map;
     }
 
 }

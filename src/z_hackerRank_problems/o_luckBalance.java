@@ -39,6 +39,12 @@ public class o_luckBalance {
          1 -> 2 -> 5 -> 8 -> null | when sorted
 
          */
+
+        // Logic: add all | if the contest is important add it to the list
+        //        sort the list -> this will give us the least value that we can fail on purposes
+        //        contests.size() - k : explanation -> how many contests we can fail
+        //        total -= lose * 2 : explanation -> we have to subtract from the total, since we added we must subtract twice as to start at "zero"
+
         for (int[] contest : contests) {
             total += contest[0];
 
@@ -48,7 +54,9 @@ public class o_luckBalance {
                 // [2,1] -> [1,1] -> null
             }
         }
-        Collections.sort(importantContests); // [1, 1] -> [2, 1] -> null
+
+        Collections.sort(importantContests); // [1], [2], [3] -> null
+
         for (int i = 0; i < importantContests.size() - k; i++) {
             int lose = importantContests.get(i);
             total -= lose * 2;

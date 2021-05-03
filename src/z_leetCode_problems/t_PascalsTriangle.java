@@ -7,7 +7,7 @@ import java.util.List;
 public class t_PascalsTriangle {
 
     public static void main(String[] args) {
-        for(List<Integer> list: generate(5)) {
+        for(List<Integer> list: generate(3)) {
             System.out.println(list);
         }
     }
@@ -25,6 +25,7 @@ public class t_PascalsTriangle {
         for(int row = 1; row < k; row++) {
             List<Integer> newRow = new ArrayList<>();
             List<Integer> prevRow = list.get(row - 1); // we only use prevRow if row > 1
+
 
             // since we always start with 1
             newRow.add(1);

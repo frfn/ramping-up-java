@@ -37,6 +37,7 @@ public class g_hourGlass2D {
         if(arr.length == 0) return 0;
 
         int maxValue = hourGlass(arr, 0 ,0); // assign maxValue of the first hour glass value
+        int[] position = new int[2];
 
         // accounting for the 'off by 1', in this case off by 2 since our template requires (x + 2)
         for(int row = 0; row < arr.length - 2; row++) {
@@ -46,9 +47,14 @@ public class g_hourGlass2D {
                 // keep track of max value
                 if(totalOf > maxValue) {
                     maxValue = totalOf;
+                    position[0] = row;
+                    position[1] = indexInRow;
                 }
             }
         }
+
+        System.out.println("Max Position at: ["+position[0]+","+position[1]+"]");
+
         return maxValue;
     }
 

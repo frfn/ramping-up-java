@@ -1,7 +1,5 @@
 package b_dsalgo.list;
-
 import java.util.HashSet;
-import java.util.regex.Pattern;
 
 public class IntLinkedList {
 
@@ -42,7 +40,6 @@ public class IntLinkedList {
 
         size++;
     }
-
     public void addNode(ListNode node, int data) {
         ListNode newNode = new ListNode(data);
         if(node == null) {
@@ -150,6 +147,8 @@ public class IntLinkedList {
         while(pointer1 != null || pointer2 != null) {
             // sum is important bc it accounts for the carry value
             int sum = carry;
+
+
             if(pointer1 != null && pointer2 != null) sum += pointer1.val + pointer2.val;
             else if(pointer1 != null) sum += pointer1.val;
             else sum += pointer2.val;

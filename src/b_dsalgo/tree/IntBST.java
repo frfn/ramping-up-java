@@ -1,6 +1,6 @@
 package b_dsalgo.tree;
 
-// This IS IMPORTANT.
+// This IS IMPORTANT. Binary Search Trees are used in lots of FAANG questions.
 
 public class IntBST {
 
@@ -20,6 +20,8 @@ public class IntBST {
         }
 
         // This is recursion!
+
+        /* when the node is null, we create a new TreeNode and return that node to be the left or right child */
         if(node == null) {
             size++;
             node = new TreeNode(data);
@@ -36,9 +38,16 @@ public class IntBST {
     public TreeNode delete(TreeNode node, int data) {
         if(root == null) return null;
 
-        // the node.left | node.right = delete(...) will be assigned at 'here'
-        if(data < node.data) node.left = delete(node.left, data);
-        else if(data > node.data) node.right = delete(node.right, data);
+        /* we traverse the tree until we find the node */
+        if(data < node.data) {
+            node.left = delete(node.left, data);
+        }
+
+        else if(data > node.data) {
+            node.right = delete(node.right, data);
+        }
+
+        /* we found node */
         else {
             // having one child
             if(node.left == null || node.right == null) {
@@ -46,7 +55,7 @@ public class IntBST {
             }
             // having two children
             else {
-                // find the min in the right subtree! this is the logic to find potential node to replace deleted node with two childen
+                // find the min in the right subtree! this is the logic to find potential node to replace deleted node with two children
                 TreeNode successor = node.right;
                 while(successor.left != null) successor = successor.left;
                 node.data = successor.data;
@@ -74,14 +83,32 @@ class TestIntBST {
 
     public static void main(String[] args) {
 
-        IntBST tree = new IntBST();
-        tree.add(tree.getRoot(), 10);
-        tree.add(tree.getRoot(), 5);
-        tree.add(tree.getRoot(), 15);
-        tree.add(tree.getRoot(), 3);
-        tree.add(tree.getRoot(), 18);
 
-        tree.delete(tree.getRoot(), 10);
+        /*
+
+          BST ( you do bubble out when popping from call stack. )
+
+                                       100
+                                     /     \
+                                 50           150
+                               /    \            \
+                              5     75             200
+                                  /    \
+                                60     80
+
+         */
+
+        IntBST tree = new IntBST();
+        tree.add(tree.getRoot(), 100);
+        tree.add(tree.getRoot(), 150);
+        tree.add(tree.getRoot(), 50);
+        tree.add(tree.getRoot(), 5);
+        tree.add(tree.getRoot(), 75);
+        tree.add(tree.getRoot(), 60);
+        tree.add(tree.getRoot(), 80);
+        tree.add(tree.getRoot(), 200);
+
+        tree.delete(tree.getRoot(), 75);
 
         tree.preOrderTraversal(tree.getRoot());
 

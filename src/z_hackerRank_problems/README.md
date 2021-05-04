@@ -56,3 +56,32 @@
 
 - really easy for some reason
 - compares if there are any letters in string1 that is in string2
+
+# flexAndToys
+
+- sorts the array first
+- uses O(n) - looped though and had counter to keep track of how many things I can buy
+
+# makingAnagrams
+
+- created a hashmap
+- initially stored and counted the letters in the first string
+- with the second string, loop through subtracting
+- grab the absolute value and sum up
+- the sum will be the total amount of letters that will be deleted to create the anagram
+
+# alternatingCharacters
+
+- counts the total amount of letters being the same when adjacent
+
+# minimumAbsoluteDifference
+
+- grabs the minimum absolute difference
+- sort the array first to go through O(n) instead of O(n^2)
+
+# luckBalance
+
+- add all points up
+- keep track of important contests and its corresponding value
+- sort the values of the important contests
+- in a for-loop, with `i < contest.size() - k`, subtract the current value at `i` * 2 to account for being added in the first place

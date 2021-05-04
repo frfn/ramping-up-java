@@ -27,7 +27,7 @@ public class n_minimumAbsoluteDifference {
 
         // works, but not greedy
 
-        int minimum = Math.abs(Integer.MAX_VALUE);
+        int minimum = Integer.MAX_VALUE;
 
         for(int i = 0; i < arr.length; i++) {
 

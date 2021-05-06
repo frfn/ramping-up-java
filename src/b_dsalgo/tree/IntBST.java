@@ -24,14 +24,20 @@ public class IntBST {
         /* when the node is null, we create a new TreeNode and return that node to be the left or right child */
         if(node == null) {
             size++;
-            node = new TreeNode(data);
+            node = new TreeNode(data); // when we hit null, we return a new node,
             return node;
         }
 
         if(data < node.data) {
-            node.left = add(node.left, data);
+            TreeNode newNode = add(node.left, data); // we eventually will reach a null since we are passing node.left | node.right
+
+            node.left = newNode;
+            newNode.parent = node;
         } else if(data > node.data) {
-            node.right = add(node.right, data);
+            TreeNode newNode = add(node.right, data);
+
+            node.right = newNode;
+            newNode.parent = node;
         }
         return node;
     }
@@ -91,10 +97,10 @@ class TestIntBST {
                                        100
                                      /     \
                                  50           150
-                               /    \            \
-                              5     75             200
-                                  /    \
-                                60     80
+                               /    \
+                              5     75
+                                  /
+                                60
 
          */
 
@@ -103,12 +109,7 @@ class TestIntBST {
         tree.add(tree.getRoot(), 150);
         tree.add(tree.getRoot(), 50);
         tree.add(tree.getRoot(), 5);
-        tree.add(tree.getRoot(), 75);
-        tree.add(tree.getRoot(), 60);
-        tree.add(tree.getRoot(), 80);
-        tree.add(tree.getRoot(), 200);
-
-        tree.delete(tree.getRoot(), 75);
+        tree.add(tree.getRoot(), 1);
 
         tree.preOrderTraversal(tree.getRoot());
 

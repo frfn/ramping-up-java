@@ -12,14 +12,15 @@ public class IntBST {
     }
 
     public TreeNode getRoot() { return root; }
+
+    // adding and deleting in recursive manner
     public TreeNode add(TreeNode node, int data) {
+        // if tree is empty
         if(root == null) {
             size++;
             root = new TreeNode(data);
             return root;
         }
-
-        // This is recursion!
 
         /* when the node is null, we create a new TreeNode and return that node to be the left or right child */
         if(node == null) {
@@ -31,15 +32,20 @@ public class IntBST {
         if(data < node.data) {
             TreeNode newNode = add(node.left, data); // we eventually will reach a null since we are passing node.left | node.right
 
-            node.left = newNode;
-            newNode.parent = node;
+            node.left = newNode; // current node's left = newNode, when bubbling out of recursive call, it will just point to existing node
+
+            newNode.parent = node; // same here as well from explanation above ^
+
         } else if(data > node.data) {
             TreeNode newNode = add(node.right, data);
 
             node.right = newNode;
+
             newNode.parent = node;
         }
         return node;
+        // you're wondering what happens to the returned node, the value goes to the newNode
+        // we DO bubble out and the newNode CAN have existing nodes already since we bubble out! :D
     }
     public TreeNode delete(TreeNode node, int data) {
         if(root == null) return null;
@@ -71,6 +77,8 @@ public class IntBST {
         }
         return node;
     }
+
+    // traversing tree in recursive manner
     public void preOrderTraversal(TreeNode node) {
         if(node != null) {
             System.out.println(node.data);
@@ -78,6 +86,37 @@ public class IntBST {
             preOrderTraversal(node.right);
         }
     }
+    public void inOrderTraversal(TreeNode node) {
+        if(node != null) {
+            inOrderTraversal(node.left);
+            System.out.println(node.data);
+            inOrderTraversal(node.right);
+        }
+    }
+    public void postOrderTraversal(TreeNode node) {
+        if(node != null) {
+            postOrderTraversal(node.left);
+            postOrderTraversal(node.right);
+            System.out.println(node.data);
+        }
+    }
+
+    // traversing tree in iterative manner
+    // ... do this tomorrow
+
+    // print items level order
+    // ... do this tomorrow
+
+    // find height
+    public int findHeight(TreeNode node) {
+        if(node == null) return -1;
+
+        int leftHeight = findHeight(node.left);
+        int rightHeight = findHeight(node.right);
+
+        return Math.max(leftHeight, rightHeight) + 1; // you MUST increase
+    }
+
 }
 
 class TreeNode {
@@ -96,11 +135,11 @@ class TestIntBST {
 
                                        100
                                      /     \
-                                 50           150
-                               /    \
-                              5     75
-                                  /
-                                60
+                                  50        150
+                                 /  \
+                               5    75
+                                      \
+                                       80
 
          */
 
@@ -109,9 +148,11 @@ class TestIntBST {
         tree.add(tree.getRoot(), 150);
         tree.add(tree.getRoot(), 50);
         tree.add(tree.getRoot(), 5);
-        tree.add(tree.getRoot(), 1);
+//        tree.add(tree.getRoot(), 1);
+        tree.add(tree.getRoot(), 75);
+        tree.add(tree.getRoot(), 80);
 
-        tree.preOrderTraversal(tree.getRoot());
+        System.out.println(tree.findHeight(tree.getRoot()));
 
     }
 

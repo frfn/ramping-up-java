@@ -2,6 +2,10 @@ package b_dsalgo.tree;
 
 // This IS IMPORTANT. Binary Search Trees are used in lots of FAANG questions.
 
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Stack;
+
 public class IntBST {
 
     TreeNode root;
@@ -44,7 +48,7 @@ public class IntBST {
             newNode.parent = node;
         }
         return node;
-        // you're wondering what happens to the returned node, the value goes to the newNode
+        // you're wondering what happens to the returned node values, the value goes to the newNode
         // we DO bubble out and the newNode CAN have existing nodes already since we bubble out! :D
     }
     public TreeNode delete(TreeNode node, int data) {
@@ -61,7 +65,7 @@ public class IntBST {
 
         /* we found node */
         else {
-            // having one child
+            // having one child, at this point your AT the node, you will return one of it's child
             if(node.left == null || node.right == null) {
                 return node.left == null ? node.right : node.left; // <-- here
             }
@@ -101,11 +105,57 @@ public class IntBST {
         }
     }
 
-    // traversing tree in iterative manner
-    // ... do this tomorrow
+    // traversing tree in iterative manner ( DFS )
+    public void preOrderIterative(TreeNode node) {
+        if(node == null) return;
 
-    // print items level order
-    // ... do this tomorrow
+        Stack<TreeNode> stack = new Stack<>();
+        stack.push(node);
+
+        while(!stack.isEmpty()) {
+            TreeNode temp = stack.pop();
+            System.out.println(temp.data);
+
+            if(temp.right != null) stack.push(temp.right);
+            if(temp.left  != null) stack.push(temp.left);
+        }
+    }
+    public void inOrderIterative(TreeNode node) {
+        if(node == null) return;
+
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode current = node;
+
+        while(!stack.isEmpty() || current != null) {
+            if(current != null) {
+                stack.push(current);
+                current = current.left;
+            }
+            else {
+                current = stack.pop(); // we utilize the stack and use it as the next iterator
+                System.out.println(current.data);
+                current = current.right;
+            }
+        }
+    }
+    /* Do       postOrderIterative      tomorrow!  */
+
+    // print items level order ( BFS )
+    public void levelOrderTraversal(TreeNode node) {
+        if (node == null) return;
+
+        Queue<TreeNode> q = new LinkedList<>();
+        q.offer(node);
+
+        while (!q.isEmpty()) {
+            TreeNode temp = q.poll();
+            System.out.println(temp.data);
+
+            if (temp.left != null) q.offer(temp.left);
+            if (temp.right != null) q.offer(temp.right);
+        }
+    }
+
 
     // find height
     public int findHeight(TreeNode node) {
@@ -115,6 +165,27 @@ public class IntBST {
         int rightHeight = findHeight(node.right);
 
         return Math.max(leftHeight, rightHeight) + 1; // you MUST increase
+    }
+
+    // finding max in Binary Tree and Binary Search Tree recursively
+    public int findMaxInBT(TreeNode node) {
+        if(node == null) return -1;
+
+        int maxValue = node.data;
+        int left = findMaxInBT(node.left); // the return value is max value
+        int right = findMaxInBT(node.right);
+
+        if(left > maxValue) maxValue = left;
+        if(right > maxValue) maxValue = right;
+
+        return maxValue;
+
+    }
+    public int findMaxInBST(TreeNode node) {
+        if(node.right == null) {
+            return node.data;
+        }
+        return findMaxInBST(node.right);
     }
 
 }
@@ -148,11 +219,10 @@ class TestIntBST {
         tree.add(tree.getRoot(), 150);
         tree.add(tree.getRoot(), 50);
         tree.add(tree.getRoot(), 5);
-//        tree.add(tree.getRoot(), 1);
         tree.add(tree.getRoot(), 75);
         tree.add(tree.getRoot(), 80);
 
-        System.out.println(tree.findHeight(tree.getRoot()));
+        tree.preOrderIterative(tree.getRoot());
 
     }
 

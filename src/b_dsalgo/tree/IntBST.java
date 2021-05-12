@@ -8,14 +8,18 @@ import java.util.Stack;
 
 public class IntBST {
 
+
     TreeNode root;
     int size;
+
 
     public IntBST() {
         root=null; size=0;
     }
 
+
     public TreeNode getRoot() { return root; }
+
 
     // adding and deleting in recursive manner
     public TreeNode add(TreeNode node, int data) {
@@ -82,6 +86,7 @@ public class IntBST {
         return node;
     }
 
+
     // traversing tree in recursive manner
     public void preOrderTraversal(TreeNode node) {
         if(node != null) {
@@ -104,6 +109,7 @@ public class IntBST {
             System.out.println(node.data);
         }
     }
+
 
     // traversing tree in iterative manner ( DFS )
     public void preOrderIterative(TreeNode node) {
@@ -140,6 +146,7 @@ public class IntBST {
     }
     /* Do       postOrderIterative      tomorrow!  */
 
+
     // print items level order ( BFS )
     public void levelOrderTraversal(TreeNode node) {
         if (node == null) return;
@@ -167,6 +174,7 @@ public class IntBST {
         return Math.max(leftHeight, rightHeight) + 1; // you MUST increase
     }
 
+
     // finding max in Binary Tree and Binary Search Tree recursively
     public int findMaxInBT(TreeNode node) {
         if(node == null) return -1;
@@ -186,6 +194,23 @@ public class IntBST {
             return node.data;
         }
         return findMaxInBST(node.right);
+    }
+
+
+    // lowest common ancestor
+    public int lowestCommonAncestor(TreeNode node, int a, int b) {
+        while(node != null) {
+            if(node.data > a && node.data > b) {
+                node = node.left;
+            }
+
+            else if(node.data < a && node.data < b) {
+                node = node.right;
+            }
+
+            else break;
+        }
+        return node != null ? node.data : -1;
     }
 
 }
@@ -222,7 +247,7 @@ class TestIntBST {
         tree.add(tree.getRoot(), 75);
         tree.add(tree.getRoot(), 80);
 
-        tree.preOrderIterative(tree.getRoot());
+        System.out.println(tree.lowestCommonAncestor(tree.getRoot(), 80, 5));
 
     }
 

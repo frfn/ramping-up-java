@@ -442,8 +442,7 @@ public class GenericBinarySearchTree<X extends Comparable<? super X>> { // Effec
     public boolean symmetricTree(Node<X> root) {
         return symmetricTreeHelper(root, root);
     }
-
-    public boolean symmetricTreeHelper(Node<X> p, Node<X> q) {
+    private boolean symmetricTreeHelper(Node<X> p, Node<X> q) {
         if(p == null && q == null) return true;
         if(p == null || q == null) return false;
 

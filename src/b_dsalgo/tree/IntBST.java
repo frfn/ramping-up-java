@@ -8,17 +8,40 @@ import java.util.Stack;
 
 public class IntBST {
 
-
     TreeNode root;
     int size;
-
 
     public IntBST() {
         root=null; size=0;
     }
 
-
     public TreeNode getRoot() { return root; }
+
+
+    // contains
+    public boolean contains(TreeNode root, int data) {
+        /*
+        Create an easy to understand explanation here. Iterative is easier to implement!'
+
+        1. You had the right approach at the first round
+
+        2. contains() returns a boolean, use that as a VALUE,
+
+        3. because
+            - T & F = F
+            - T & T = T
+
+            if F, then we go down to false!
+         */
+
+        if(root == null) return false;
+
+        if(data == root.data) return true;
+        else if(data < root.data && contains(root.left, data)) return true;
+        else if(data > root.data && contains(root.right, data)) return true;
+
+        return false;
+    }
 
 
     // adding and deleting in recursive manner
@@ -144,7 +167,7 @@ public class IntBST {
             }
         }
     }
-    /* Do       postOrderIterative      tomorrow!  */
+    /* Do       postOrderIterative      tomorrow!  */ // it is confusing...
 
 
     // print items level order ( BFS )
@@ -175,7 +198,7 @@ public class IntBST {
     }
 
 
-    // finding max in Binary Tree and Binary Search Tree recursively
+    // finding max in Binary Tree and Binary Search Tree recursively | you find min by doing this
     public int findMaxInBT(TreeNode node) {
         if(node == null) return -1;
 
@@ -213,6 +236,35 @@ public class IntBST {
         return node != null ? node.data : -1;
     }
 
+
+    // symmetric tree | interesting, so it reads, after it does first p.left, q.right, it it will start p.right, q.left and re do the method calls! Fascinating.
+    public boolean symmetricTree(TreeNode root) {
+        return symTreeHelper(root, root);
+    }
+    private boolean symTreeHelper(TreeNode p, TreeNode q) {
+        if(p == null && q == null) return true;  // when it hits null return true
+        if(p == null || q == null) return false; // if the parent has a child and the other parent doesn't... well it's not symmetric.
+
+        if(p.data == q.data) return
+                symTreeHelper(p.left, q.right)
+                && symTreeHelper(p.right, q.left);
+
+        return false;
+    }
+
+
+    // same tree
+    public boolean sameTree(TreeNode p, TreeNode q) {
+        if(p == null && q == null) return true;  // when it hits null return true
+        if(p == null || q == null) return false; // if the parent has a child and the other parent doesn't... well it's not symmetric.
+
+        if(p.data == q.data) return
+                sameTree(p.left, q.left)
+                && sameTree(p.right, q.right);
+
+        return false;
+    }
+
 }
 
 class TreeNode {
@@ -247,7 +299,74 @@ class TestIntBST {
         tree.add(tree.getRoot(), 75);
         tree.add(tree.getRoot(), 80);
 
-        System.out.println(tree.lowestCommonAncestor(tree.getRoot(), 80, 5));
+        System.out.println(tree.contains(tree.root, 1));
+
+
+        // -------------------------------------------------- //
+
+
+        /*
+
+          Binary Tree
+
+                                        0
+                                     /     \
+                                   1        1
+                                 /  \     /   \
+                               3    4    4     3
+
+         */
+
+
+        // Binary Tree
+        IntBST binaryTree = new IntBST();
+        TreeNode root = new TreeNode(0); // root
+
+        TreeNode node1 = new TreeNode(1); // second layer
+        TreeNode node2 = new TreeNode(1);
+
+        TreeNode node3 = new TreeNode(3); // third layer
+        TreeNode node4 = new TreeNode(4);
+        TreeNode node5 = new TreeNode(4);
+        TreeNode node6 = new TreeNode(3);
+
+        // setting up
+        binaryTree.add(binaryTree.getRoot(), root.data);
+
+        binaryTree.getRoot().left = node1;
+        binaryTree.getRoot().right = node2;
+
+        binaryTree.getRoot().left.left = node3;
+        binaryTree.getRoot().right.right = node6;
+        binaryTree.getRoot().left.right = node4;
+        binaryTree.getRoot().right.left = node5;
+
+        // BT 2
+
+        IntBST binaryTree2 = new IntBST();
+        TreeNode rootCopy = new TreeNode(0); // root
+
+        TreeNode node1Copy = new TreeNode(1); // second layer
+        TreeNode node2Copy = new TreeNode(1);
+
+        TreeNode node3Copy = new TreeNode(3); // third layer
+        TreeNode node4Copy = new TreeNode(4);
+        TreeNode node5Copy = new TreeNode(4);
+        TreeNode node6Copy = new TreeNode(3);
+
+        // setting up
+        binaryTree2.add(binaryTree.getRoot(), rootCopy.data);
+
+        binaryTree2.getRoot().left = node1Copy;
+        binaryTree2.getRoot().right = node2Copy;
+
+        binaryTree2.getRoot().left.left = node3Copy;
+        binaryTree2.getRoot().right.right = node6Copy;
+        binaryTree2.getRoot().left.right = node4Copy;
+        binaryTree2.getRoot().right.left = node5Copy;
+
+        //System.out.println(binaryTree.sameTree(binaryTree.getRoot(), binaryTree2.getRoot()));
+
 
     }
 

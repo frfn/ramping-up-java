@@ -115,7 +115,7 @@ class GridProblems {
         if(grid.length == 0) return 0;
         if(grid.length == 1 || grid[0].length == 1) return 1;
 
-        return paths(grid, 0, 0);
+        return paths(grid, 0, 0); // we start at top left
 
     }
     private int paths(int[][] grid, int i, int j) {
@@ -129,7 +129,10 @@ class GridProblems {
                 && j == grid[i].length-1)
             return 1; // I want to return a value when I hit the end
 
+        // The portion below becomes the Recursive Leap of Faith, just see if it works.
+
         // just because there's only TWO statements here ... it goes through EACH as expected
+        // I learned this approach because I have seen how the # of islands question work
         int down = paths(grid, i + 1, j);
         int right = paths(grid, i, j + 1);
 

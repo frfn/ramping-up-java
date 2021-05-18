@@ -44,4 +44,6 @@ public class u_checkIfTwoStringArraysAreEqual {
         return wordIndex == word.length && word2Index == word2.length;
     }
 
+
+
 }

@@ -102,3 +102,26 @@
 - logic: if the digit is LESS than 9, `digits[i]++; return digits;`
     - if `digits[i] is 9` then at current value, `digits[i] =  0`;
     - since we are looping through, it will iterate through the array and return when condition is met
+    
+# My Square Root
+
+- Uses binary search to find the square root.
+- It multiplies the middle by itself and sees if it is the target value
+- if greater than , middle - 1
+- if less than,     middle + 1
+
+# Staircase
+
+- Fibonacci Value
+- Either use memoization or tabulation for solution
+
+# Rotate String
+
+- Add the string together and sees if new string contains B
+- 2nd approach, iterate through the first string and make a new string via the algorithm
+    - see if the new string while iterating is the same as String B
+    
+# Pascal's Triangle
+
+
+

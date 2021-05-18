@@ -5,7 +5,7 @@ public class q_mySqRt {
     // you're looking in a sorted list, 1, 2, 3, 4, etc... you can use binary search!
 
     public static void main(String[] args) {
-        System.out.println(binarySearch(69));
+        System.out.println(binarySearch(25));
     }
 
     /*

@@ -159,12 +159,7 @@ public class IntLinkedList {
                 iterator.next = new ListNode(nodeToBePlaced);
                 iterator = iterator.next; // move up!
                 carry = sum / 10; // cuts the remainder off
-
             }
-            //   1 1 1 1 1
-            // 9 9 9 9 9
-            // 9 9 9 9 9
-            // 8 9 9 9 9
 
             else {
                 iterator.next = new ListNode(sum);
@@ -172,7 +167,7 @@ public class IntLinkedList {
 
                 // [2,4,3]
                 // [5,6,4]
-                //  7 0 8 , if you don't do this, the carry will remain and give false values
+                //  7 0 8 , if you don't do this, the carry will remain and give false values, carry will just be 1 at all times.
                 if(carry > 0) {
                     carry /= 10;
                 }
@@ -241,15 +236,29 @@ public class IntLinkedList {
             size++;
         }
 
+        /*
+        1 % 5 = 1
+        ..
+        4 % 5 = 4
+
+        -->
+
+        5 % 5 = 0
+        6 % 5 = 1
+        7 % 5 = 2
+        ..
+         */
+
         // 2. get the recalculated (if needed) iterations, argument index can be bigger than size!
         indexFromEnd %= size; // 7 % 5 = 2 | 5 - 2 = 3
-        current.next = node;
+        current.next = node; // creates the circular linked list
 
+        // 3. note the size - indexFromEnd
         for(int i = 0; i < size - indexFromEnd; i++) {
             current = current.next;
         }
 
-        // at this point, current is STILL at its original position
+        // by visualizing this, it makes way more sense
         // lets say [current] = 5
         node = current.next;    // node = 1->...5->null | we are declaring the new [node] value
         current.next = null;    // 5.next = null

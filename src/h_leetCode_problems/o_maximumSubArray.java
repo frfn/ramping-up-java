@@ -2,6 +2,17 @@ package h_leetCode_problems;
 
 public class o_maximumSubArray {
 
+    /*
+
+    Easy to understand
+
+    1. first approach goes through each of the values and adds them up. Keeps track of the largest sum
+
+    2. Kadane's approach: uses a runningSum variable, tests to see if the current value is bigger than current value + sum
+        - current value + sum could have gone through some negative numbers and lessen the iterated value! that is why!
+
+     */
+
     public static void main(String[] args) {
         System.out.println(kadanesMaxSubArray(new int[] {-2,1,-3,4,-1,2,1,-5,4}));
     }

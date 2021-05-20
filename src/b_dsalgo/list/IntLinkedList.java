@@ -137,48 +137,39 @@ public class IntLinkedList {
     // --------------- //
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
 
-        ListNode dummy = new ListNode();
-        ListNode iterator = dummy; // for moving the node up
+        ListNode newList = new ListNode();
+        ListNode newListIterator = newList;
 
-        ListNode pointer1 = l1;
-        ListNode pointer2 = l2;
         int carry = 0;
 
-        while(pointer1 != null || pointer2 != null) {
-            // sum is important bc it accounts for the carry value
-            int sum = carry;
+        while(l1 != null || l2 != null) {
+            int sum = 0;
 
+            if(l1 != null && l2 != null) sum += carry + l1.val + l2.val;
+            else if(l1 != null) sum += carry + l1.val;
+            else sum += carry + l2.val;
 
-            if(pointer1 != null && pointer2 != null) sum += pointer1.val + pointer2.val;
-            else if(pointer1 != null) sum += pointer1.val;
-            else sum += pointer2.val;
-
-            // reasoning for this is that if sum is greater than 9, than we must carry!
             if(sum > 9) {
-                int nodeToBePlaced = sum % 10; // grabs the remainder
-                iterator.next = new ListNode(nodeToBePlaced);
-                iterator = iterator.next; // move up!
-                carry = sum / 10; // cuts the remainder off
-            }
 
+                newListIterator.next = new ListNode(sum % 10);
+                newListIterator = newListIterator.next;
+
+                carry = sum / 10;
+
+            }
             else {
-                iterator.next = new ListNode(sum);
-                iterator = iterator.next;
 
-                // [2,4,3]
-                // [5,6,4]
-                //  7 0 8 , if you don't do this, the carry will remain and give false values, carry will just be 1 at all times.
-                if(carry > 0) {
-                    carry /= 10;
-                }
+                newListIterator.next = new ListNode(sum);
+                newListIterator = newListIterator.next;
+
+
+                carry /= 10;
             }
-
-            if(pointer1 != null) pointer1 = pointer1.next;
-            if(pointer2 != null) pointer2 = pointer2.next;
+            if(l1 != null) l1 = l1.next;
+            if(l2 != null) l2 = l2.next;
         }
-        if(carry != 0) iterator.next = new ListNode(carry);
-
-        return dummy.next;
+        if(carry != 0) newListIterator.next = new ListNode(carry);
+        return newList.next;
 
     }
 
@@ -521,7 +512,9 @@ public class IntLinkedList {
             current = current.next;
         }
     }
+
 }
+
 
 class ListNode {
     int val;
@@ -534,23 +527,41 @@ class TestIntLinkedList {
 
     public static void main(String[] args) {
         IntLinkedList list = new IntLinkedList();
-        ListNode one = new ListNode(1);
-        ListNode two = new ListNode(2);
-        ListNode three = new ListNode(3);
-        ListNode four = new ListNode(4);
-        ListNode five = new ListNode(5);
+        IntLinkedList list2 = new IntLinkedList();
 
-        one.next = two;
-        two.next = three;
-        three.next = four;
-        four.next = five;
-        five.next = two;
+        list.add(new ListNode(9));
+        list.add(new ListNode(9));
+        list.add(new ListNode(9));
+        list.add(new ListNode(9));
+        list.add(new ListNode(9));
+        list.add(new ListNode(9));
+        list.add(new ListNode(9));
 
-        list.add(one);
+        list2.add(new ListNode(9));
+        list2.add(new ListNode(9));
+        list2.add(new ListNode(9));
+        list2.add(new ListNode(9));
 
-        System.out.println(list.isLoop(one));               // is loop?
-        System.out.println(list.beginningOfLoop(one).val);  // start of loop?
-        list.cutLoop(list.getHead());                       // cut loop!
-        list.print(list.getHead());                         // the algorithm works.
+        list.print(list.addTwoNumbers(list.getHead(), list2.getHead()));
+
+        //IntLinkedList list = new IntLinkedList();
+        //ListNode one = new ListNode(1);
+        //ListNode two = new ListNode(2);
+        //ListNode three = new ListNode(3);
+        //ListNode four = new ListNode(4);
+        //ListNode five = new ListNode(5);
+
+        //one.next = two;
+        //two.next = three;
+        //three.next = four;
+        //four.next = five;
+        //five.next = two;
+
+        //list.add(one);
+
+        //System.out.println(list.isLoop(one));               // is loop?
+        //System.out.println(list.beginningOfLoop(one).val);  // start of loop?
+        //list.cutLoop(list.getHead());                       // cut loop!
+        //list.print(list.getHead());                         // the algorithm works.
     }
 }

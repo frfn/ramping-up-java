@@ -20,6 +20,7 @@ public class IntStack {
     public void push(int val) {
         if(head == null) head = new Node(val, val);
                     //data = val; this.min = min; this.next = next;
+
         else head = new Node(val, Math.min(val, head.min), head); // this says PREPEND, then set the new node as the head.
     }
 
@@ -50,6 +51,7 @@ class Node {
     int data;
     Node next;
     Node(int val, int min) { this(val, min, null); }
+
     Node(int val, int min, Node next) {
         data = val; this.min = min; this.next = next; // <-- this syntax for stack is cool.
     }

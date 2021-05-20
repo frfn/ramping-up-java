@@ -10,7 +10,7 @@ Recursive Leap of Faith
 
     Examples are for uniquePaths but the steps are for every recursive problem. ( edit this. )
 
-    1. Simplest Possible Input?
+    1. Simplest Possible Input? ( Base Case )
         - if m or n is 1, then the only possible answer is 1
 
     2. Play around with examples and visualize!

@@ -1,6 +1,6 @@
 package h_leetCode_problems;
 
-public class z_numberOfIslands {
+public class y_numberOfIslands {
     /* This is now in f_recursive, it is a matrix recursive problem! -- Important for learning */
     public int numIslands(char[][] grid) {
         if(grid.length == 0) return 0;
@@ -40,7 +40,7 @@ public class z_numberOfIslands {
                 {'1', '1', '0'},
             };
 
-        z_numberOfIslands obj = new z_numberOfIslands();
+        y_numberOfIslands obj = new y_numberOfIslands();
         System.out.println("Number of Islands: " + obj.numIslands(matrix));
     }
 }

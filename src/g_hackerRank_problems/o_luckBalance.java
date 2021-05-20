@@ -41,8 +41,12 @@ public class o_luckBalance {
          */
 
         // Logic: add all | if the contest is important add it to the list
+
         //        sort the list -> this will give us the least value that we can fail on purposes
+
         //        contests.size() - k : explanation -> how many contests we can fail, if one, you must do size-k!
+        //        - K are the contests you CANNOT lose, so size - k will give us how much we can lose. Get rid of that magic behind.
+
         //        total -= lose * 2 : explanation -> we have to subtract from the total, since we added we must subtract twice as to start at "zero"
 
         for (int[] contest : contests) {

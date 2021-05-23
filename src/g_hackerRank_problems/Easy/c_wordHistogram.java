@@ -1,4 +1,4 @@
-package g_hackerRank_problems;
+package g_hackerRank_problems.Easy;
 
 import java.io.*;
 import java.util.HashMap;

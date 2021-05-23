@@ -5,9 +5,9 @@ public class quicksort {
     /*
     Sorting Alg -
 
-    Pivot - an item that we use to compare          (BETWEEN PARTITION)
-        - all elements left of pivot is LESS        (LEFT PARTITION)
-        - all elements right of pivot is GREATER    (RIGHT PARTITION)
+    Pivot   - an item that we use to compare            (BETWEEN PARTITION)
+            - all elements left of pivot is LESS        (LEFT PARTITION)
+            - all elements right of pivot is GREATER    (RIGHT PARTITION)
 
 
 

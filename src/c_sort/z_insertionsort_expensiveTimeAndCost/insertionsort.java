@@ -3,7 +3,7 @@ package c_sort.z_insertionsort_expensiveTimeAndCost;
 public class insertionsort {
 
     public static void main(String[] args) {
-        int[] arr = {5,4,3,2,1};
+        int[] arr = {99, 43, 1, 3, 5};
         insertionSort(arr);
         for(int num: arr) {
             System.out.print(num+",");
@@ -19,9 +19,6 @@ public class insertionsort {
                     int temp = arr[j+1];
                     arr[j+1] = arr[j];
                     arr[j] = temp;
-                }
-                else {
-                    break;
                 }
             }
         }

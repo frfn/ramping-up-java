@@ -1,4 +1,4 @@
-package g_hackerRank_problems;
+package g_hackerRank_problems.Easy;
 
 import java.util.ArrayList;
 import java.util.Arrays;

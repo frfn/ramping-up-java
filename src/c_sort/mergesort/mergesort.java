@@ -9,7 +9,10 @@ public class mergesort {
         for(int num: arr) System.out.print(num + ", ");
     }
 
-    // 5 3 1 8 9 2
+    // slowly look at this, it will makes sense. Take a second to breathe!
+
+    // 5 3 1 8 9 2 <-- starting array
+
     // middle = 6 / 2 = 3
     // left[3] | right[6-3] = right[3]
     // left[] = { 5, 3, 1 }

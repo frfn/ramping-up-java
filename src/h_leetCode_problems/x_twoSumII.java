@@ -13,7 +13,7 @@ public class x_twoSumII {
 
         while(left <= right) {
             if(numbers[left] + numbers[right] == target) {
-                return new int[] {left + 1, right + 1};
+                return new int[] {left, right};
             }
 
             else if(numbers[left] + numbers[right] < target) {

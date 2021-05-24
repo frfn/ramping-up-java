@@ -1,4 +1,4 @@
-package g_hackerRank_problems.Easy;
+package g_hackerRank_problems.Algorithms.x_Easy_Algorithms;
 
 // I made a template for the hour glass ... wow.
 

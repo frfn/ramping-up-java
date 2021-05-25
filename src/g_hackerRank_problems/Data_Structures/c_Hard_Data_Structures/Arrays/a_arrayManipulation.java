@@ -13,10 +13,36 @@ public class a_arrayManipulation {
 
         List<List<Integer>> queries = new ArrayList<>(); queries.add(r1); queries.add(r2); queries.add(r3);
 
-        long maxValue = arrayManipulation(10, queries);
+        long maxValue = arrayManipulationEfficient(10, queries);
 
         System.out.println(maxValue);
 
+    }
+
+    public static long arrayManipulationEfficient(int n, List<List<Integer>> queries) {
+
+        long[] arr = new long[n + 1];
+
+        for(List<Integer> query: queries) {
+
+            int start = query.get(0);
+            int end = query.get(1);
+            long value = query.get(2);
+
+            arr[start - 1] += value; // when we access the array, we are 0-based index
+            arr[end] -= value;
+
+        }
+
+        long sum = 0;
+        long maxValue = Long.MIN_VALUE;
+
+        for(long num : arr) {
+            sum += num;
+            maxValue = Math.max(sum, maxValue);
+        }
+
+        return maxValue;
     }
 
     public static long arrayManipulation(int n, List<List<Integer>> queries) {

@@ -25,7 +25,7 @@ public class a_findMissingNumber {
     // will work with many missing numbers, sorted array
     public static List<Integer> findMissingNumbers(int[] list, int totalCount) {
         List<Integer> missingNums = new ArrayList<>();
-        for(int i = 1; i < totalCount; i++) {
+        for(int i = 0; i < totalCount; i++) {
             if(!bs(list, i)) {
                 missingNums.add(i);
             }
@@ -48,7 +48,7 @@ public class a_findMissingNumber {
         HashSet<Integer> set = new HashSet<>();
         for(int num: list) set.add(num);
 
-        for(int i = 1; i <= totalCount; i++) {
+        for(int i = 0; i <= totalCount; i++) {
             if(!set.contains(i)) {
                 missingNums.add(i);
             }

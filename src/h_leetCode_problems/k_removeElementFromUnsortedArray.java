@@ -6,7 +6,7 @@ public class k_removeElementFromUnsortedArray {
 
     public static void main(String[] args) {
         int[] arr = {2,3,4,1,2,3,4,1,2}; // 2,3,4,1
-        int length = removeDupesFromUnsortedArray(arr);
+        int length = removeElement(arr, 1);
         System.out.println(length);
 
         int counter = 0;

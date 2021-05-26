@@ -18,7 +18,7 @@ public class v_gradingStudent {
         // if below 38, no rounding occurs
         for(int grade: studentGrades) {
             if(grade < 38) {
-                roundedGrades.add(grade); // no change occues because less than 38
+                roundedGrades.add(grade); // no change occurs because less than 38
                 continue;
             }
 

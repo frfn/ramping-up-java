@@ -2,9 +2,7 @@ package b_dsalgo.tree;
 
 // This IS IMPORTANT. Binary Search Trees are used in lots of FAANG questions.
 
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Stack;
+import java.util.*;
 
 public class IntBST {
 
@@ -17,6 +15,20 @@ public class IntBST {
 
     public TreeNode getRoot() { return root; }
 
+
+     /*
+
+          BST ( you do bubble out when popping from call stack. )
+
+                                       100
+                                     /     \
+                                  50        150
+                                 /  \
+                               5    75
+                                      \
+                                       80
+
+         */
 
     // contains
     public boolean contains(TreeNode root, int data) {
@@ -110,7 +122,7 @@ public class IntBST {
     }
 
 
-    // traversing tree in recursive manner
+    // traversing tree in recursive manner ( DFS )
     public void preOrderTraversal(TreeNode node) {
         if(node != null) {
             System.out.println(node.data);
@@ -216,7 +228,12 @@ public class IntBST {
         if(node.right == null) {
             return node.data;
         }
-        return findMaxInBST(node.right);
+
+        int right = findMaxInBST(node.right);
+
+        System.out.println(node.data);
+
+        return right;
     }
 
 
@@ -265,6 +282,20 @@ public class IntBST {
         return false;
     }
 
+    // print in tree order traversal
+    public List<Integer> inorderTraversal(TreeNode root) {
+        List<Integer> inOrderList = new ArrayList<>();
+        helper(root, inOrderList);
+        return inOrderList;
+    }
+    private void helper(TreeNode curr, List<Integer> list) {
+        if(curr != null) {
+            helper(curr.left, list);
+            list.add(curr.data);
+            helper(curr.right, list);
+        }
+    }
+
 }
 
 class TreeNode {
@@ -298,8 +329,9 @@ class TestIntBST {
         tree.add(tree.getRoot(), 5);
         tree.add(tree.getRoot(), 75);
         tree.add(tree.getRoot(), 80);
+        tree.add(tree.getRoot(), 190);
 
-        System.out.println(tree.contains(tree.root, 1));
+        System.out.println(tree.findMaxInBST(tree.root));
 
 
         // -------------------------------------------------- //

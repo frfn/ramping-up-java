@@ -30,7 +30,7 @@ public class y_subArrayDivision {
             for(int j = i; j < i + m; j++) { // i = 4 --> j < 6
                 runningSum += s.get(j);
 
-                if(j == i + m - 1 && runningSum == d) count++; // the - 1 is taking into account the index
+                if(j == i + m - 1 && runningSum == d) count++; // it must be a pair, you cannot JUST have one bar.
             }
 
         }

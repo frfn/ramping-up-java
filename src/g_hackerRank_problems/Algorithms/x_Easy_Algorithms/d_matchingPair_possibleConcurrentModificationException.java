@@ -3,7 +3,7 @@ package g_hackerRank_problems.Algorithms.x_Easy_Algorithms;
 import java.util.HashMap;
 import java.util.HashSet;
 
-public class d_matchingPair {
+public class d_matchingPair_possibleConcurrentModificationException {
 
     public static void main(String[] agrs) {
 

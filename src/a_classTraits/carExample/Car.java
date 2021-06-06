@@ -1,7 +1,7 @@
 package a_classTraits.carExample;
 
 // simple interface
-interface ICarName extends Compare{
+interface ICarName extends Compare {
     String owner = "Flexer";
     void showOwner();
 }

@@ -206,7 +206,7 @@ public class IntLinkedList {
             count++;
         }
 
-        dummy.next = current.next;
+        iterate.next = current.next;
         current.next = null; // the reason why head changes as well is because the head AND current are pointing to the same pointer... they are the same element.
 
         while(iterate.next != null) {
@@ -221,11 +221,13 @@ public class IntLinkedList {
         ListNode current = node;
         int size = 1;
 
-        // 1. get length
+        // 1. get length and make it to a circular linked list
         while(current.next != null) {
             current = current.next;
             size++;
         }
+
+        current.next = node; // creates the circular linked list
 
         /*
         1 % 5 = 1
@@ -242,7 +244,6 @@ public class IntLinkedList {
 
         // 2. get the recalculated (if needed) iterations, argument index can be bigger than size!
         indexFromEnd %= size; // 7 % 5 = 2 | 5 - 2 = 3
-        current.next = node; // creates the circular linked list
 
         // 3. note the size - indexFromEnd
         for(int i = 0; i < size - indexFromEnd; i++) {
@@ -398,7 +399,7 @@ public class IntLinkedList {
             }
             dummyIterator = dummyIterator.next;
         }
-        dummyIterator.next = l1 == null ? l2 : l1;
+        dummyIterator.next = l1 == null ? l2 : l1; // since they're sorted already, just plop it at the end
 
         return dummy.next;
 
@@ -466,6 +467,7 @@ public class IntLinkedList {
         ListNode current = node;
         ListNode pointer = null; // keeps track of new value
 
+        // note that current and pointer are the SAME linked list, when pointer SKIPS, it alters current!
         while(current != null) {
             if(set.contains(current.val)){
               pointer.next = current.next;
@@ -489,8 +491,8 @@ public class IntLinkedList {
         ListNode half = middle.next;
         middle.next = null;
 
-        ListNode halfReversed = reverse(half);
-        ListNode current = node;
+        ListNode halfReversed = reverse(half); // will be the shorter half!
+        ListNode current = node;               // restarting to the head!
 
         while(halfReversed != null) {
             if(current.val != halfReversed.val) return false;
@@ -515,7 +517,6 @@ public class IntLinkedList {
 
 }
 
-
 class ListNode {
     int val;
     ListNode next;
@@ -527,22 +528,24 @@ class TestIntLinkedList {
 
     public static void main(String[] args) {
         IntLinkedList list = new IntLinkedList();
-        IntLinkedList list2 = new IntLinkedList();
+        //IntLinkedList list2 = new IntLinkedList();
 
-        list.add(new ListNode(9));
-        list.add(new ListNode(9));
-        list.add(new ListNode(9));
-        list.add(new ListNode(9));
-        list.add(new ListNode(9));
-        list.add(new ListNode(9));
-        list.add(new ListNode(9));
+        list.add(new ListNode(1));
+        list.add(new ListNode(1));
+        list.add(new ListNode(2));
+        list.add(new ListNode(3));
+        list.add(new ListNode(1));
+        list.add(new ListNode(2));
+        //list.add(new ListNode(7));
 
-        list2.add(new ListNode(9));
-        list2.add(new ListNode(9));
-        list2.add(new ListNode(9));
-        list2.add(new ListNode(9));
+        list.print(list.removeDupesInUnsorted(list.getHead()));
 
-        list.print(list.addTwoNumbers(list.getHead(), list2.getHead()));
+        //list2.add(new ListNode(9));
+        //list2.add(new ListNode(9));
+        //list2.add(new ListNode(9));
+        //list2.add(new ListNode(9));
+
+        //list.print(list.addTwoNumbers(list.getHead(), list2.getHead()));
 
         //IntLinkedList list = new IntLinkedList();
         //ListNode one = new ListNode(1);

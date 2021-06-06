@@ -34,7 +34,7 @@ Recursive Leap of Faith
 public class RecursionExamples {
 
     public static void main(String[] args) {
-        /*
+
         char[][] charGrid = {
                 {'0', '0', '1'},
                 {'0', '0', '1'},
@@ -45,31 +45,30 @@ public class RecursionExamples {
         int[][] intGrid = {
                 {0, 0},
                 {0, 0},
-                {0, 0},
         };
-        */
-        /*
+
+
         GridProblems gp = new GridProblems();
-        System.out.println("# of Islands: "+gp.numOfIslands(charGrid));
-        */
-        /*
-        Foundation f = new Foundation();
-        System.out.println("Factorial of 5: "+f.factorial(5));
-        */
+        System.out.println("# of ways: "+gp.uniquePathsWithConstraints(intGrid));
 
-        DynamicProgramming dp = new DynamicProgramming();
 
-        int target = 5;
+        // Foundation f = new Foundation();
+        // System.out.println("Factorial of 5: "+f.factorial(5));
+
+
+        // DynamicProgramming dp = new DynamicProgramming();
+
+        // int target = 5;
 
         // memoization
         // you must increase by one bc the target is equivalent to the index
         /* 5 elements in an array has 4 index, so +1 to make it to 5 index */
-        int[] memo = new int[target+1];
+        // int[] memo = new int[target+1];
 
-        System.out.println("Memo Fibonacci: "+dp.fibonacciMemo(memo, target));
+        // System.out.println("Memo Fibonacci: "+dp.fibonacciMemo(memo, target));
 
         // tabulation
-        System.out.println("Tab Fibonacci: "+dp.fibonacciTab(target));
+        // System.out.println("Tab Fibonacci: "+dp.fibonacciTab(target));
     }
 }
 
@@ -136,6 +135,11 @@ class GridProblems {
         // I learned this approach because I have seen how the # of islands question work
         int down = paths(grid, i + 1, j);
         int right = paths(grid, i, j + 1);
+
+        /*
+        0 0
+        0 0
+         */
 
         return down + right;
     }

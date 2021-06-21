@@ -317,7 +317,7 @@ public class IntLinkedList {
     }
 
     // --------------------- //
-    // where does loop begin //
+    // where does loop begin // Floyd's Detection Loop!
     // --------------------- //
     public ListNode beginningOfLoop(ListNode node) {
         ListNode slowPtr = node, fastPtr = node;
@@ -343,7 +343,7 @@ public class IntLinkedList {
     }
 
     // -------------- //
-    // take loop away //
+    // take loop away // Floyd's Detection Loop!
     // -------------- //
     public void cutLoop(ListNode node) {
         ListNode slowPtr = node, fastPtr = node;
@@ -531,14 +531,15 @@ class TestIntLinkedList {
         //IntLinkedList list2 = new IntLinkedList();
 
         list.add(new ListNode(1));
-        list.add(new ListNode(1));
         list.add(new ListNode(2));
         list.add(new ListNode(3));
-        list.add(new ListNode(1));
-        list.add(new ListNode(2));
+        list.add(new ListNode(4));
+        list.add(new ListNode(5));
+        //list.add(new ListNode(3));
+        //list.add(new ListNode(3));
         //list.add(new ListNode(7));
 
-        list.print(list.removeDupesInUnsorted(list.getHead()));
+        System.out.println(list.getNthNodeFromEnd(list.getHead(), 2).val);
 
         //list2.add(new ListNode(9));
         //list2.add(new ListNode(9));

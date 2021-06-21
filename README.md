@@ -169,3 +169,12 @@ StringBuilder string = new StringBuilder();
 - `data layer` is to manage translation between the OO and relational worlds
 - `data layer` is typically is a lib usually written in the OO language like Java!
 - the db manager, functions here will be CRUD operations, while at the same time manipulating the data to be created, read, updated, or deleted!
+
+# Off By One?
+
+- When doing an algorithm question, and you have to compare a value in a for loop with i+1, the i < length SHALL be i < length-1
+- The reason being is that the +1 will check, and it will be a null value, causing an error.
+- Sometimes, you will see people do
+  - for(int i = 0; i <= length-1; i++)
+    - But this is == to, for(int i = 0; i < length; i++)
+    - !! very important!

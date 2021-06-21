@@ -20,7 +20,7 @@ public class d_romanToIntegers {
      */
 
     public static void main(String[] args) {
-        System.out.println(romanToInt("MCMXCVI")); // 1996
+        System.out.println(romanToInt("MCMX")); // 1996
     }
     public static int romanToInt(String s) {
         HashMap<Character, Integer> roman = new HashMap<>();
@@ -32,7 +32,9 @@ public class d_romanToIntegers {
         roman.put('D', 500);
         roman.put('M', 1000);
         int result = 0;
-        result += roman.get(s.charAt(0));
+
+        result += roman.get(s.charAt(0)); // adding the first letter value!
+
         // compares the value upfront
 
         for (int i = 1; i < s.length(); ++i) {

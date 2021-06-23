@@ -8,6 +8,29 @@ public class l_makingAnagrams {
         System.out.println(creatingAnagrams("fcrxzwscanmligyxyvym", "jxwtrhvujlmrpdoqbisbwhmgpmeoke"));
     }
 
+    public static int anagram(String word, String otherWord) {
+        HashMap<Character, Integer> map = new HashMap<>();
+
+        for(Character c : word.toCharArray()) {
+            int count = map.getOrDefault(c, 0);
+            map.put(c, count + 1);
+        }
+
+        for(Character c : otherWord.toCharArray()) {
+            int count = map.getOrDefault(c, 0);
+            map.put(c, count - 1);
+        }
+
+        int deleted = 0;
+
+        for(int value : map.values()) {
+            deleted += Math.abs(value); // it will calculate normal, any negative numbers will become positive!
+        }
+
+        return deleted;
+
+    }
+
     public static int creatingAnagrams(String word, String otherWord) {
 
         // hash map to keep the count of letters

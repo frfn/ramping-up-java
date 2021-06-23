@@ -13,7 +13,7 @@ public class e_LongestCommonPrefix {
         listOfSayings.add("The operator likes blue");
         listOfSayings.add("The operator likes green");
 
-        System.out.println(commonPrefixWords(listOfSayings));
+        System.out.println(cPW(listOfSayings));
     }
 
     /*
@@ -36,7 +36,7 @@ public class e_LongestCommonPrefix {
 
     public static String commonPrefixWords(List<String> orders) {
 
-        // filling in array
+        // filling in array -- just use get
         String[] ordersArray = new String[orders.size()];
         int index = 0;
         for(String order: orders) {
@@ -53,6 +53,28 @@ public class e_LongestCommonPrefix {
             for(int j = 1; j < ordersArray.length; j++) { // hypothetically starts at next word
 
                 if(i == ordersArray[j].length() || letter != ordersArray[j].charAt(i)) {
+                    return basePhrase.substring(0, i);
+                }
+
+            }
+
+        }
+
+        return basePhrase;
+    }
+
+    public static String cPW(List<String> orders) {
+
+        // Start logic here...
+        String basePhrase = orders.get(0); // first sentence
+
+        for(int i = 0; i < basePhrase.length(); i++) {
+
+            char letter = basePhrase.charAt(i); // grab the letter
+
+            for(int j = 1; j < orders.size(); j++) { // starts at next word
+
+                if(i == orders.get(j).length() || letter != orders.get(j).charAt(i)) {
                     return basePhrase.substring(0, i);
                 }
 

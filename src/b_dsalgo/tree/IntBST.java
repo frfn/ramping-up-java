@@ -24,16 +24,16 @@ public class IntBST {
                                      /     \
                                   50        150
                                  /  \
-                               5    75
-                                      \
-                                       80
+                               5    80
+                                   /
+                                  60
 
          */
 
     // contains
     public boolean contains(TreeNode root, int data) {
         /*
-        Create an easy to understand explanation here. Iterative is easier to implement!'
+        Create an easy to understand explanation here. Iterative is easier to implement!
 
         1. You had the right approach at the first round
 
@@ -65,7 +65,7 @@ public class IntBST {
             return root;
         }
 
-        /* when the node is null, we create a new TreeNode and return that node to be the left or right child */
+        /* when the node is null, we create a new TreeNode and return that node */
         if(node == null) {
             size++;
             node = new TreeNode(data); // when we hit null, we return a new node,
@@ -282,7 +282,7 @@ public class IntBST {
         return false;
     }
 
-    // print in tree order traversal
+    // grab the nodes in tree order traversal
     public List<Integer> inorderTraversal(TreeNode root) {
         List<Integer> inOrderList = new ArrayList<>();
         helper(root, inOrderList);
@@ -329,9 +329,8 @@ class TestIntBST {
         tree.add(tree.getRoot(), 5);
         tree.add(tree.getRoot(), 75);
         tree.add(tree.getRoot(), 80);
-        tree.add(tree.getRoot(), 190);
 
-        System.out.println(tree.findMaxInBST(tree.root));
+        System.out.println(tree.findHeight(tree.root));
 
 
         // -------------------------------------------------- //

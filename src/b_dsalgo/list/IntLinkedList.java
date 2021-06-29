@@ -137,8 +137,8 @@ public class IntLinkedList {
     // --------------- //
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
 
-        ListNode newList = new ListNode();
-        ListNode newListIterator = newList;
+        ListNode newList = new ListNode(); // new list
+        ListNode newListIterator = newList; // the pointer that will move + Yes, they are the same list.
 
         int carry = 0;
 
@@ -151,10 +151,10 @@ public class IntLinkedList {
 
             if(sum > 9) {
 
-                newListIterator.next = new ListNode(sum % 10);
-                newListIterator = newListIterator.next;
+                newListIterator.next = new ListNode(sum % 10); // grab the last digit
+                newListIterator = newListIterator.next; // move it up!
 
-                carry = sum / 10;
+                carry = sum / 10; // let's say sum is 18, carry will be 1
 
             }
             else {
@@ -162,8 +162,7 @@ public class IntLinkedList {
                 newListIterator.next = new ListNode(sum);
                 newListIterator = newListIterator.next;
 
-
-                carry /= 10;
+                carry /= 10; // let's say we had a carry of 1, ex: 1 + 5 + 2 = 8. We will now get rid of carry because we used it! 1 / 10 = 0
             }
             if(l1 != null) l1 = l1.next;
             if(l2 != null) l2 = l2.next;
@@ -402,7 +401,6 @@ public class IntLinkedList {
         dummyIterator.next = l1 == null ? l2 : l1; // since they're sorted already, just plop it at the end
 
         return dummy.next;
-
     }
 
     // ---------- //
@@ -435,6 +433,18 @@ public class IntLinkedList {
             b = b == null ? l1 : b.next;
         }
 
+        /*
+
+
+        A: 1 -> 2
+                  \
+                   3 -> 4 -> 5 -> null
+                  /
+        B:     1
+
+
+         */
+
         return a;
     }
 
@@ -462,6 +472,10 @@ public class IntLinkedList {
     // ----------------------------- //
     public ListNode removeDupesInUnsorted(ListNode node) {
         if(node == null) return null;
+
+        // 1 -> 3 -> 1 -> 3 -> 5
+
+        // set: 1, 3
 
         HashSet<Integer> set = new HashSet<>();
         ListNode current = node;
@@ -491,7 +505,7 @@ public class IntLinkedList {
         ListNode half = middle.next;
         middle.next = null;
 
-        ListNode halfReversed = reverse(half); // will be the shorter half!
+        ListNode halfReversed = reverse(half); // will be the shorter half! yes it is! , imagine 1 -> 2 -> 3 -> 4 -> 5, split is 123 | 45
         ListNode current = node;               // restarting to the head!
 
         while(halfReversed != null) {

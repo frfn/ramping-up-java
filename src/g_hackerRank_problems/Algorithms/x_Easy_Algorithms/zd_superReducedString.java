@@ -26,6 +26,9 @@ public class zd_superReducedString {
 
     public static String superReducedString(String str) {
         for (int i = 1; i < str.length(); i++) {
+
+            System.out.println(str + ":" +str.length());
+
             if (str.charAt(i) == str.charAt(i-1)) {
 
                 System.out.println(str.substring(i+1));

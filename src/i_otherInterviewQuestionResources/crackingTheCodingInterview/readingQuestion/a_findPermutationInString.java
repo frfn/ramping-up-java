@@ -15,6 +15,7 @@ public class a_findPermutationInString {
 
         // logic: store string a in hashmap to be used for comparison of letters
         HashMap<Character, Integer> map = new HashMap<>();
+        HashMap<Character, Integer> tempMap;
 
         for(char letter : a.toCharArray()) {
             int freq = map.getOrDefault(letter, 0);
@@ -25,7 +26,7 @@ public class a_findPermutationInString {
         for(int i = 0; i < b.length(); i++) {
 
             // this is how you create a copy of a hashmap
-            HashMap<Character, Integer> tempMap = new HashMap<>(map);
+            tempMap = new HashMap<>(map);
 
             if(i + a.length() > b.length()) break;
 

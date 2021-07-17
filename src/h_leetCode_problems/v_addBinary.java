@@ -49,8 +49,8 @@ public class v_addBinary {
             int sum = carry;
             if(j >= 0) sum += b.charAt(j--) - '0'; // this does the same thing as above!
             if(i >= 0) sum += a.charAt(i--) - '0';
-            sb.insert(0, sum % 2);
-            carry = sum / 2;
+            sb.insert(0, sum % 2); // by 2 because we will only look at 0's and 1's
+            carry = sum / 2; // if there's a carry and it has been used, take into account
         }
         if(carry != 0) sb.append(carry);
         return sb.reverse().toString();

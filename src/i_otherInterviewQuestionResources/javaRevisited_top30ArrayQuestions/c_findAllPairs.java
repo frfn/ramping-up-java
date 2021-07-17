@@ -36,6 +36,7 @@ public class c_findAllPairs {
             if(set.contains(complement)) {
                 pair.add(num); pair.add(complement);
 
+                // we remove so that we don't reuse
                 set.remove(num);
                 set.remove(complement);
 

@@ -21,6 +21,10 @@ public class Main {
 
         house.printPeople();
 
+        System.out.println("Flex age: " + Flex.getAge());
+        Flex.setAge(25);
+        System.out.println("Flex age: " + Flex.getAge());
+
         Scanner scan = new Scanner(System.in);
 
         System.out.println("Input '1' to change a name! '2' to print!");

@@ -14,9 +14,39 @@ public class f_findCommonElementsInThreeSortedArray {
         int[] lcInput1 = new int[] {4,9,5};
         int[] lcInput2 = new int[] {9,4,9,8,4};
 
-        for(int num: commonElementsInThreeArraysEfficient(input1,input2,input3)) {
+        List<Integer> l1 = new ArrayList<>(); l1.add(3); l1.add(10); l1.add(11); l1.add(20); l1.add(50); l1.add(66);
+        List<Integer> l2 = new ArrayList<>(); l2.add(1); l2.add(10); l2.add(30); l2.add(50); l2.add(70);
+
+
+
+        for(int num: commonElementsTwoLists(l1, l2)) {
             System.out.println(num);
         }
+    }
+
+    public static List<Integer> commonElementsTwoLists(List<Integer> l1, List<Integer> l2) {
+
+        int i, j;
+        i = j = 0;
+
+        List<Integer> intersect = new ArrayList<>();
+
+        while(i < l1.size() && j < l2.size()) {
+            if(l1.get(i).equals(l2.get(j))) {
+                intersect.add(l1.get(i));
+                i++;
+                j++;
+            }
+            else if (l1.get(i) < l2.get(j)) {
+                i++;
+            }
+            else {
+                j++;
+            }
+        }
+
+        return intersect;
+
     }
 
     // easier to understand now that you rested... woo hoo. Victory!
@@ -62,7 +92,7 @@ public class f_findCommonElementsInThreeSortedArray {
         // adding to int[] since data is coming from Set!
         int[] common = new int[commonElement.size()];
         int index = 0;
-        for(int num : commonElement) common[index] = num;
+        for(int num : commonElement) common[index++] = num;
 
         return common;
 

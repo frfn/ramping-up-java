@@ -6,7 +6,7 @@ import java.util.List;
 public class t_PascalsTriangle {
 
     public static void main(String[] args) {
-        for(List<Integer> list: generate(3)) {
+        for(List<Integer> list: generate(10)) {
             System.out.println(list);
         }
     }

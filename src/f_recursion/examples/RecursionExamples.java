@@ -1,5 +1,8 @@
 package f_recursion.examples;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 /*
 
 Recursive Leap of Faith
@@ -34,41 +37,70 @@ Recursive Leap of Faith
 public class RecursionExamples {
 
     public static void main(String[] args) {
+        /* -------------------------------------- */
 
-        char[][] charGrid = {
-                {'0', '0', '1'},
-                {'0', '0', '1'},
-                {'1', '0', '1'},
-                {'0', '0', '1'},
-        };
+        // Matrix Problem
+        // char[][] charGrid = {
+        //         {'0', '0', '1'},
+        //         {'0', '0', '1'},
+        //         {'1', '0', '1'},
+        // };
 
-        int[][] intGrid = {
-                {0, 0},
-                {0, 0},
-        };
+        // int[][] intGrid = {
+        //         {0, 0},
+        //         {0, 0},
+        // };
 
 
-        GridProblems gp = new GridProblems();
-        System.out.println("# of ways: "+gp.uniquePathsWithConstraints(intGrid));
+        // GridProblems gp = new GridProblems();
+        // System.out.println("# of ways: "+gp.uniquePathsWithConstraints(intGrid));
+        // System.out.println("Islands: "+gp.numOfIslands(charGrid));
 
+        /* -------------------------------------- */
 
         // Foundation f = new Foundation();
         // System.out.println("Factorial of 5: "+f.factorial(5));
 
+        /* -------------------------------------- */
 
         // DynamicProgramming dp = new DynamicProgramming();
 
         // int target = 5;
 
-        // memoization
+        // memoization for fibo
         // you must increase by one bc the target is equivalent to the index
         /* 5 elements in an array has 4 index, so +1 to make it to 5 index */
         // int[] memo = new int[target+1];
 
         // System.out.println("Memo Fibonacci: "+dp.fibonacciMemo(memo, target));
 
-        // tabulation
+        // tabulation for fibo
         // System.out.println("Tab Fibonacci: "+dp.fibonacciTab(target));
+
+        /* ------- DP ------- */
+
+        // Knapsack problem
+        /* the 0 is intended, we start at 0 index, even though there are 4 elements */
+        int[] values = {0,1,2,5,6};
+        int[] weight = {0,2,3,4,5};
+        int capacity = 8; // weight limit
+        int length = 4; // how many elements we are looking at
+        int[][] tableForKnapSack = new int[length+1][capacity+1]; // why +1? We will take into account the 0 spot
+
+        int[][] table = DynamicProgramming.knapsackTabulation(weight,values,capacity,length,tableForKnapSack);
+
+        for(int[] row: table){
+            System.out.println(Arrays.toString(row));
+        }
+
+        System.out.println();
+
+        for(List<Integer> results: DynamicProgramming.itemsToPutInBag(table,length,capacity,weight)) {
+            for(int result : results) {
+                System.out.print(result + ", ");
+            }
+            System.out.println();
+        }
     }
 }
 
@@ -100,7 +132,13 @@ class GridProblems {
         return counter;
     }
     private void isIsland(char[][] grid, int i, int j) {
-        if(i < 0 || j < 0 || i >= grid.length || j >= grid[i].length || grid[i][j] != '1') return;
+        if(
+            i < 0 || i >= grid.length // why >= ? well, because if we go on index[3] and our array length 3
+         || j < 0 || j >= grid[i].length // ... issue, there is nothing at index 3 since our array length is 3, it will only be 0,1,2!!
+         || grid[i][j] != '1'            // this is checking for out of bounds error! Woohoo!
+
+        ) return;
+
         grid[i][j] = '0';
         isIsland(grid, i+1, j);
         isIsland(grid, i-1, j);
@@ -190,6 +228,75 @@ class DynamicProgramming {
 
         return bottomUp[num];
     }
+
+    // KnapSack tabulation!
+    /* https://www.youtube.com/watch?v=zRza99HPvkQ&ab_channel=AbdulBari | best explanation ever. */
+    public static int[][] knapsackTabulation(int[] weight, int[] values, int capacity, int length, int[][] table) {
+
+        for(int i = 0; i <= length; i++) { // i == the index | the rows
+
+            for (int w = 0; w <= capacity; w++) { // w == the weight | the columns
+
+                // table[i][w] will store the PROFIT, not the weight
+
+                // 1st condition
+                if(i == 0 || w == 0) {
+                    table[i][w] = 0;
+                }
+
+                // 2nd condition | the main
+                else if (weight[i] <= w) {
+                    table[i][w] = Math.max( // grab the bigger number of two
+                                    values[i] + table[i-1][w-weight[i]], // profit + the value already in table
+                                    table[i-1][w]
+                                    );
+                }
+
+                // 3rd condition | if weight[i] > than current w, then use previous data at index [i-1][w]
+                else {
+                    table[i][w] = table[i-1][w];
+                }
+
+            }
+
+        }
+        return table;
+    }
+    public static List<List<Integer>> itemsToPutInBag(int[][] knapSackTable, int length, int capacity, int[] weight) {
+        List<Integer> bag = new ArrayList<>();
+        List<Integer> whatWeAdded = new ArrayList<>();
+        List<List<Integer>> returnThis = new ArrayList<>();
+
+        // length == index of array | the rows
+        // capacity == max limit of bag | weight
+        int i = length;   // index
+        int j = capacity; // weight
+
+        while(i > 0 && j > 0) {
+            if(knapSackTable[i][j] == knapSackTable[i-1][j]) {
+                i--;
+                whatWeAdded.add(0);
+            }else {
+                bag.add(weight[i]);
+                j = j-weight[i];
+
+                i--;
+                whatWeAdded.add(1);
+            }
+        }
+
+        if(whatWeAdded.size() != length) {
+            whatWeAdded.add(0,0);
+        }
+
+        returnThis.add(bag);
+        returnThis.add(whatWeAdded);
+
+        return returnThis;
+    }
+
+
+    // Coin Change!
 
 
 }

@@ -12,6 +12,7 @@ public class a_findMissingNumber {
 
     // will work with only one number, sorted array
     public static int findMissingNumber(int[] arr, int num) {
+        // new int[]{1, 2, 3, 4, 6, 7}, 7)
 
         // instead of the for loop to add one by one, math way is:
         int expectedSum = num * ((num + 1) / 2);
@@ -24,6 +25,7 @@ public class a_findMissingNumber {
 
     // will work with many missing numbers, sorted array
     public static List<Integer> findMissingNumbers(int[] list, int totalCount) {
+        Arrays.sort(list);
         List<Integer> missingNums = new ArrayList<>();
         for(int i = 0; i < totalCount; i++) {
             if(!bs(list, i)) {

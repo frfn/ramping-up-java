@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class zzc_minimumDistances {
+public class zze_minimumDistances {
 
     public static void main(String[] args) {
         List<Integer> l = new ArrayList<>();
